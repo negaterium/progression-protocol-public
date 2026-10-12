@@ -1,0 +1,8 @@
+# Run Caddy on the same host as the loopback-bound application.
+# Replace this hostname with your public DNS name; Caddy manages HTTPS.
+system.example.com {
+    reverse_proxy 127.0.0.1:9999 {
+        # Overwrite client input; required before enabling proxy trust in the app.
+        header_up X-Real-IP {remote_host}
+    }
+}

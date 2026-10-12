@@ -1,0 +1,38 @@
+name: Bug report
+description: Report reproducible behavior using synthetic data.
+title: "[Bug] "
+body:
+  - type: markdown
+    attributes:
+      value: "For vulnerabilities follow SECURITY.md. Do not attach credentials, environment files, database dumps or private player data."
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: "OS, Node/PostgreSQL versions, browser, Docker/source and HTTP/HTTPS. Omit private hostnames and secrets."
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: Use a disposable player/database where possible.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Redacted diagnostics
+      description: Include only relevant sanitized errors; no raw configuration or database rows.

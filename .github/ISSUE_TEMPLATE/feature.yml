@@ -1,0 +1,21 @@
+name: Feature proposal
+description: Describe a problem and the behavior that would solve it.
+title: "[Feature] "
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: User problem
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+    validations:
+      required: true
+  - type: textarea
+    id: compatibility
+    attributes:
+      label: Compatibility and alternatives
+      description: Consider game balance, database ownership, authentication and deployment.

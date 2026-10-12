@@ -1,0 +1,4 @@
+# These bytes are checksummed; keep them identical across Windows/Linux checkouts.
+database/migrations/*.sql text eol=lf
+database/seeds/*.json text eol=lf
+database/manifest.json text eol=lf

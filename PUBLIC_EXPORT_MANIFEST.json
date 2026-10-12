@@ -1,0 +1,2275 @@
+{
+  "format": 1,
+  "sourceCommit": "041b04540ca2ed93296bdaa77a553083df8f6853",
+  "files": [
+    {
+      "path": ".dockerignore",
+      "bytes": 155,
+      "sha256": "b0617299744646ce08e6e3762a1dbc53eb3e42be8429a87db00b081023e35b55"
+    },
+    {
+      "path": ".env.docker.example",
+      "bytes": 905,
+      "sha256": "50941bf5eeb47dd21adcf11ed725e16d1b6c00a71beb5d681a1c4dd327cfb6f2"
+    },
+    {
+      "path": ".env.example",
+      "bytes": 855,
+      "sha256": "55436e341b1c60cd9bd020eae3515e10bf27fb810b63693ae6271246919a3931"
+    },
+    {
+      "path": ".gitattributes",
+      "bytes": 190,
+      "sha256": "f0b71d73354f4a11a1ca74f1cb9394b9a4ff8bfd9e2a6fe3c79d45f5b2b1885a"
+    },
+    {
+      "path": ".github/CODEOWNERS",
+      "bytes": 93,
+      "sha256": "8cbe417ac38cf9694bb0ac4951c9e3a2e53dc920b59f8b5285e568401c5a64f9"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug.yml",
+      "bytes": 1152,
+      "sha256": "4f8b2c8608206a0e7c3bcc8e1a4fd4663d1e769dcb2e569909dfcc361495b9fc"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/config.yml",
+      "bytes": 27,
+      "sha256": "13064e7bea658e01e718b414fbb7b3b244f36411fe25ee2055c151f7b534547a"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/feature.yml",
+      "bytes": 549,
+      "sha256": "851800d932183857fda7f855ee1d9a563c686797279d1540fe55c89f73c54ea3"
+    },
+    {
+      "path": ".github/PULL_REQUEST_TEMPLATE.md",
+      "bytes": 688,
+      "sha256": "73c47b29bc09972404e99e83f147a9e56350d0b839cf00e1e1fda09e8f6ef9ea"
+    },
+    {
+      "path": ".github/dependabot.yml",
+      "bytes": 134,
+      "sha256": "5585fdf741046ef565671e226dca44b756558d7c14b0fe6a99dc652d6b04328b"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "bytes": 2387,
+      "sha256": "6a8199d554560611ebad115739578a6c23fb4d71cd37c49c0fd6797430766c15"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 750,
+      "sha256": "852fc9e91f11e79ffe37f5311b89e902fe838d95cdb641234ab1719fff679873"
+    },
+    {
+      "path": ".node-version",
+      "bytes": 3,
+      "sha256": "f14b4987904bcb5814e4459a057ed4d20f58a633152288a761214dcd28780b56"
+    },
+    {
+      "path": ".nvmrc",
+      "bytes": 3,
+      "sha256": "f14b4987904bcb5814e4459a057ed4d20f58a633152288a761214dcd28780b56"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 3950,
+      "sha256": "f35ea8d77edefccc99c73409e5b9782daa91cbd5e02cf15d9bdf82e40188588b"
+    },
+    {
+      "path": "CODE_OF_CONDUCT.md",
+      "bytes": 773,
+      "sha256": "53a5b97956c730fd2656743c9e316a0c97369dd7da1266e439ce8e2842b49bad"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "bytes": 3741,
+      "sha256": "9f56143522d3c1bd326d24917210847b4dc1013f87e1d99df0f892c443915330"
+    },
+    {
+      "path": "DEPLOYMENT.md",
+      "bytes": 21027,
+      "sha256": "55c61724a7b4e31d87ae9b918bb3bf4f5216cde017831d1137c7c3a6a827dc58"
+    },
+    {
+      "path": "Dockerfile",
+      "bytes": 1870,
+      "sha256": "80039e0a2a14eb023f1c39937b6a0dbc88dbc188b7dd7d432468373d6955ccc6"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1067,
+      "sha256": "b027b7a9c5b3f0432899700e4e3518b16cfe1de5fba572671c03c1e927114970"
+    },
+    {
+      "path": "README.md",
+      "bytes": 12442,
+      "sha256": "a01db59a43fd2758c1312eb5bc7ac4f7ff6b6184cbfbb6dfee159dfef731ba01"
+    },
+    {
+      "path": "SECURITY.md",
+      "bytes": 2134,
+      "sha256": "214cb2fa98350bf1019e04b7cb96d363aaac438db6d0dc418cc3a6714e996016"
+    },
+    {
+      "path": "SUPPORT.md",
+      "bytes": 614,
+      "sha256": "d6e4af8dc261e9af8178ca5f73ea815562acbbfa613b9ef5031307520935351a"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "bytes": 3161,
+      "sha256": "ec38aceb81bf9a980be5cca29a91f3c7d48df53512c2b71a58ee483db906421a"
+    },
+    {
+      "path": "components.json",
+      "bytes": 443,
+      "sha256": "bc87cca5874cfeefba88eabd8a89675cec11099761c38f9c3ac80fcf3d75cb54"
+    },
+    {
+      "path": "compose.production.yml",
+      "bytes": 1231,
+      "sha256": "2a0a9a8c539bddca1f4924b730fd4d9400ff909324138b3b0a8d618c00f13cec"
+    },
+    {
+      "path": "database/README.md",
+      "bytes": 8554,
+      "sha256": "6fc22e4dab3aed28f62ce86020a1fa49a56f0044f603db6c3a54407ed147daf4"
+    },
+    {
+      "path": "database/manifest.json",
+      "bytes": 596,
+      "sha256": "18c95bf918ab97d1c336b92f36e41e7059a36840ed76917fe7236cd4b65c5716"
+    },
+    {
+      "path": "database/migrations/001_baseline.sql",
+      "bytes": 35996,
+      "sha256": "a83a149517952cadc750c43ce1121c471275bbb73c446e9ffa64c9dfabd64641"
+    },
+    {
+      "path": "database/migrations/002_skill_catalog_truth.sql",
+      "bytes": 11815,
+      "sha256": "060fe53cea06d938b3020ddb5a79911256d24b693af30367bcb6595d695953aa"
+    },
+    {
+      "path": "database/migrations/003_clear_missing_item_images.sql",
+      "bytes": 1236,
+      "sha256": "5fb435d3c5daeef26ee33565ce7cfef78fb94cd91ebdcb50580630e6e8a9f54b"
+    },
+    {
+      "path": "database/seeds/catalogs.json",
+      "bytes": 256975,
+      "sha256": "482bda1bc72824e7eab083cc7165aab8ecbdb29303f551cfdddca22c7a3eebeb"
+    },
+    {
+      "path": "deployment/Caddyfile.example",
+      "bytes": 325,
+      "sha256": "9ebe21a0c0ac9ceb815125c04b848369e31f6bcba02f5650d3af10c6dfe4f9f4"
+    },
+    {
+      "path": "deployment/nginx.conf.example",
+      "bytes": 813,
+      "sha256": "cd9db64e0900d70758951a973f92687cb6c828b10fcc6440ae1113a58222b238"
+    },
+    {
+      "path": "deployment/progression-protocol.service.example",
+      "bytes": 503,
+      "sha256": "0fd4a8d5a5d88b087c3813a8beae8926e29526aebcc645ae83dc0429f626dd3f"
+    },
+    {
+      "path": "docker-compose.yml",
+      "bytes": 1076,
+      "sha256": "cb4fb1dd18dd7294b466f7f3dc81a6983231124395e60c3d0f5361635e8e1ef6"
+    },
+    {
+      "path": "docs/ASSET_LICENSE.md",
+      "bytes": 1544,
+      "sha256": "59d3ff2c8e67f997ca2f7bf39bc200e8585ac75db0a77bfacf5f24c464be1288"
+    },
+    {
+      "path": "docs/ASSET_REVIEW.md",
+      "bytes": 4475,
+      "sha256": "a40b0d370963be80675dda80a98df3ca58c14613d1e4795d5420ae66873a8d0a"
+    },
+    {
+      "path": "docs/FAN_PROJECT_NOTICE.md",
+      "bytes": 1093,
+      "sha256": "8777f4aac816e952ec390b6ca2195431d807ba7bb04edff90fb1127c69b900ca"
+    },
+    {
+      "path": "docs/INTEGRITY_REVIEW.md",
+      "bytes": 4696,
+      "sha256": "46d3c21578a50eddd27dfbd09e6dec21504b3c1a3f9ac404b02b81733469c4c2"
+    },
+    {
+      "path": "docs/LICENSING.md",
+      "bytes": 2330,
+      "sha256": "b9b0773a047c1b35efc1dc2f8120cd6a477fa06ae3020cb242ce455fb1b464d7"
+    },
+    {
+      "path": "docs/MECHANICS.md",
+      "bytes": 4808,
+      "sha256": "6f24ee74d7f640736de359338ffd0b1f622d0a606182bce0a2500d1e9937aa4e"
+    },
+    {
+      "path": "docs/RELEASE_CHECKLIST.md",
+      "bytes": 4209,
+      "sha256": "913281d5b8360fe672e54f7df33bbda0679d810e79cff653b11b3fb04984fa36"
+    },
+    {
+      "path": "docs/SETUP.md",
+      "bytes": 12619,
+      "sha256": "03a96482d7567422a0ae45fd099fe493aa6aedd5c04286af32e92eededb61d8e"
+    },
+    {
+      "path": "docs/SKILL_AUDIT.md",
+      "bytes": 9467,
+      "sha256": "ab2d542179a2bb03ff6dc66f5acd64ff08fb88be1f8bd04a6e49e3fb100ee1d3"
+    },
+    {
+      "path": "docs/SKILL_SYSTEM.md",
+      "bytes": 8501,
+      "sha256": "60372a90d131b18a74d1bd7053530c747c8de9256de98a7d79fe525d885cca1e"
+    },
+    {
+      "path": "docs/SMOKE_TESTS.md",
+      "bytes": 1577,
+      "sha256": "4dd5c35b9507f0ec10424951be0abb0b93f330e29a76ce5b574818138a9b1074"
+    },
+    {
+      "path": "docs/asset-manifest.json",
+      "bytes": 53828,
+      "sha256": "357311b021c0621c49b20cabae3569e775f2b581325e97c352dc32681df7c6e8"
+    },
+    {
+      "path": "eslint.config.mjs",
+      "bytes": 596,
+      "sha256": "ac44a5452d59863f7a7952a03db4c564391b626fa6d863f898734280665b092f"
+    },
+    {
+      "path": "next.config.ts",
+      "bytes": 175,
+      "sha256": "e529218bc61027e1f264cc9f612d4a6c3da02b5980ed26d9bd50eacac4abca5b"
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 345165,
+      "sha256": "d11e009c273667757c28536119420f38a4b9dab211dec93a679482eafbf00490"
+    },
+    {
+      "path": "package.json",
+      "bytes": 2863,
+      "sha256": "4bcf8a702446a98477548a9c0f66ec159c58e85ded24541942d1e20ed253962e"
+    },
+    {
+      "path": "postcss.config.mjs",
+      "bytes": 194,
+      "sha256": "5b8eeb6b776fe81997861ebf709c1b5655b99c556cc847d5cf96d867741b25f3"
+    },
+    {
+      "path": "public/achievements/combat.png",
+      "bytes": 963486,
+      "sha256": "5d7da506de48e8bf179f0cec677f6674a24a73ae47c43d36bba59650f908d571"
+    },
+    {
+      "path": "public/achievements/progression.png",
+      "bytes": 1041817,
+      "sha256": "a00bdb249fa9c74b92d1d0d9f79e83242a9fc36f445bd067d3a50420fa33234b"
+    },
+    {
+      "path": "public/achievements/secret.png",
+      "bytes": 1026188,
+      "sha256": "72d2b7bcbeede91dfbf714fa018558c19e9077d2bbd488643593845eff570792"
+    },
+    {
+      "path": "public/achievements/wealth.png",
+      "bytes": 1021834,
+      "sha256": "87c6b85e293543d886824b1e610d392d14f787bc80c82a5a1a85ac1861ea1dfb"
+    },
+    {
+      "path": "public/avatars/assassin-female.webp",
+      "bytes": 254156,
+      "sha256": "9f2803d970b5b97ab4b9f2722ddbd633f0e4cd04a70c360740cc0d7bb9d7abf1"
+    },
+    {
+      "path": "public/avatars/assassin-male.webp",
+      "bytes": 244310,
+      "sha256": "8c89b4ec499f60072ee4804a2b363c93c562b07e8c4ab4dcb890bf5ec70541a1"
+    },
+    {
+      "path": "public/avatars/druid-female.webp",
+      "bytes": 330480,
+      "sha256": "648f4284ab400bc1e89fdcc3a3372d0336323c3b31e2b268d6c4dea36c9ff6bb"
+    },
+    {
+      "path": "public/avatars/druid-male.webp",
+      "bytes": 242350,
+      "sha256": "c81513d8d83c5ac047b7b7e67e40bdf646c51d6947abf1cf23f9aef275aced7d"
+    },
+    {
+      "path": "public/avatars/generic-female.webp",
+      "bytes": 262416,
+      "sha256": "8c3ba08b7e56b46623582b1e58431901953e651ba28876cf9832f128f72610ca"
+    },
+    {
+      "path": "public/avatars/generic-male.webp",
+      "bytes": 209290,
+      "sha256": "8665e414169d35998f01f7fb636976676cd84d2d9108ce42ce31383f8ff22566"
+    },
+    {
+      "path": "public/avatars/healer-female.webp",
+      "bytes": 230738,
+      "sha256": "bc5ba965bcbcb020cdf0300e6167f5303e3ace340f57139345d7201254ac5313"
+    },
+    {
+      "path": "public/avatars/healer-male.webp",
+      "bytes": 243596,
+      "sha256": "163cb5ee265e77325bce66ce63cb6594355608bd4e81330278e25e7c10fd2be9"
+    },
+    {
+      "path": "public/avatars/mage-female.webp",
+      "bytes": 288258,
+      "sha256": "139c411e4dcaf70c7c5893755b17cbbab1605bba490725f9cd88642f8e11cb27"
+    },
+    {
+      "path": "public/avatars/mage-male.webp",
+      "bytes": 262482,
+      "sha256": "692ff3b52dc09e2719101501c8f54a83a19b14821ee6e96915560d999f6fc87f"
+    },
+    {
+      "path": "public/avatars/monk-female.webp",
+      "bytes": 289548,
+      "sha256": "2f3305c6b22e65f2bf2c3b60a5a93f75d2db15b2da7c55bf5bc8167ea65073a6"
+    },
+    {
+      "path": "public/avatars/monk-male.webp",
+      "bytes": 242302,
+      "sha256": "819ff949521f4eec5536eb15f3d291bdb3531d6608a41cc07d2a5b5572e57770"
+    },
+    {
+      "path": "public/avatars/necromancer-female.webp",
+      "bytes": 292948,
+      "sha256": "122436729b25298ceb3fc2ee3be5e6ed130fea0be56dd9436b6345847487e670"
+    },
+    {
+      "path": "public/avatars/necromancer-male.webp",
+      "bytes": 309806,
+      "sha256": "ed1d6c5e68447500377850fb77d5df79d330ad527f03c2a4dafb2945ee0944ee"
+    },
+    {
+      "path": "public/avatars/tank-female.webp",
+      "bytes": 185968,
+      "sha256": "3147bc443b83bf1607b4c8d36e36c34c98f8030fc798536078f23c95a0a0ab0f"
+    },
+    {
+      "path": "public/avatars/tank-male.webp",
+      "bytes": 185338,
+      "sha256": "b84845183202bb7fc04643542ed3dbf457518097acdd65257259148f5b39c752"
+    },
+    {
+      "path": "public/avatars/warlock-female.webp",
+      "bytes": 269834,
+      "sha256": "dab0887d323285bae699ef04ff6d39eba49883518a3fd71a8be2e8c3cf3b395c"
+    },
+    {
+      "path": "public/avatars/warlock-male.webp",
+      "bytes": 256022,
+      "sha256": "44612a5f5bc891693a135a2defc5ff6cbbf642d4ea8a01d0025a0d1b2fcd8f12"
+    },
+    {
+      "path": "public/bosses/boss-antares.webp",
+      "bytes": 351662,
+      "sha256": "0bc85bc6d8f4ffa30f6fa9109fa0db462b2a7db1655e8ea3050ba564e979a03a"
+    },
+    {
+      "path": "public/bosses/boss-ashborn.webp",
+      "bytes": 32860,
+      "sha256": "fcdcfdcfd4dd33b567e2325bac932f40f435ab87b3c30ed013f666c2186fe9d3"
+    },
+    {
+      "path": "public/bosses/boss-atropus.webp",
+      "bytes": 261420,
+      "sha256": "71410caa8bb0d3a868e64f8e8fcb5f0299b152985581217b42ac473e010aedf3"
+    },
+    {
+      "path": "public/bosses/boss-azathoth.webp",
+      "bytes": 261420,
+      "sha256": "71410caa8bb0d3a868e64f8e8fcb5f0299b152985581217b42ac473e010aedf3"
+    },
+    {
+      "path": "public/bosses/boss-baruka.webp",
+      "bytes": 291446,
+      "sha256": "101025076f0f6d44cd8a3d726a9fb33863568ae9cfc303a6c98d0b6021b9137c"
+    },
+    {
+      "path": "public/bosses/boss-beru.webp",
+      "bytes": 330494,
+      "sha256": "398cc8050b6bbb9415223d32ca523bbb06c672d0f9f837ce15fee7333fefe715"
+    },
+    {
+      "path": "public/bosses/boss-buryura.webp",
+      "bytes": 298126,
+      "sha256": "8e873d3ecec0d807ce281d5e226d4a134ab44fb8312411e5fe35e16d2530d6d5"
+    },
+    {
+      "path": "public/bosses/boss-cerberus.webp",
+      "bytes": 277892,
+      "sha256": "58f633e20936d437a6bc1eb02a8c3f100a1a67a2eac053667881476b1003cb21"
+    },
+    {
+      "path": "public/bosses/boss-hwang.webp",
+      "bytes": 252438,
+      "sha256": "bb093d86a06f184317f11308b643327e9c448845f260806a80e89888e5cb6302"
+    },
+    {
+      "path": "public/bosses/boss-igris.webp",
+      "bytes": 241320,
+      "sha256": "b58fe61c35145ba19edc09be967cfbe040c891c3315d7c2a6fb85ef6889cc4fd"
+    },
+    {
+      "path": "public/bosses/boss-itarim-apostles.webp",
+      "bytes": 365758,
+      "sha256": "7f1fea317a7f479b1ef1a6f1a78ca73de5579fb8c5a52204b45da09c39937fad"
+    },
+    {
+      "path": "public/bosses/boss-itarim.webp",
+      "bytes": 261420,
+      "sha256": "71410caa8bb0d3a868e64f8e8fcb5f0299b152985581217b42ac473e010aedf3"
+    },
+    {
+      "path": "public/bosses/boss-kamish.webp",
+      "bytes": 371350,
+      "sha256": "a579c90e55bc012b73efc4cf80d610e62a26fc7c33f70ce940ed60bc01c18fda"
+    },
+    {
+      "path": "public/bosses/boss-kandiru.webp",
+      "bytes": 305978,
+      "sha256": "8a3897b67248b6baa23de3986f0105a43ecf934f07498b75259e15a3d907c798"
+    },
+    {
+      "path": "public/bosses/boss-kargalgan.webp",
+      "bytes": 249742,
+      "sha256": "d347d741c03d0b4a4d694df17da0a2ce2bb4718745e6bc61132caeb353c2d784"
+    },
+    {
+      "path": "public/bosses/boss-kasaka.webp",
+      "bytes": 325896,
+      "sha256": "f08a69147aa50aa9a4c3908d8a6411340f188dc0fd8c167d51a4f1fce9eb3984"
+    },
+    {
+      "path": "public/bosses/boss-legia.webp",
+      "bytes": 320378,
+      "sha256": "bb1e40b8c6188232898bcfc48163b7002b8a82d049067211d6843e08d181072f"
+    },
+    {
+      "path": "public/bosses/boss-metus.webp",
+      "bytes": 229026,
+      "sha256": "4aa5b5a64ffb01c508302f292dd9af6009f4ef50cc0fbcdcf1fffc3c042a9a9b"
+    },
+    {
+      "path": "public/bosses/boss-nyarlathotep.webp",
+      "bytes": 261420,
+      "sha256": "71410caa8bb0d3a868e64f8e8fcb5f0299b152985581217b42ac473e010aedf3"
+    },
+    {
+      "path": "public/bosses/boss-querehsha.webp",
+      "bytes": 400482,
+      "sha256": "29a7e271efc6cfb3badf59484f686c5ff6416e083919aa735ba158b4d4a4e96f"
+    },
+    {
+      "path": "public/bosses/boss-rakan.webp",
+      "bytes": 366440,
+      "sha256": "fbb9157c82b2ee192f1a723e81e37cb0e2e29aaeb07abd160f153ec243afeb2e"
+    },
+    {
+      "path": "public/bosses/boss-sillad.webp",
+      "bytes": 417346,
+      "sha256": "474452382a05b7c99652073d29c39ad05df56a4b63c04f478aa3ab26c588444a"
+    },
+    {
+      "path": "public/bosses/boss-status-of-god.webp",
+      "bytes": 349948,
+      "sha256": "b1686099531c0548cd705ea5899d3f755d46bfbfa9725140d1475608db4d14e5"
+    },
+    {
+      "path": "public/bosses/boss-tarnak.webp",
+      "bytes": 366170,
+      "sha256": "9bc5998e656e487be639bc8c36bb7914ea560635829332591f6c0ffc7f25ede2"
+    },
+    {
+      "path": "public/bosses/boss-tiamat.webp",
+      "bytes": 261420,
+      "sha256": "71410caa8bb0d3a868e64f8e8fcb5f0299b152985581217b42ac473e010aedf3"
+    },
+    {
+      "path": "public/bosses/boss-vecna.webp",
+      "bytes": 261420,
+      "sha256": "71410caa8bb0d3a868e64f8e8fcb5f0299b152985581217b42ac473e010aedf3"
+    },
+    {
+      "path": "public/bosses/boss-vulcan.webp",
+      "bytes": 339866,
+      "sha256": "a98a385b11091a9e542317fe4b4cde2a83a8da4d9ac97af24641fc0567c5ae76"
+    },
+    {
+      "path": "public/bosses/boss-yogumunt.webp",
+      "bytes": 280364,
+      "sha256": "5ad3118b74711444c20fd5e32c885fcae1ff0a181db55164dddd06d1f365708f"
+    },
+    {
+      "path": "public/bosses/bosss-baran.webp",
+      "bytes": 410172,
+      "sha256": "f68e41fe28b0d21bac7d8d1068bd4bb36fc669f95739751153082b8e130c89ab"
+    },
+    {
+      "path": "public/grid.svg",
+      "bytes": 186,
+      "sha256": "3161211aa224736bd0f00812043e4c0fef0c3563628bdaf33bcf0a01f4b95aae"
+    },
+    {
+      "path": "public/images/bosses/boss_atropus.webp",
+      "bytes": 91396,
+      "sha256": "58fac77a12d251048bd7d5f75b6017ad2b568d764b1efc53fcb89967e13a390f"
+    },
+    {
+      "path": "public/images/bosses/boss_azathoth.webp",
+      "bytes": 82286,
+      "sha256": "3f112d56f9716613cf800cb1bf9bdf0fc24ad4e86fbcf89c83d4d296f8385d13"
+    },
+    {
+      "path": "public/images/bosses/boss_nyarlathotep.webp",
+      "bytes": 93774,
+      "sha256": "2f18733965a49683920d30e8cf07174454a30f1f324229ca64a2ded864211020"
+    },
+    {
+      "path": "public/images/bosses/boss_tiamat.webp",
+      "bytes": 123848,
+      "sha256": "8d705b7cee901e516fdc46eb22a1343163776621ff41949e1042eee80bb9a140"
+    },
+    {
+      "path": "public/images/bosses/boss_vecna.webp",
+      "bytes": 116474,
+      "sha256": "bfd2394272815f180eabede5e907b1f279b675858109ee5b1d86fc27ab7c20a2"
+    },
+    {
+      "path": "public/items/accessory.webp",
+      "bytes": 70742,
+      "sha256": "fb947d2a375e0ba231e89276215c94196ea79fadda245f73c7e30bf947a10c39"
+    },
+    {
+      "path": "public/items/altar-agility.png",
+      "bytes": 676760,
+      "sha256": "e32ad6fe2d062135e02681e7d7dde0cefd249cd6e3040a770d6f00d48ae29426"
+    },
+    {
+      "path": "public/items/altar-intelligence.png",
+      "bytes": 886679,
+      "sha256": "53df91889670c48c3f1c2857ca4b18a6567d5ae2bb27f759f75230d08548da40"
+    },
+    {
+      "path": "public/items/altar-perception.png",
+      "bytes": 875983,
+      "sha256": "a40af04acf26e457bd1f75cf401d3891a9b984e2021d3ebdfc824f16aa2f1c15"
+    },
+    {
+      "path": "public/items/altar-strength.png",
+      "bytes": 602807,
+      "sha256": "63bb82b632b987b22024cb54f5fe52fb85edb055f9f96f1eb1b40fbe1f25f3e7"
+    },
+    {
+      "path": "public/items/altar-vitality.png",
+      "bytes": 722419,
+      "sha256": "b6b1e8af5b64deed3a4288838ee03845843db3d8b2430cc71cfe480fc8108a03"
+    },
+    {
+      "path": "public/items/bandages.webp",
+      "bytes": 98740,
+      "sha256": "b645a047857915574e016e98db334f27de4f0b0d97833685aeabe409271fc0c1"
+    },
+    {
+      "path": "public/items/barukas-dagger.webp",
+      "bytes": 101548,
+      "sha256": "bb92151ea85a6e1979ce98f39938724bdd2970cde334884e6377c62b1357d442"
+    },
+    {
+      "path": "public/items/bread-of-the-gatekeeper.webp",
+      "bytes": 156788,
+      "sha256": "a27256ca31ce280b8aa4b933b35983b4bd1515587784f77002c8994b34527844"
+    },
+    {
+      "path": "public/items/chest.webp",
+      "bytes": 68928,
+      "sha256": "816a6f5e4006cc5d659cb711ee8e63502dfc49dcab9912d9d6a4b2ae80f9154c"
+    },
+    {
+      "path": "public/items/cosmic-armor.webp",
+      "bytes": 944813,
+      "sha256": "09904cc34ad382f5305d23f9c79efd8a7f125bd4fc9c79dd7a1ea8fd7afbee2f"
+    },
+    {
+      "path": "public/items/cosmic-crown.webp",
+      "bytes": 702938,
+      "sha256": "f93a0ef45b86739ced9c7cf40e42eb1f7ddc2960f2c6ef16aab84de42653884d"
+    },
+    {
+      "path": "public/items/cosmic-gauntlet.webp",
+      "bytes": 733843,
+      "sha256": "4529a28d6f3f5e3ed2697921c43dea139be2ea0acb5359d6af65459028812586"
+    },
+    {
+      "path": "public/items/cosmic-mask.webp",
+      "bytes": 693592,
+      "sha256": "bc4f57e2b04acfc8882f0e83338509af4851fa2f066d21ffb61fb8ce722bb069"
+    },
+    {
+      "path": "public/items/cosmic-shard.webp",
+      "bytes": 792964,
+      "sha256": "d052017e74baf502918f7a256c6e0d12a9381103a21cf7701fafb8faa50a2ce4"
+    },
+    {
+      "path": "public/items/cosmic-tome.webp",
+      "bytes": 781717,
+      "sha256": "3485b31b6c9cb63babad12a1dac70c5906e7e8423ba5da324e829dbe6020790a"
+    },
+    {
+      "path": "public/items/cup-of-reincarnation.webp",
+      "bytes": 62712,
+      "sha256": "689d940654bc50aa2f352d1d9d166cfbf5321baedbb4d95595489868523077ea"
+    },
+    {
+      "path": "public/items/dungeon-key-d.webp",
+      "bytes": 86984,
+      "sha256": "de7a5102b565c503d147f5eb705635eb4d02851d7b5d5febf74d768c9ad7d7e2"
+    },
+    {
+      "path": "public/items/elixir-intelligence.webp",
+      "bytes": 111840,
+      "sha256": "cf2ecac9649f51dd7b3a042ae4fc99f9945483b30fc01a914bef5fb3855b93a7"
+    },
+    {
+      "path": "public/items/elixir-strength.webp",
+      "bytes": 82796,
+      "sha256": "4ea6cb41454b3a4022317d66ce44d875638d4fd5f1168a60b7c7e4103e7ab416"
+    },
+    {
+      "path": "public/items/elixir-vitality.webp",
+      "bytes": 136852,
+      "sha256": "ca6590d8686007e696609638649216b9c7490429a9a000d9503d40384a8cb961"
+    },
+    {
+      "path": "public/items/elvenwood-fruit.webp",
+      "bytes": 87004,
+      "sha256": "669f479cf2d5796243ec007188ca0303007340fda8d404e7a72dc55d08072e47"
+    },
+    {
+      "path": "public/items/essence-of-arise.webp",
+      "bytes": 53308,
+      "sha256": "5c65dc37ee1705cd4680a13ca40210325fa6b2c2c93c5ddd439d50e77b42b877"
+    },
+    {
+      "path": "public/items/feet.webp",
+      "bytes": 59554,
+      "sha256": "1a1b367af4b44afae92f1ff77d83aec20d082998a7e4e2ba97e5b800b4d0faac"
+    },
+    {
+      "path": "public/items/greater-mana-potion.webp",
+      "bytes": 68808,
+      "sha256": "6cb74317650808c3b7e849a44f292c1a6869126c25d00d091e3a14619f402b4e"
+    },
+    {
+      "path": "public/items/hand-vecna.webp",
+      "bytes": 571337,
+      "sha256": "7f12685ab4ef4ba7206d94558d4c35147c46792bf62adc03e1f776a60ad26abe"
+    },
+    {
+      "path": "public/items/hands.png",
+      "bytes": 696996,
+      "sha256": "a0f06ae3d0382b477d9c4a8c7790659ea27ac7e26bab94f34712b0b7f9c99597"
+    },
+    {
+      "path": "public/items/head.webp",
+      "bytes": 49252,
+      "sha256": "51e69342de057272c627def05695d08fd2d6afbb62182638df69a991b235eae3"
+    },
+    {
+      "path": "public/items/healing-potion-premium.webp",
+      "bytes": 67818,
+      "sha256": "27f3884d2b0dce4e20f16da9fff32a373ba2287e483f4852f866025c4d1edc00"
+    },
+    {
+      "path": "public/items/healing-potion.webp",
+      "bytes": 65808,
+      "sha256": "90ce67a58bbc547014243769695fefa1b65995f58aed57bdd6efbca6ae9b0d50"
+    },
+    {
+      "path": "public/items/holy-water-of-life.webp",
+      "bytes": 67648,
+      "sha256": "477ea7948cc4fa19767cd7f1ee8bb511859dccf6399f363470d561db7b507fff"
+    },
+    {
+      "path": "public/items/ice-bears-robe.webp",
+      "bytes": 154316,
+      "sha256": "df1e029085b771fc94704c9da7026dfffa228014f53f7bdab83232536adb8cda"
+    },
+    {
+      "path": "public/items/igriss-helmet.webp",
+      "bytes": 110344,
+      "sha256": "dc388eac7c13b98cc8400ad1f5bef72dfc33abb37d0324f2d51f01c2fa64dd08"
+    },
+    {
+      "path": "public/items/iron-buckler.webp",
+      "bytes": 131848,
+      "sha256": "6f33e56bfcacdde249a094138da2e579a7bcb8d8c8be2da3805a25ea5b0b56c6"
+    },
+    {
+      "path": "public/items/kamish-wrath.webp",
+      "bytes": 159894,
+      "sha256": "399a533412b738fc3569d3fc854ccccb464eda231945385c4e4db63d4ef1a1fc"
+    },
+    {
+      "path": "public/items/kasaka-venom-pouch.webp",
+      "bytes": 91496,
+      "sha256": "0af4c78957ef886ee7fe42100815494ade0f93f9c640f70271c1891eb89e62a2"
+    },
+    {
+      "path": "public/items/kasakas-venom-fang.webp",
+      "bytes": 57496,
+      "sha256": "b510aa7b7634c628c57cfa4a6e7fa75342e0def23713945a6d298ac0306438a3"
+    },
+    {
+      "path": "public/items/key.webp",
+      "bytes": 57168,
+      "sha256": "93d84f00dad2c4daa54ecb52e33e3b33bfe8cdfe7b21f63567bb888ff8533ad7"
+    },
+    {
+      "path": "public/items/leather-armor-premium.webp",
+      "bytes": 109550,
+      "sha256": "d1370e2f50cb29cc1e9f2d3bd7cbaabf46ca932874da7d784124c17bcde46a45"
+    },
+    {
+      "path": "public/items/legs.webp",
+      "bytes": 68116,
+      "sha256": "61b80aedb9e46b08b33f473f4e9135edb870d45fda2af999d4317a40e688975b"
+    },
+    {
+      "path": "public/items/mana-infused-coffee.webp",
+      "bytes": 14804,
+      "sha256": "d2a613e076428315f2af066909bdbc758b3d0b179af32f55fba361d63bf3b56c"
+    },
+    {
+      "path": "public/items/mana-potion-premium.webp",
+      "bytes": 108342,
+      "sha256": "b4ed690df21465a5c5c775268d04b5e0b30169f4e295587e145b8d359802f148"
+    },
+    {
+      "path": "public/items/offhand.webp",
+      "bytes": 72204,
+      "sha256": "c46f960c28abe820d7cec66f508ef9ef102a2078da74ef025756ba64ace728a5"
+    },
+    {
+      "path": "public/items/potion-iron-body.webp",
+      "bytes": 115980,
+      "sha256": "1d0d4e6e2865f59377bd497db8899be5995c92a9f10e5a9f39679338c65b5370"
+    },
+    {
+      "path": "public/items/premium-boots.webp",
+      "bytes": 97004,
+      "sha256": "cf2c042f1b6bc8ba1c31eaa5eeae79da8c6dd8b12e9979ba29881d9523ae0358"
+    },
+    {
+      "path": "public/items/premium-pants.webp",
+      "bytes": 112372,
+      "sha256": "dd3977c3d91be1a8f95adafb1ec66ee6418b6626a1f228ab16af1cb20dc1c2cb"
+    },
+    {
+      "path": "public/items/premium-ring.webp",
+      "bytes": 61520,
+      "sha256": "75708dca324d6983a29598283e9e2b942f594d2fe2a1fefdfef91bfdca779f65"
+    },
+    {
+      "path": "public/items/purified-blood-demon-king.webp",
+      "bytes": 18400,
+      "sha256": "ba90e6ec7d4c86e372899a5db8d41342ce63ed4afe11815a4936d8af134ec80f"
+    },
+    {
+      "path": "public/items/scroll-of-the-labyrinth.webp",
+      "bytes": 17166,
+      "sha256": "c2107022d777238d415f96ad43779149408d76ed5897269702e3757d44311ed8"
+    },
+    {
+      "path": "public/items/shadow-monarch-crown.webp",
+      "bytes": 577517,
+      "sha256": "3393d5e529709d5573d9a91762a31475145a6a4da91f2c347997e0c294d217e9"
+    },
+    {
+      "path": "public/items/shadow-monarch-scythe.webp",
+      "bytes": 133054,
+      "sha256": "a9a6821f649828179c047ef756897ebd60d834a4de8984036e4107e2bbeb0c3d"
+    },
+    {
+      "path": "public/items/steel-sword-premium.webp",
+      "bytes": 53046,
+      "sha256": "99666a95938f55ad0647854f6f612b62b6f06cbf49e465cb2efa4a66ebe90a28"
+    },
+    {
+      "path": "public/items/system-antidote.webp",
+      "bytes": 16540,
+      "sha256": "d40c4b9418e1a14903793af3521e2eb4defe09847acebcbf58428aba301fa56a"
+    },
+    {
+      "path": "public/items/tiamat-fang.webp",
+      "bytes": 801762,
+      "sha256": "f0fa84b17f80fabd458fd1bccd439e4386d0d2dd7a9a6f0be979030117c7c8f2"
+    },
+    {
+      "path": "public/items/void-dagger.webp",
+      "bytes": 790744,
+      "sha256": "b053f5d1685e629f9ee4bbe489071053cc2f8425c91289640e8b3d2de4b9dab1"
+    },
+    {
+      "path": "public/items/vulcans-horn.webp",
+      "bytes": 102030,
+      "sha256": "f11dbf7c65e852e4a38e55c173edfa333a06db1e8795a639b5d81aed0d370ee1"
+    },
+    {
+      "path": "public/items/wardens-necklace.webp",
+      "bytes": 120184,
+      "sha256": "3f89f005a3bf78ac39d31aae813602de08662b6307e390ece6d6b69018c99887"
+    },
+    {
+      "path": "public/items/weapon.webp",
+      "bytes": 56954,
+      "sha256": "57ef0b34519acd62792cbb290aa63bcaf51f28fa9af404b82df735d144d946e3"
+    },
+    {
+      "path": "public/items/wrath-antares.webp",
+      "bytes": 541822,
+      "sha256": "a5b4ee222ad68cc97466709bf6e087a19611fb16d61f24188d72b863dfddb463"
+    },
+    {
+      "path": "public/items/xx-scythe.webp",
+      "bytes": 703955,
+      "sha256": "ca4ab2aa9c3c52e4d40f9482d47b5982c32fbf94db689cd170248b52ee275c9b"
+    },
+    {
+      "path": "public/skills/algorithm.webp",
+      "bytes": 69800,
+      "sha256": "fe86e4f06cf6575449e15d6855c4bbd43ff3e08fc180d95fa1eed584eff95295"
+    },
+    {
+      "path": "public/skills/bear-form.webp",
+      "bytes": 31978,
+      "sha256": "7fb8977da92a0502b9656a2a9fc0eba9f965a2b927329882a65c2b4d1e6c7a4a"
+    },
+    {
+      "path": "public/skills/bloodlust.webp",
+      "bytes": 31094,
+      "sha256": "018e6e5e714086d314c93f0250c8a80535bafec33f83624a18827b5cd723b3d7"
+    },
+    {
+      "path": "public/skills/coding.webp",
+      "bytes": 53522,
+      "sha256": "c54cfff16b6dc6772e09751e411efee956c8711c9043cd2778e481a5dbb28c81"
+    },
+    {
+      "path": "public/skills/critical-strike.webp",
+      "bytes": 33662,
+      "sha256": "68cef472fd76ce3dcb30052650e2c66a4fb3bac797e6b3726090c3f0a660be97"
+    },
+    {
+      "path": "public/skills/curse-of-agony.webp",
+      "bytes": 29274,
+      "sha256": "e3aee0f24ed10be8716c30710b2ddfbc3a7a2efc01f70cefe6b7c7cefc9a0796"
+    },
+    {
+      "path": "public/skills/dagger-mastery.webp",
+      "bytes": 37966,
+      "sha256": "7e973c497832b45f1c709e9f671947dc33fc71639c6cada7900b184fb9722620"
+    },
+    {
+      "path": "public/skills/deep-work.webp",
+      "bytes": 29792,
+      "sha256": "92c475a850d0ec74bad71a89c5a022d87fe7831c888eb5341255f40a93b627a0"
+    },
+    {
+      "path": "public/skills/dominator-touch.webp",
+      "bytes": 38396,
+      "sha256": "eba3ea4726f759b1583dd77171222559783b9870136911475437c458e6615ae7"
+    },
+    {
+      "path": "public/skills/endurance.webp",
+      "bytes": 33316,
+      "sha256": "e82324527f6ebbdf155f3c8015fb24f6a0a10418c61bee137b9c1470c3c60425"
+    },
+    {
+      "path": "public/skills/entangling-roots.webp",
+      "bytes": 36896,
+      "sha256": "79bca23f925d35657aa2f8ca886fc239313f253d41a9727c86c62d67bf6ef539"
+    },
+    {
+      "path": "public/skills/fireball.webp",
+      "bytes": 36038,
+      "sha256": "d7885dc9b837d5467744e55a7d59a5daab7ad1df6852fa553c841f78aeade114"
+    },
+    {
+      "path": "public/skills/flow-state.webp",
+      "bytes": 51852,
+      "sha256": "358134de2b1bd39d384bfd97c722cc881856441b4c5d33afb2db28b77be0ee9f"
+    },
+    {
+      "path": "public/skills/focus.webp",
+      "bytes": 41672,
+      "sha256": "1b4b37a46e2b2a030039a2921b97a80a45986fe7175d11e25b0abe5eb1617071"
+    },
+    {
+      "path": "public/skills/holy-light.webp",
+      "bytes": 26672,
+      "sha256": "3c0d43cddb3fdb01d1c603f7bd0e0d57af38e45dfed4a665689a01ea61a07e06"
+    },
+    {
+      "path": "public/skills/iron-body.webp",
+      "bytes": 48598,
+      "sha256": "04f796bdf85bb94ad08b46ab5a84e808e08e60ab971103783f507a65af11bae7"
+    },
+    {
+      "path": "public/skills/iron-fist.webp",
+      "bytes": 40260,
+      "sha256": "6058332f67d0c93df8018168c09ea841782f122d764589b65a5fede2573b30bb"
+    },
+    {
+      "path": "public/skills/iron-skin.webp",
+      "bytes": 64990,
+      "sha256": "a8180eb6ed03543aaa3266941ba7ee430674317215ab25f2002a59cbf49efa84"
+    },
+    {
+      "path": "public/skills/iron-will.webp",
+      "bytes": 37116,
+      "sha256": "7e79829e5e0c91cd751613ad475e8d08d8f30d1e33d1c3858d1f3d3f41da90d2"
+    },
+    {
+      "path": "public/skills/longevity.webp",
+      "bytes": 57794,
+      "sha256": "3f3aad84a343972393d29afbc0786fc8c19e6abc757d50d550cd347409674d8b"
+    },
+    {
+      "path": "public/skills/mana-shield.webp",
+      "bytes": 62554,
+      "sha256": "cd56e99d4d039dcf85bd54e5eabb538c0300d3877fbb05f26b636817648cb7c7"
+    },
+    {
+      "path": "public/skills/meditation.webp",
+      "bytes": 32400,
+      "sha256": "fb503ca6e2f19c4ae1fa15ecd8b6c34f735d36009ef29f493d5bbb79dee3eb20"
+    },
+    {
+      "path": "public/skills/monarch-domain.webp",
+      "bytes": 38500,
+      "sha256": "3364ebc996fc3c12f4646c91970d1421d9a3f2b8045e672e7a309ea0ed5e4256"
+    },
+    {
+      "path": "public/skills/mutilate.webp",
+      "bytes": 30080,
+      "sha256": "2d9c27aa1ce33be76c56e4978b92f6a137b5f98388bdfe760609fb40f8a22f1f"
+    },
+    {
+      "path": "public/skills/purification.webp",
+      "bytes": 46930,
+      "sha256": "0fbd1d62944bb913646d4f9fcbbe68fb0c8be12009759d8416876d60d8bc9959"
+    },
+    {
+      "path": "public/skills/quick-silver.webp",
+      "bytes": 30930,
+      "sha256": "f94c0d07c5db1aed12e1c99e6af7b8db6bc4837cd388e136a5dca2cf64974093"
+    },
+    {
+      "path": "public/skills/recovery.webp",
+      "bytes": 42322,
+      "sha256": "c4f36c443aeafb94b0625efea377ffb7290fbba917974f11706394b67f9def7d"
+    },
+    {
+      "path": "public/skills/sense.webp",
+      "bytes": 33508,
+      "sha256": "3fba92d30a4662444a14f7e6d800bee9f802b45fb5edde527d0e197cd9d3f160"
+    },
+    {
+      "path": "public/skills/shadow-extraction.webp",
+      "bytes": 38972,
+      "sha256": "ac9351dfdc9623dab11cd1a3c00a3d815f1dee8f747f86aaa2a2712fe2262bbc"
+    },
+    {
+      "path": "public/skills/shadows-step.webp",
+      "bytes": 38590,
+      "sha256": "31358e43ef07dc6aa81c3979e48103eedb9590be9cd82fc0c74b9c6ed0974be9"
+    },
+    {
+      "path": "public/skills/sprint.webp",
+      "bytes": 24866,
+      "sha256": "d53cbd74f2994318714d8917e1c33a452d28fa9551f800e8bef05db155392747"
+    },
+    {
+      "path": "public/skills/stealth.webp",
+      "bytes": 16886,
+      "sha256": "77cd69f0416190f627208fe1de6180857c593098caded1e3461aadc47cb4f025"
+    },
+    {
+      "path": "public/skills/system-design.webp",
+      "bytes": 45614,
+      "sha256": "dbe4c704f4944b38f8e2b39634f13852fac4634eb7ae4a14ca679af99ee87c5a"
+    },
+    {
+      "path": "public/skills/taunt.webp",
+      "bytes": 35724,
+      "sha256": "d677600561e30158aa94ecc6c4f580310100e34b316ea913f2b029e125c2c7c7"
+    },
+    {
+      "path": "public/skills/time-blocking.webp",
+      "bytes": 38338,
+      "sha256": "a96b00edf60221057cc67c5c3609ad9bf43d38602e2180922960327b42c43102"
+    },
+    {
+      "path": "public/skills/ultimate-awakening.webp",
+      "bytes": 85218,
+      "sha256": "7c69e87adebe06af8f511f1c3234cbaf3c9a364174ae7e19b60f2a0abed2b448"
+    },
+    {
+      "path": "public/skills/vital-strike.webp",
+      "bytes": 36994,
+      "sha256": "a128b18d8f3f12d361037f1857c253c2fc41f678761155f5ccd285e61b7c6ac9"
+    },
+    {
+      "path": "public/zones/fantasya.webp",
+      "bytes": 20472,
+      "sha256": "a37ba094a11dd228f44c8b9de8d0859a914550100f6b9b15df50c8d51c164f92"
+    },
+    {
+      "path": "public/zones/home.webp",
+      "bytes": 11750,
+      "sha256": "dc20b0e13f6b43840378df26b9636f35d59449868269d1b7b025634fef70b012"
+    },
+    {
+      "path": "public/zones/library.webp",
+      "bytes": 16558,
+      "sha256": "17418f0b16c1f5623cff565f91ffcefb819655d5df9a140cbbcbb8350507928f"
+    },
+    {
+      "path": "public/zones/sanctuary.webp",
+      "bytes": 17560,
+      "sha256": "d902fa53b54fd33d847fc9521e93452bbcae9c3c016b70314eeb50f62019fe36"
+    },
+    {
+      "path": "public/zones/training.webp",
+      "bytes": 15930,
+      "sha256": "d39d7f448d125b26d140e9b8c6768ce0bdd3a702ccbc8e2781adf71732f21c0d"
+    },
+    {
+      "path": "public/zones/work.webp",
+      "bytes": 14764,
+      "sha256": "0ee2216a376fd4c18b1ded24ac12c06e2af78712112b57ea5a62ac101c1fb41c"
+    },
+    {
+      "path": "scripts/community/export-public-tree.mjs",
+      "bytes": 4396,
+      "sha256": "99db40fcf596a8a7135e5afb6cf318cb7e2b2cec3c39d54a6dcee595377c4dc8"
+    },
+    {
+      "path": "scripts/community/verify-assets.mjs",
+      "bytes": 3356,
+      "sha256": "047d31afcdd68387cdee2b0463dc64825c7eeadd446df041586eb523622694ba"
+    },
+    {
+      "path": "scripts/community/verify-package.mjs",
+      "bytes": 3332,
+      "sha256": "4e5c692457b0c3855d02ef42e87751dc6278982b063c72fa344e22bb47ff8b65"
+    },
+    {
+      "path": "scripts/community/verify-skills.mjs",
+      "bytes": 7559,
+      "sha256": "91561de74b3d4f8b64dcb68e537fdaffe808636cfe54e34ca1f1b2b0aa11ed47"
+    },
+    {
+      "path": "scripts/database/catalogs.ts",
+      "bytes": 3028,
+      "sha256": "122170449a772eefe631a801336b3336ef6215f2736ff7809a213aa06ca8c877"
+    },
+    {
+      "path": "scripts/database/config.ts",
+      "bytes": 958,
+      "sha256": "a433da80c807527f9248e086ad2fe274f8934ac5a63336002c58e28c81b1a766"
+    },
+    {
+      "path": "scripts/database/create-user.ts",
+      "bytes": 1479,
+      "sha256": "b6d0b664c42b73a012859399fd738c61ea178b8b3eeaf979b2881f172337e69f"
+    },
+    {
+      "path": "scripts/database/export.ts",
+      "bytes": 4447,
+      "sha256": "ddffa06b807350f24d9b38b77bde4cf3d068ba8f552039ae77d3decc3f842228"
+    },
+    {
+      "path": "scripts/database/init.ts",
+      "bytes": 1553,
+      "sha256": "f59736fc862f9b7e01b9ab224c7f9fd5df6ec643f823d3bdbe7b81ddbc02b9a4"
+    },
+    {
+      "path": "scripts/database/install-package.ts",
+      "bytes": 3664,
+      "sha256": "03c5f8cf725bd51e2c0af815e47fbbf8518d4cb8590739cde33458b6d822a336"
+    },
+    {
+      "path": "scripts/database/migrate.ts",
+      "bytes": 5796,
+      "sha256": "9c72a013c1b1f427a85aa4a62b5a6be2521c73f02fa2099f41c52a91bf54b1ec"
+    },
+    {
+      "path": "scripts/database/verify.ts",
+      "bytes": 9837,
+      "sha256": "6b36c5e3e702284feea136144627892961045578a8ed3cc372ab27c915103832"
+    },
+    {
+      "path": "scripts/deployment/verify-recovery.ts",
+      "bytes": 3438,
+      "sha256": "2be0d2c8c4ac64e98d4fd5b6f5dfac8b4067ec7f0838342a668f63578fa27b4a"
+    },
+    {
+      "path": "scripts/lib/prompt-password.ts",
+      "bytes": 1074,
+      "sha256": "3613233c9c4614725db24921c0b0d5badb21f62528cee3ba8ae0c41e4c113e59"
+    },
+    {
+      "path": "scripts/runtime/next.mjs",
+      "bytes": 1783,
+      "sha256": "e5ec0ca92cba47b1deb67c1d2d7810835a78e4c4b844afbc79c7bba5adb21000"
+    },
+    {
+      "path": "scripts/runtime/standalone.mjs",
+      "bytes": 846,
+      "sha256": "ef8a3019d73aff42ed6789a58adb14f5ad1c01d7dd75e28ebd2b3232d891060f"
+    },
+    {
+      "path": "scripts/security/publication-audit.mjs",
+      "bytes": 6892,
+      "sha256": "aa3d5a25b4d9e3fe5ffb5ac7f2711ab733ebdfdf3c5345290f667b34d353b86c"
+    },
+    {
+      "path": "scripts/security/verify-boundaries.mjs",
+      "bytes": 5058,
+      "sha256": "42a70f94ea9b200073f01df2611c1724d4255ff28bf9be07853bee0dd1894de5"
+    },
+    {
+      "path": "scripts/setup/check.ts",
+      "bytes": 3415,
+      "sha256": "942e0a0f9fdd902da7076e7ee102a492cf692ff8777222fbfad09db0760f170b"
+    },
+    {
+      "path": "scripts/setup/verify-player.ts",
+      "bytes": 1860,
+      "sha256": "e7fb4b266a3782ae9642ed48bcc285df680138d21b8ab6a3712f3570b7540c9a"
+    },
+    {
+      "path": "scripts/setup/verify.mjs",
+      "bytes": 19395,
+      "sha256": "f77762080bb9e68f49603787f42f53d191fd180552a7057c60cb84cd4a5c0f59"
+    },
+    {
+      "path": "src/app/about/page.tsx",
+      "bytes": 1305,
+      "sha256": "1342ac1d749a8e3db0489f74c535b18b75cabbe874ec12e544927b437f1e7afd"
+    },
+    {
+      "path": "src/app/actions/altar.ts",
+      "bytes": 5109,
+      "sha256": "4c5a7c0da09f968b3310063a1741343786ccd7dccaec94ff700553468e13fb39"
+    },
+    {
+      "path": "src/app/actions/backup-restore.ts",
+      "bytes": 6436,
+      "sha256": "92710a1e272b80643ae838e5234983c73da0998c7c9efab50e72ce50fb437004"
+    },
+    {
+      "path": "src/app/actions/backup.ts",
+      "bytes": 4888,
+      "sha256": "82aa81f4e031c36266bf5ca1c9a2960645e5843972d47264183534f78fda82af"
+    },
+    {
+      "path": "src/app/actions/bosses.ts",
+      "bytes": 5070,
+      "sha256": "e82035d8e0bfa6896d8ef29120e691ca39a3b332e4b93ef010699060688f38da"
+    },
+    {
+      "path": "src/app/actions/inventory.ts",
+      "bytes": 27982,
+      "sha256": "8c33965c509d8651dfa5887a4f74630d4f9a6412e7ab5290bf8df2ddf1976457"
+    },
+    {
+      "path": "src/app/actions/leaderboard.ts",
+      "bytes": 2434,
+      "sha256": "aa0f1010f00095ba314461d3c0d21ea5268fc6f7f1c1d34efe70a774eb60a06f"
+    },
+    {
+      "path": "src/app/actions/prestige.ts",
+      "bytes": 4580,
+      "sha256": "7d065c3eba7d8dc907b8732a7ee7f5f84485ec5566ca4e08787f8e9b7881b1ff"
+    },
+    {
+      "path": "src/app/actions/profile.ts",
+      "bytes": 4996,
+      "sha256": "1eb70cc8af20ce7d838738e86b3221d0979d11e0414727e50d6678730bcf7e69"
+    },
+    {
+      "path": "src/app/actions/quests.ts",
+      "bytes": 223,
+      "sha256": "d401d4a32563bf3ec9884e17688630fe9975380f1a8628a1d56145b5f7ac0fd8"
+    },
+    {
+      "path": "src/app/actions/quests/complete.ts",
+      "bytes": 534,
+      "sha256": "7b56befc8bf2a4dd12dfc76853beae6ced8abf3145eca17d9529ba3c849f602c"
+    },
+    {
+      "path": "src/app/actions/quests/custom.ts",
+      "bytes": 3470,
+      "sha256": "0b2ccac9722330df4be5b960e8d83ac2b9c531f4575a4359b83cf507391df304"
+    },
+    {
+      "path": "src/app/actions/quests/index.ts",
+      "bytes": 379,
+      "sha256": "124d041566e259981737919a2d8780d016884fba8f6efe62c1aaa352d2c7620e"
+    },
+    {
+      "path": "src/app/actions/quests/lifecycle.ts",
+      "bytes": 10538,
+      "sha256": "c634c425560f7557b1615ce9fda0821992d51b28d9291ea7f6d8dcc1a28bf222"
+    },
+    {
+      "path": "src/app/actions/security.test.ts",
+      "bytes": 4134,
+      "sha256": "d25e3323b8d165a103f7c9818a7eb3c91965b750d949b417cda43a266f27ea4e"
+    },
+    {
+      "path": "src/app/actions/shadows.ts",
+      "bytes": 12517,
+      "sha256": "b30f88612b109e15bc1dcdfa4e5a145a01efc4ef1096865d8d5011c70138fb41"
+    },
+    {
+      "path": "src/app/actions/skills.ts",
+      "bytes": 25454,
+      "sha256": "d955196f5f23d0beae5188da9f09b5582263e904ef05230de90da9d2f5965ed4"
+    },
+    {
+      "path": "src/app/actions/stats.ts",
+      "bytes": 7251,
+      "sha256": "413b2bc4c8580e6adf1aa60d1473f9a721e0d14345206dd98e914a01c0ecca64"
+    },
+    {
+      "path": "src/app/actions/store.ts",
+      "bytes": 5960,
+      "sha256": "9dc5a964fb4043b266aab67ee7996c6281e0fe315eb5fbe39bf4e5ddcc821fe2"
+    },
+    {
+      "path": "src/app/actions/system.ts",
+      "bytes": 32262,
+      "sha256": "316052ca27b3101c774306f1f3f058e3680fe62e6e3414d94b2c02fc120ce30c"
+    },
+    {
+      "path": "src/app/api/auth/me/route.ts",
+      "bytes": 408,
+      "sha256": "7cd9801df79cbcfd2335f84a28910488b7143d0d430e57d4c9a6fe577b29c5cb"
+    },
+    {
+      "path": "src/app/dashboard/DashboardClient.tsx",
+      "bytes": 29698,
+      "sha256": "bfe0c101c87ec274462ddd4252b07b4632d0744485d7dd501bf449a2eb056323"
+    },
+    {
+      "path": "src/app/dashboard/about/page.tsx",
+      "bytes": 333,
+      "sha256": "252126d14e8cefeabe3ca1c81d08959a69cc11d0b6d9500c155437739e7c72e2"
+    },
+    {
+      "path": "src/app/dashboard/actions/page.tsx",
+      "bytes": 7313,
+      "sha256": "3ce4ed6eb1157ca4b8aced13f7989f1ad71a916646e6b6ca59fe0b4e0a310faf"
+    },
+    {
+      "path": "src/app/dashboard/bosses/page.tsx",
+      "bytes": 2720,
+      "sha256": "098014d9e7f9b67e755b1e2e4f9ca268f6ce082cbec570700ae077a1c2e6cb38"
+    },
+    {
+      "path": "src/app/dashboard/habits/page.tsx",
+      "bytes": 1506,
+      "sha256": "8be9c575be2b39f339b5bcae449a2ed0a261f70c81d99f04a1070bc4e14e76f0"
+    },
+    {
+      "path": "src/app/dashboard/inventory/InventoryMain.tsx",
+      "bytes": 5955,
+      "sha256": "efbb2321f6f9e473cf22c2dc4ccd622f84f9488fec8973dd883cb38bb59a4213"
+    },
+    {
+      "path": "src/app/dashboard/inventory/page.tsx",
+      "bytes": 1053,
+      "sha256": "f1453ec70c5b4f1610f6b03cca8015866e65775d51e201180d43d330adb59321"
+    },
+    {
+      "path": "src/app/dashboard/layout.tsx",
+      "bytes": 718,
+      "sha256": "43bb09a0d27fe3ee9df4991e0fcd904522db67d7908acc254e410e19ec0e6a82"
+    },
+    {
+      "path": "src/app/dashboard/page.tsx",
+      "bytes": 327,
+      "sha256": "b43744163662f6222c3189b570e4e3aed49bddaf9995a8b54412da5591fc00c7"
+    },
+    {
+      "path": "src/app/dashboard/profile/ProfileClient.tsx",
+      "bytes": 24372,
+      "sha256": "f40de8f48b59999f522f7a8e58412266860191be88737712b600b8fd24fe95cd"
+    },
+    {
+      "path": "src/app/dashboard/profile/page.tsx",
+      "bytes": 4249,
+      "sha256": "96d0143d57b8cb2829b3c78040cab3c4b8e70c22cf7757a0f3afcd91f12aa349"
+    },
+    {
+      "path": "src/app/dashboard/quests/page.tsx",
+      "bytes": 6359,
+      "sha256": "4588dd25700289c4c709a19909d6eacbb8e01caeea23d614a23e1296fe85532f"
+    },
+    {
+      "path": "src/app/dashboard/skills/SkillsClient.tsx",
+      "bytes": 15258,
+      "sha256": "65d978dcba361d2307313ef725bedec6bc50ae862118bf088c91430a2dbcd484"
+    },
+    {
+      "path": "src/app/dashboard/skills/page.tsx",
+      "bytes": 2019,
+      "sha256": "8897741f535b92985962868b9a42709cf2ff925b6a81a0b56a9baea210ae5cfd"
+    },
+    {
+      "path": "src/app/dashboard/store/page.tsx",
+      "bytes": 506,
+      "sha256": "67c9b5b88e9c624fea39092413154beb948eb90f3aaf0cca5b935236e4f175ab"
+    },
+    {
+      "path": "src/app/error/page.tsx",
+      "bytes": 1196,
+      "sha256": "16282fa5a9fdaac3ab942c826b9ff13ccf8d95c9bd5b2347d49ef17dc18c5ee5"
+    },
+    {
+      "path": "src/app/favicon.ico",
+      "bytes": 25931,
+      "sha256": "2b8ad2d33455a8f736fc3a8ebf8f0bdea8848ad4c0db48a2833bd0f9cd775932"
+    },
+    {
+      "path": "src/app/globals.css",
+      "bytes": 8371,
+      "sha256": "e7f98be1dfae07d899e08d1573004467612767a3b948ea26e4d3a25c31334072"
+    },
+    {
+      "path": "src/app/layout.tsx",
+      "bytes": 1387,
+      "sha256": "7dbe797303333ca07259354827d8e0106173ebd53964551a05b3b73674d438dc"
+    },
+    {
+      "path": "src/app/login/LoginClient.tsx",
+      "bytes": 5053,
+      "sha256": "c93caa8d58591584f96947278f6be90d84eda69f0cec38f3f65cd516e3192a23"
+    },
+    {
+      "path": "src/app/login/actions.test.ts",
+      "bytes": 4124,
+      "sha256": "fb400314ac179a9f0b3b6b0489679682140aef4a71228b7b98af66fef2446797"
+    },
+    {
+      "path": "src/app/login/actions.ts",
+      "bytes": 3033,
+      "sha256": "8d7daa1ba49e26869dc1efc0a79e5ea964f8fea9a8ab8e39b25de4d271c603eb"
+    },
+    {
+      "path": "src/app/login/page.tsx",
+      "bytes": 311,
+      "sha256": "985f99fe1b772dd631fb470f5f46c777239d2d9d676727fe325c0ed2ae0a9862"
+    },
+    {
+      "path": "src/app/page.tsx",
+      "bytes": 109,
+      "sha256": "0ef61ad1808a25523c9a37b8d2a9775c84cc5a1073b22a65dacef2a94d704acb"
+    },
+    {
+      "path": "src/components/about/AboutContent.tsx",
+      "bytes": 9003,
+      "sha256": "d39b2531ddd03baa1329a8371ce2497ade36870dfa7be3e93555b668e6ba362d"
+    },
+    {
+      "path": "src/components/achievements/AchievementsPanel.tsx",
+      "bytes": 18991,
+      "sha256": "948eeda7a64b8be0b56fb14942f5d177079ec285779471342b72afb513f03276"
+    },
+    {
+      "path": "src/components/achievements/TitleSelector.tsx",
+      "bytes": 8034,
+      "sha256": "1ec7816a1711bc255fa182b9ac573e644da7fceb342b5e41f0ff2d697ae2db2d"
+    },
+    {
+      "path": "src/components/bosses/BossesClient.tsx",
+      "bytes": 34940,
+      "sha256": "f04364b9ecf27a690554bcac192b14744ed2bfe51792e6cf2fefdef0d7313c0d"
+    },
+    {
+      "path": "src/components/dashboard/ActionTabs.tsx",
+      "bytes": 3906,
+      "sha256": "66a7e7257d857ac7339dde91a446b32b0dcdf54b847fe37c15993372596dbdca"
+    },
+    {
+      "path": "src/components/dashboard/ActiveMissions.tsx",
+      "bytes": 25737,
+      "sha256": "1dac5871973f13ee660a37b2cbc930302a3adf97f4ab41ef9167bc8d79da5c73"
+    },
+    {
+      "path": "src/components/dashboard/BattleResultModal.tsx",
+      "bytes": 9824,
+      "sha256": "6afd6306361b74007748c4b94c428dc41b5e1ba0938785b7cba11899fe28d105"
+    },
+    {
+      "path": "src/components/dashboard/BossWidget.tsx",
+      "bytes": 24336,
+      "sha256": "14122c303bb82a26a956a3d6d260d55b550e1fbe72acbf8da7ef995e9d436d48"
+    },
+    {
+      "path": "src/components/dashboard/CollapsiblePanel.tsx",
+      "bytes": 1920,
+      "sha256": "e69689bab3307a8ffe7b6dc732a0cecc7dc019bbf434277e980ad087e0ff4fac"
+    },
+    {
+      "path": "src/components/dashboard/CombatLog.tsx",
+      "bytes": 17928,
+      "sha256": "223e4c2248dc0c159dac68945129ddc21b7b02a173a1a6eef289a4dc5f1bb929"
+    },
+    {
+      "path": "src/components/dashboard/DailyProgress.tsx",
+      "bytes": 9015,
+      "sha256": "5f47f9f89c4251db59a2761da72950352b5f36cd7d8e319c51dbeabe10adb8f1"
+    },
+    {
+      "path": "src/components/dashboard/DebugControls.tsx",
+      "bytes": 12260,
+      "sha256": "4bb55c27e254a0a16af8e26b3edb421598e0631ded974aa8c60c2724bf519024"
+    },
+    {
+      "path": "src/components/dashboard/LevelManager.tsx",
+      "bytes": 3009,
+      "sha256": "9192193478d4c93fa30aa6cb65f90ecc41b8debda036df5be01390507d57fb78"
+    },
+    {
+      "path": "src/components/dashboard/LevelUpModal.tsx",
+      "bytes": 7920,
+      "sha256": "e8b75dced08477d8ea94cc6c55a79b7ac3a406eb59827251dc67cddfd0eef04b"
+    },
+    {
+      "path": "src/components/dashboard/MarketTabs.tsx",
+      "bytes": 6617,
+      "sha256": "582a3f8c5c58f3d923ca296c38c8cd904d9292124a4eb0f1e86bf9bf72de5f2d"
+    },
+    {
+      "path": "src/components/dashboard/MiniBossWidget.tsx",
+      "bytes": 12637,
+      "sha256": "491b382e36d4921abc7ee9db44a8ebc452e95b8221e9f392c06e18b61a095d9c"
+    },
+    {
+      "path": "src/components/dashboard/MissionControl.tsx",
+      "bytes": 4532,
+      "sha256": "077fb48f6e13b85441912cd3bd70f7fa14ed7cb939d95c54a613bccdfe59df75"
+    },
+    {
+      "path": "src/components/dashboard/OfflineSyncModal.tsx",
+      "bytes": 6167,
+      "sha256": "35196ab83ccf860d93a4b48dd6f3de3753f86fabef3e107f4bf1e837ce8b1eef"
+    },
+    {
+      "path": "src/components/dashboard/ProductivityHub.tsx",
+      "bytes": 24652,
+      "sha256": "8770c6e390c9a68018d26ebea9dc472ff64a0518ba90c27558c8dc29b096ec9b"
+    },
+    {
+      "path": "src/components/dashboard/ProfileSummary.tsx",
+      "bytes": 13009,
+      "sha256": "880edf52f317066867e3837445ba444167533e09d7f80dc38c0bb30c7cb82548"
+    },
+    {
+      "path": "src/components/dashboard/ResetApButton.tsx",
+      "bytes": 6503,
+      "sha256": "ffea73df1f3c662572eedb75c1b58ddd1892db3caf5a3df2658945c52796c231"
+    },
+    {
+      "path": "src/components/dashboard/StatsRadar.tsx",
+      "bytes": 25621,
+      "sha256": "77fbda2d5a49cff56bfef8cfac7fc1f983bf77083836742ff584fd6d397516df"
+    },
+    {
+      "path": "src/components/dashboard/StatusCard.tsx",
+      "bytes": 30156,
+      "sha256": "132293e984d20bbb6463360f4d94bbedb17eeb810a2a307b8c98b1805d85e72d"
+    },
+    {
+      "path": "src/components/dashboard/SystemWidget.tsx",
+      "bytes": 2473,
+      "sha256": "afd12a9cbd0a009d5b31c7cd01e2333787e3b454c9cf53c2d6c84069a2f7b5f8"
+    },
+    {
+      "path": "src/components/dashboard/VictoryModal.tsx",
+      "bytes": 10149,
+      "sha256": "4f36a4247f2f052f4d87f63dc35eff1ef1fc35633e4efcd34d95f03cb5c7775d"
+    },
+    {
+      "path": "src/components/habits/DetailedLogViewer.tsx",
+      "bytes": 10834,
+      "sha256": "cf56eb5aadbdc3540b1e2d2b326909d2f16009bbc4d94936f8fdb8ea9fc8c028"
+    },
+    {
+      "path": "src/components/habits/HabitStats.tsx",
+      "bytes": 5436,
+      "sha256": "92d05074e985066af483643c005eddec74235846b515a2806f451f2c90ec1802"
+    },
+    {
+      "path": "src/components/habits/HabitsView.tsx",
+      "bytes": 1191,
+      "sha256": "b3c6ae03e554bdddf7ebda801d12099e799f8b7bae3946d21876511f6652b690"
+    },
+    {
+      "path": "src/components/inventory/HunterBody.tsx",
+      "bytes": 18093,
+      "sha256": "4aa11edeba769acc6cd89d59c078819ff0c9d32eb8d2c87a7d2895b02a52e411"
+    },
+    {
+      "path": "src/components/inventory/InventoryGrid.tsx",
+      "bytes": 25999,
+      "sha256": "9ab0da1ea4966b070a7990376e52c468c1bf5d0b163f16cb4244f41b62a42ae8"
+    },
+    {
+      "path": "src/components/inventory/ItemComparisonTooltip.tsx",
+      "bytes": 10896,
+      "sha256": "4eb7f07a4a5d22e937a6ff7543767fa5192a9bde619598fdf74b040ac4e9b87c"
+    },
+    {
+      "path": "src/components/inventory/SellModal.tsx",
+      "bytes": 6929,
+      "sha256": "e8062ebe59af0986758d64e05c55876dbc280ccfb9c2f52c94d7cca823675109"
+    },
+    {
+      "path": "src/components/inventory/UseModal.tsx",
+      "bytes": 5674,
+      "sha256": "31d73495af07dcd2f258ffed09cf01649519f627235c9144a9851a18d3f729c6"
+    },
+    {
+      "path": "src/components/items/ItemIcon.tsx",
+      "bytes": 8828,
+      "sha256": "ec9009d55a8e95dc7c0eddd9c1ecebeca99bb80f989c3a9857a723ed34583f4b"
+    },
+    {
+      "path": "src/components/jobs/JobSelectionModal.tsx",
+      "bytes": 9341,
+      "sha256": "30659fcf121752aa01e898279c8cbf363a9202ad288f75d7c1089de0b988434d"
+    },
+    {
+      "path": "src/components/layout/MobileHeader.tsx",
+      "bytes": 1051,
+      "sha256": "48424ed0924c68e3b6a1b4ea52061ad98ba2a78bcb38358f8109a5e87477d3aa"
+    },
+    {
+      "path": "src/components/layout/Shell.tsx",
+      "bytes": 17123,
+      "sha256": "e24aad5520bfcac66bd76b01960b1af0f8c67012191f177db12537f0c4af53e5"
+    },
+    {
+      "path": "src/components/layout/Sidebar.tsx",
+      "bytes": 3026,
+      "sha256": "cdf8471dd429804b19abf4d1da288d1e1cf6a574e6d10081f4f8492b6e0951dd"
+    },
+    {
+      "path": "src/components/layout/VitalStrip.tsx",
+      "bytes": 42342,
+      "sha256": "b06f8b7464baa4fc62eec423fe714416abfd042780613272d19df60f3005efc3"
+    },
+    {
+      "path": "src/components/modals/SystemConfirmModal.tsx",
+      "bytes": 3434,
+      "sha256": "5aaa2837cfd409fc17637947b84f8188879da6828c04e3c7ef3ff85b7bd7ab3b"
+    },
+    {
+      "path": "src/components/profile/BackupRestoreControls.tsx",
+      "bytes": 10547,
+      "sha256": "315d33282ed141f7ea8dec34eb6d0705484de120bb3faffff5c14d5a9b78f140"
+    },
+    {
+      "path": "src/components/profile/CustomQuestCreator.tsx",
+      "bytes": 8137,
+      "sha256": "55c841e5cc428c3088c6cbeb8b2e1358e0e85b7afb67a77514e90d22d08f1c5b"
+    },
+    {
+      "path": "src/components/profile/LevelUpProjection.tsx",
+      "bytes": 9094,
+      "sha256": "3ab4116572a45a234d6b42a79fb72a4ea7be23af9cde3d5a14609a26698d02fe"
+    },
+    {
+      "path": "src/components/profile/RankingPanel.tsx",
+      "bytes": 17060,
+      "sha256": "b5b3e5ea23780df0317effce7ec393ba0e004ed7c8d46d7ab0859cf0fa60bfd9"
+    },
+    {
+      "path": "src/components/quests/QuestCard.tsx",
+      "bytes": 30490,
+      "sha256": "1a77ebef4b7c6c4fc5b101ce2b1ed14d19e3681a3a6ed8e0c73a82636f766791"
+    },
+    {
+      "path": "src/components/quests/QuestGrid.tsx",
+      "bytes": 2860,
+      "sha256": "aeb3cd8f56baea9dc48c1ddb66afabfcdea622e0ec03cd1f2725f16403477df1"
+    },
+    {
+      "path": "src/components/quests/QuestsClient.tsx",
+      "bytes": 33124,
+      "sha256": "3acd42f16e085be5d636835f9df25698575378ee575bd80c4b4448027b708e7b"
+    },
+    {
+      "path": "src/components/quests/ZoneCard.tsx",
+      "bytes": 5198,
+      "sha256": "c068a3977ebf125fa57c6e669c54617ce6706e5e4c50b6c2f162028339feb697"
+    },
+    {
+      "path": "src/components/quests/ZoneGrid.tsx",
+      "bytes": 1802,
+      "sha256": "4eedf0318a564171e24693df3994c571c33d059fce1e989a499e826a9c7935ac"
+    },
+    {
+      "path": "src/components/shadows/AriseAnimation.tsx",
+      "bytes": 10074,
+      "sha256": "7bcf6ab53c5ab5d4ec357d05b812935b6dc169e20c724620e2d28502e31b0a6e"
+    },
+    {
+      "path": "src/components/shadows/ShadowArmy.tsx",
+      "bytes": 22863,
+      "sha256": "119082a114a4ae63a4ca1aad0457140ba06025c377402b374719be080cbe6156"
+    },
+    {
+      "path": "src/components/skills/ReserveSkillCard.tsx",
+      "bytes": 4670,
+      "sha256": "13ec528edb8f9e7d62397285e9c1695bf3676d493b8aed48fa5a0e7143aa2866"
+    },
+    {
+      "path": "src/components/skills/SkillDetailsPanel.tsx",
+      "bytes": 25013,
+      "sha256": "4f9d51ccea0c8b92a80266d6540ac436765e3f6d1eaabaf53aa7d5b7aa04806c"
+    },
+    {
+      "path": "src/components/skills/SkillHotbar.tsx",
+      "bytes": 4338,
+      "sha256": "83c9df83036ba0a7eedc6c2c65917c1c56eb8fc1f514592492908c5a8674d7e7"
+    },
+    {
+      "path": "src/components/skills/SkillHotbarSlot.test.tsx",
+      "bytes": 2212,
+      "sha256": "0df58f93549319a186480ad714e25650dc5c8e16aad2320e770f7bfce901f889"
+    },
+    {
+      "path": "src/components/skills/SkillHotbarSlot.tsx",
+      "bytes": 9674,
+      "sha256": "e48cb49df3ebf87a9a0ebed74c386efc76c2e4125fc11df378519ce0f4906b70"
+    },
+    {
+      "path": "src/components/skills/SkillIcons.tsx",
+      "bytes": 3959,
+      "sha256": "3ce691ce8e4e7f388b8c89cb9462e24f23c803bf1f7ffbfc7b60507b6842ac29"
+    },
+    {
+      "path": "src/components/skills/SkillNode.tsx",
+      "bytes": 13764,
+      "sha256": "beaf65f28c15efee1c96dcfe6708cf1e607176e91fd99b5335ad84bdc4a2ac8e"
+    },
+    {
+      "path": "src/components/skills/SkillTreeCanvas.tsx",
+      "bytes": 4316,
+      "sha256": "c1cc3cbe1aab0c45b02d6a891d57ac3f9876f0d2cbc5c2246406fdfdf3012219"
+    },
+    {
+      "path": "src/components/store/CosmicAltar.tsx",
+      "bytes": 10969,
+      "sha256": "3fa79a71fe735b4e8a15246cf6b09d8952d6dec7c8305eaf67eda922745cc4f1"
+    },
+    {
+      "path": "src/components/store/PurchaseModal.tsx",
+      "bytes": 4412,
+      "sha256": "054b8c016754f9e0c732315a2f04b845d30436cb27c826de82dacbded0bf18b8"
+    },
+    {
+      "path": "src/components/store/StoreInterface.tsx",
+      "bytes": 12226,
+      "sha256": "b0278815d8c61907ecd12d3994b570162126eb21f98ceff9d5cd782113896257"
+    },
+    {
+      "path": "src/components/store/StoreItemCard.tsx",
+      "bytes": 10594,
+      "sha256": "fd84727ba090ca38ac0aa1df23c7d2bc241d91a79b8cf69157b30af1602ab06f"
+    },
+    {
+      "path": "src/components/system/NotificationProvider.tsx",
+      "bytes": 16849,
+      "sha256": "3cc28c9ee5b5c4b4b045272d6cca18dfd7efb14326f3e1464a049da91241948a"
+    },
+    {
+      "path": "src/components/system/SystemAlert.tsx",
+      "bytes": 4016,
+      "sha256": "ab501f8988bafec38c3658f72629c1c76943a9af2998d1c1a7fea7376130e7f7"
+    },
+    {
+      "path": "src/components/ui/button.tsx",
+      "bytes": 2218,
+      "sha256": "5a5c4b8b60a8a80ba7b8b5d0319be2d3c61bfd2ce4fc2a645371dee9f6db0a77"
+    },
+    {
+      "path": "src/components/ui/card.tsx",
+      "bytes": 1987,
+      "sha256": "2040cdff27cd1ed771e0ebbd15abcd73d31f2f1e4be6664bd6816fffd2a87476"
+    },
+    {
+      "path": "src/components/ui/dialog.tsx",
+      "bytes": 3995,
+      "sha256": "bd07164f172aafffb93861e4b1a3be4249f5a8739f24454864f2cf9c0c46758d"
+    },
+    {
+      "path": "src/components/ui/input.tsx",
+      "bytes": 962,
+      "sha256": "56b7fd30208addbcc2468cfda4f5bc0a55342211deaab61ee35b1c352b1622f1"
+    },
+    {
+      "path": "src/components/ui/label.tsx",
+      "bytes": 611,
+      "sha256": "9ec42c8a57e82311118b794318409ee02b2cebfa49ba6cce8457cff6448cd471"
+    },
+    {
+      "path": "src/components/ui/progress.tsx",
+      "bytes": 899,
+      "sha256": "bb29d02f120a35178ff5d69173e606356715d20625599b462dcb1e8eb6723083"
+    },
+    {
+      "path": "src/components/ui/separator.tsx",
+      "bytes": 699,
+      "sha256": "e9dddbd8dbbc0eccd683306481b0f0bbc8e2b60ea97817416ebb9fe7fbbbdca8"
+    },
+    {
+      "path": "src/hooks/useAuthUser.ts",
+      "bytes": 1019,
+      "sha256": "fe1e4b679ea70588f7db4bb78463516f53c3fb6137f895190b318756fa298ae8"
+    },
+    {
+      "path": "src/instrumentation.test.ts",
+      "bytes": 1116,
+      "sha256": "3c27119becbe16f0afa471001efbea7d497a6a93e42904d28b85395efbdec462"
+    },
+    {
+      "path": "src/instrumentation.ts",
+      "bytes": 373,
+      "sha256": "83a049799235aa6512c9a9ace90cc85f87ccb4be285c609450dbf6634044a875"
+    },
+    {
+      "path": "src/lib/achievement-manager.test.ts",
+      "bytes": 2477,
+      "sha256": "dfcc8b102c8b98b4c607e0e4407d24a333310e5e471794888bdbc266219d339f"
+    },
+    {
+      "path": "src/lib/achievement-manager.ts",
+      "bytes": 19181,
+      "sha256": "cf0608e61cacbcdfb729aa02cd61a589dad951b93f695e8a65fc32d2d436aa9a"
+    },
+    {
+      "path": "src/lib/action-utils.ts",
+      "bytes": 1803,
+      "sha256": "90372de16ad54618bc38976e5814723f40bb04d123c3b3016db44a993c64b587"
+    },
+    {
+      "path": "src/lib/auth-utils.test.ts",
+      "bytes": 2074,
+      "sha256": "86df712809ff2bff0818cd9fc475c1da48ec3f87c7138e2d69f1834b69103433"
+    },
+    {
+      "path": "src/lib/auth-utils.ts",
+      "bytes": 4000,
+      "sha256": "d601ad47b6b6ed39bf758fcc1a29c26c393f15555f228d3fd168ba265ebee13d"
+    },
+    {
+      "path": "src/lib/dashboard-data.ts",
+      "bytes": 17356,
+      "sha256": "38cba98d7e1962ca279a6dfeb07e64b76ec4b1d1eb5cacfc6f90f04449d3bb2e"
+    },
+    {
+      "path": "src/lib/db.ts",
+      "bytes": 3851,
+      "sha256": "486d3523a0429f93fc3dfc7cee42f1fd72e0484186a28c558e8117be640ed51b"
+    },
+    {
+      "path": "src/lib/debug-logger.ts",
+      "bytes": 468,
+      "sha256": "73f495df8cfc1a9cb20e835520af4a284f2f017af9a3d665329c33bd37b70b8d"
+    },
+    {
+      "path": "src/lib/game-logic/boss-ability-manager.ts",
+      "bytes": 15446,
+      "sha256": "0fee36e7dbaf0db281db9521bdf68ac7ffe67e69bf6c84c9f9673df9e40c1775"
+    },
+    {
+      "path": "src/lib/game-logic/boss-combat.test.ts",
+      "bytes": 27666,
+      "sha256": "b93f9a857c2430bf84868b3bce2a6802e251a184fcb73b6bbdee94136d577625"
+    },
+    {
+      "path": "src/lib/game-logic/boss-combat.ts",
+      "bytes": 17605,
+      "sha256": "bfa0e8469566f25273f8330a5534979509b0818f1f6670011289f87933c57531"
+    },
+    {
+      "path": "src/lib/game-logic/boss-cooldowns.test.ts",
+      "bytes": 4063,
+      "sha256": "549cdfdfa3e3e21ae33d1c6683e9e065589d10956a41e72514832387a0c9cd30"
+    },
+    {
+      "path": "src/lib/game-logic/boss-cooldowns.ts",
+      "bytes": 1822,
+      "sha256": "583040fbfc23d5360cf22a9ebf119ccd35438e463fe611d3208680f7d5337139"
+    },
+    {
+      "path": "src/lib/game-logic/boss-intel-metadata.ts",
+      "bytes": 5363,
+      "sha256": "dad36e8ca229456a34bac4c6be66e100c5a630d39f4a77925c1f9fbaadf3d926"
+    },
+    {
+      "path": "src/lib/game-logic/boss-key-drop.test.ts",
+      "bytes": 4273,
+      "sha256": "64b6820ec076326ea0fbdfe538d03d6d06db94731ed93080c30a9774ab732cb5"
+    },
+    {
+      "path": "src/lib/game-logic/boss-loot.ts",
+      "bytes": 7024,
+      "sha256": "51a0addcb30d3b9aeb684c17b7ddefe8bf9cbc1d40ce0d626d341760c82842a5"
+    },
+    {
+      "path": "src/lib/game-logic/combat-mechanics.ts",
+      "bytes": 1750,
+      "sha256": "93813c0aed5972463a99cd5d8ad6e241f047ec462a6d097cae8e82cc0e08585b"
+    },
+    {
+      "path": "src/lib/game-logic/item-roller.ts",
+      "bytes": 15623,
+      "sha256": "b36d100d4f1017c97fe1c303e1ed85fb80248a58bf2f0d399e762dc18f3769d7"
+    },
+    {
+      "path": "src/lib/game-logic/loot.test.ts",
+      "bytes": 4520,
+      "sha256": "67dedbb6030d36a1c8cb477cfe0862ae10897ecf955e7d8a8c3a9f5c138e868b"
+    },
+    {
+      "path": "src/lib/game-logic/loot.ts",
+      "bytes": 10880,
+      "sha256": "d3af9a93cb4dbdd3a031556a92c23e1b57ade6fc819fe1c0261923e25eeba663"
+    },
+    {
+      "path": "src/lib/game-logic/shadow-data.ts",
+      "bytes": 20765,
+      "sha256": "a1b885cbf803ec37ea91cc9be8f8b29ae34f0f3c513cc272e84ae7ea0574a820"
+    },
+    {
+      "path": "src/lib/game-logic/shadow-limits.ts",
+      "bytes": 1136,
+      "sha256": "755774f5e6f82b594f89420391a5e299c22c06be16eac5c8b84f7d7b9adfce67"
+    },
+    {
+      "path": "src/lib/market-data.ts",
+      "bytes": 5317,
+      "sha256": "0c696a2c94da2311b084c2acb1f4a7b801d2c1418c11f0038f54eea26e170e9c"
+    },
+    {
+      "path": "src/lib/quest-utils.test.ts",
+      "bytes": 1293,
+      "sha256": "6da36f5729f758adb73165319a41605289a24df6856a33ed3057580c37316430"
+    },
+    {
+      "path": "src/lib/quest-utils.ts",
+      "bytes": 1096,
+      "sha256": "33e644c19780066798707a3664ae54916f5485c3368e3d5be5dc1228b1a32792"
+    },
+    {
+      "path": "src/lib/server/admin-auth.ts",
+      "bytes": 429,
+      "sha256": "6f5cadf40fa5127e2a770c56d1d60a0ae6b2ebfaf229166c360acb9f4b17ea03"
+    },
+    {
+      "path": "src/lib/server/audit.ts",
+      "bytes": 1298,
+      "sha256": "839951f70ed94a5859eee0b77ba6fac3297086402d1d43db8ccfd02f3085f06c"
+    },
+    {
+      "path": "src/lib/server/boss-battle.ts",
+      "bytes": 8024,
+      "sha256": "01addaaefcdd747b513e90b5ccd815990d788f9fb32840311826e52e21e0b844"
+    },
+    {
+      "path": "src/lib/server/boss-rewards.ts",
+      "bytes": 17389,
+      "sha256": "742986be11a8c1cb8d195ffb0044f36ad690a52b8002bfe6db4250507d5559dc"
+    },
+    {
+      "path": "src/lib/server/developer-access.test.ts",
+      "bytes": 1088,
+      "sha256": "2033d4a8e419eead7f304ebba1c50eda39c53a50f0194b334c55900cec735cfd"
+    },
+    {
+      "path": "src/lib/server/developer-access.ts",
+      "bytes": 462,
+      "sha256": "291346e13c9f74f4b49f667242b11814c0e6cf3aca4e870e9fc5e68aed36d42b"
+    },
+    {
+      "path": "src/lib/server/environment.mjs",
+      "bytes": 3449,
+      "sha256": "076ba2fed5c3797cab3a6b6fdfe14d7ea5f86cd39739a4ce2a71db2c2fdd39bd"
+    },
+    {
+      "path": "src/lib/server/environment.test.ts",
+      "bytes": 3614,
+      "sha256": "3af7d4ddce15c85536443403de74cdc16a94a2f3286c8da4e10ed59a9cff382d"
+    },
+    {
+      "path": "src/lib/server/environment.ts",
+      "bytes": 217,
+      "sha256": "9f95ae41b57d85cba7a8daec658f315dacc6844525b98d99409725400c9d1390"
+    },
+    {
+      "path": "src/lib/server/game-db.test.ts",
+      "bytes": 4783,
+      "sha256": "dadaa47e80ffea75552bd4e1f5d6528bb814f26d310e3665391790460ec7e4bb"
+    },
+    {
+      "path": "src/lib/server/game-db.ts",
+      "bytes": 3929,
+      "sha256": "9d94bfe8ee24425db40ca472ef25a9f074aafeaa4fbd5cb08e2397ac026e82ee"
+    },
+    {
+      "path": "src/lib/server/game-integrity.test.ts",
+      "bytes": 35330,
+      "sha256": "2557c6bb73ebc9ad493786c01b46f9189e79cdf7253369a117e184c08d62f198"
+    },
+    {
+      "path": "src/lib/server/login-rate-limit.test.ts",
+      "bytes": 1751,
+      "sha256": "219becf294c177e0b2662702635412a313b21e04dff8b50da42f216200344cd3"
+    },
+    {
+      "path": "src/lib/server/login-rate-limit.ts",
+      "bytes": 1204,
+      "sha256": "136bb3ae08eb116d13ae19badf9a41873716b7fd382c6bf3e44050d11a55d219"
+    },
+    {
+      "path": "src/lib/server/player-provisioning.test.ts",
+      "bytes": 2136,
+      "sha256": "fc242be9c10ead9a0b29b417a17fed36e0f90670736594cb7d683c6c01fc3dbc"
+    },
+    {
+      "path": "src/lib/server/player-provisioning.ts",
+      "bytes": 2117,
+      "sha256": "57e2f2a5308ddb873c145a6974544716b6569f99fb4ad64d622d4c0116c223d3"
+    },
+    {
+      "path": "src/lib/server/quest-access.ts",
+      "bytes": 871,
+      "sha256": "5c7de06079e34041b41f200fb33f4263014749359f4e4980870ab4441f9477e9"
+    },
+    {
+      "path": "src/lib/server/quest-completion.ts",
+      "bytes": 26337,
+      "sha256": "7b68a00d1c542f16e6fa13a8e23a31d0718b8de8c10f977cff4253f4710f80cd"
+    },
+    {
+      "path": "src/lib/server/save-restoration.test.ts",
+      "bytes": 5231,
+      "sha256": "d6fbe16200f1e3c602bc5cc5c43a22eeed6a69069812f45004a95acf9146c812"
+    },
+    {
+      "path": "src/lib/server/save-restoration.ts",
+      "bytes": 8007,
+      "sha256": "0d5d03a6fd31d5cd54114c82b23536d8a17b40c8fcf39a0bbbacf61f46a8f825"
+    },
+    {
+      "path": "src/lib/server/shadow-extraction.ts",
+      "bytes": 4260,
+      "sha256": "ffc2ba2052b34ce87d1ad40447a09e4d3dff657343fd4386a5ab1c0d893f28ae"
+    },
+    {
+      "path": "src/lib/server/skill-progress.test.ts",
+      "bytes": 1070,
+      "sha256": "7e3431e658a36d06f5bd4a43eaa2d0df4e61d83f1b90e62f7ccf7f84c2a14514"
+    },
+    {
+      "path": "src/lib/server/skill-progress.ts",
+      "bytes": 1371,
+      "sha256": "67b48af5d6e49b3e549e5bb88cd491fe2e4da912ca2f2a608d8080314b039137"
+    },
+    {
+      "path": "src/lib/server/startup.test.ts",
+      "bytes": 4004,
+      "sha256": "383a8b3a8bc9eb7a08634cda5c1f5b1043fead1c6680f7596230128795c9abd1"
+    },
+    {
+      "path": "src/lib/server/stats-loader.ts",
+      "bytes": 5419,
+      "sha256": "90f5b7a85dddfc994d7c8787d3461ce8e126788cc48e56001243851b54cf202d"
+    },
+    {
+      "path": "src/lib/server/user-stats.test.ts",
+      "bytes": 1523,
+      "sha256": "342bd2d69d5dfc665f0bb648e45d294b1b42734cd059f245eefb44a11c0aa2b9"
+    },
+    {
+      "path": "src/lib/server/user-stats.ts",
+      "bytes": 8327,
+      "sha256": "1c67a77513599c7d6f4093b17a47aba7ec2bfa497b4f930bd9b6ea037f86e7c0"
+    },
+    {
+      "path": "src/lib/server/xp-rewards.ts",
+      "bytes": 8443,
+      "sha256": "2cb404c5d4f1c354ecaf7b264f125fd65df15da9fd74f6230a6f9d2cfd8610a4"
+    },
+    {
+      "path": "src/lib/session.test.ts",
+      "bytes": 2509,
+      "sha256": "92728fb899ea1646a25ce844df73ae39c6ec439c3610e2080a62e6e728f05f78"
+    },
+    {
+      "path": "src/lib/session.ts",
+      "bytes": 6553,
+      "sha256": "d12e46dfc2a3727ddc8c10bd39e60261212bb13f29ffe687659441641a8f511e"
+    },
+    {
+      "path": "src/lib/stats-manager.test.ts",
+      "bytes": 20472,
+      "sha256": "c37a0fe2422f8b8cf9d4815059361a7238fbfe0e4cea95efb9ee97d3107bbcbf"
+    },
+    {
+      "path": "src/lib/stats-manager.ts",
+      "bytes": 23832,
+      "sha256": "107bd11b62e19f5aead5bbd2eef09e3a754bf52f80b8393804f73cf4782308a0"
+    },
+    {
+      "path": "src/lib/system/formula.test.ts",
+      "bytes": 4170,
+      "sha256": "b989738dca75f37389a1b8653b0ed5e11a0e88ad5b12c305c8b2b3a249c14ad8"
+    },
+    {
+      "path": "src/lib/system/formula.ts",
+      "bytes": 11838,
+      "sha256": "2335f4876a1a76df9613a1ac20e4233d25baa19372453b093341bd778e93533d"
+    },
+    {
+      "path": "src/lib/system/leveling.test.ts",
+      "bytes": 2001,
+      "sha256": "e8f12e06f33d0258477fc037d7f1a4f459c47c159c7e7ed0886938df0d91ecf1"
+    },
+    {
+      "path": "src/lib/system/leveling.ts",
+      "bytes": 4017,
+      "sha256": "80e2543d34f0879bd10693e80dad1c8b62a9f6389bd282b0812bac4e8335d5f4"
+    },
+    {
+      "path": "src/lib/system/rank-constants.ts",
+      "bytes": 4289,
+      "sha256": "4b1d4f7507f03e37238599047fd208a6702a6c657006bfe7590691d72d85999c"
+    },
+    {
+      "path": "src/lib/system/skill-effects.test.ts",
+      "bytes": 11709,
+      "sha256": "9c1aa01d13b5b7bbebe5476be66c8c24ffd3456aca80fba7fbf8035b83dfd0c1"
+    },
+    {
+      "path": "src/lib/system/skill-effects.ts",
+      "bytes": 17840,
+      "sha256": "630033432f4fedd818bd568608da97f5753948104c26be6133eec51fe9db3381"
+    },
+    {
+      "path": "src/lib/system/status-effects.ts",
+      "bytes": 5547,
+      "sha256": "93298364d5c8c9e2e631d1b0e9f4e966774751e53fdfdfddd7c7481f0d998072"
+    },
+    {
+      "path": "src/lib/types/zod-schemas.ts",
+      "bytes": 4065,
+      "sha256": "3327b1963b655054da102740770f05e10f7f292e725821d3d6ad7f298071526c"
+    },
+    {
+      "path": "src/lib/utils.ts",
+      "bytes": 166,
+      "sha256": "7c8c3dfc0cdd370d44932828eb067ef771c8fe7996693221d5d4b90af6d54f2d"
+    },
+    {
+      "path": "src/middleware.test.ts",
+      "bytes": 799,
+      "sha256": "079af3b15aea136372f421c5e9a83cc729635390d37c2af08441e35e9ff1a746"
+    },
+    {
+      "path": "src/middleware.ts",
+      "bytes": 1674,
+      "sha256": "e6b5d21babbcbcbe6cf511bc74653e7867b2208014723aeceee02d8ce182bff1"
+    },
+    {
+      "path": "src/types/database.types.ts",
+      "bytes": 437,
+      "sha256": "ca608e66a0dbadc50914dd3afed4e69912519195613538e04fa33df4e30f947c"
+    },
+    {
+      "path": "src/utils/dungeon-names.ts",
+      "bytes": 808,
+      "sha256": "e4a89c32dedc85c6c5c72b159443b5616c579b47fbc24a6c37f3eb2fd6eb6d0c"
+    },
+    {
+      "path": "src/utils/item-effects.ts",
+      "bytes": 3822,
+      "sha256": "486107933519c6b2a03e4ee073f44bb4db298132d4b525473e229d699e144006"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 764,
+      "sha256": "533ab11a6de3992ef053f3d05deb2efc99ac8ac6d68e5f7cee5bafbe5e019186"
+    },
+    {
+      "path": "tsconfig.scripts.json",
+      "bytes": 265,
+      "sha256": "c05748cd4677b0ab5519897cca33933ea69d6bfe3c4ae0ba25daf45a355f0106"
+    },
+    {
+      "path": "vitest.config.ts",
+      "bytes": 305,
+      "sha256": "ad46a6a43eb368d6e6402c7f29540d9f3d4a6b467578d60ab3ad096e7289c9b4"
+    }
+  ],
+  "excluded": [
+    "docs/BRANCH_REVIEW.md",
+    "docs/DEPENDENCY_REVIEW.md",
+    "docs/PUBLICATION_SECURITY.md",
+    "docs/archived_plans/COSMIC_BOSS_IMPLEMENTATION.md",
+    "docs/archived_plans/DYNAMIC_LOOT_IMPLEMENTATION.md",
+    "docs/archived_plans/LOOT_DROP_RATE_ADJUSTMENTS.md",
+    "docs/archived_plans/LOOT_EMERGENCY_FIX.md",
+    "scripts/archived/apply_skill_audit.ts",
+    "scripts/archived/audit_skills.ts",
+    "scripts/archived/check_cooldown.ts",
+    "scripts/archived/check_schema.ts",
+    "scripts/archived/check_schema_debug.js",
+    "scripts/archived/check_schema_debug.ts",
+    "scripts/archived/migrate_cosmic_phase6.ts",
+    "scripts/archived/migrate_igris_rebalance.ts",
+    "scripts/archived/migrate_item_variance.ts",
+    "scripts/archived/nerf_robe.ts",
+    "scripts/archived/rebalance_rewards.ts",
+    "scripts/archived/seed-cosmic-bosses.js",
+    "scripts/archived/tmp_test_sync.ts",
+    "scripts/archived/update_cooldown.ts",
+    "scripts/debug/check-schema.ts",
+    "scripts/debug/check_boss_hp.ts",
+    "scripts/debug/check_hand_items.ts",
+    "scripts/debug/check_items_columns.ts",
+    "scripts/debug/check_prices.ts",
+    "scripts/debug/check_skills.ts",
+    "scripts/debug/check_skills_schema.ts",
+    "scripts/debug/check_titles.ts",
+    "scripts/debug/debug_items.ts",
+    "scripts/debug/dry_run_sp_ap_rebalance.ts",
+    "scripts/debug/dump-quests.ts",
+    "scripts/debug/dump-rewards.ts",
+    "scripts/debug/fix_active_encounter.ts",
+    "scripts/debug/fix_dominators_touch.ts",
+    "scripts/debug/formula_prototype_elite_limit.ts",
+    "scripts/debug/get_errors.ts",
+    "scripts/debug/get_items.ts",
+    "scripts/debug/inspect_all_ranks.ts",
+    "scripts/debug/inspect_keys.ts",
+    "scripts/debug/inspect_schema.ts",
+    "scripts/debug/itarim_balance_analysis.ts",
+    "scripts/debug/rebalance-quests.ts",
+    "scripts/debug/simulate_leveling_models.ts",
+    "scripts/debug/simulate_monarch_curve.ts",
+    "scripts/debug/test_boss_key_drop.ts",
+    "scripts/debug/test_shadow_format.ts",
+    "scripts/debug/titles.json",
+    "scripts/debug/tune_monarch_curve_cap.ts",
+    "scripts/debug/update_skill_descriptions.ts",
+    "scripts/debug/verify_endgame.ts",
+    "scripts/debug/verify_fantasya.ts",
+    "scripts/debug/verify_home_base.ts",
+    "scripts/debug/verify_sanctuary.ts",
+    "scripts/maintenance/fix-keys.ts",
+    "scripts/maintenance/result.ts",
+    "scripts/maintenance/run.ts",
+    "scripts/maintenance/setup-cosmic-bosses.ts",
+    "scripts/migrations/add_fantasya_zone.ts",
+    "scripts/migrations/add_user_id_to_quests.ts",
+    "scripts/migrations/check_keys.ts",
+    "scripts/migrations/create_admin_user.ts",
+    "scripts/migrations/fix_item_prices_above_s.ts",
+    "scripts/migrations/fix_key_items.ts",
+    "scripts/migrations/inspect_armor_database.ts",
+    "scripts/migrations/inspect_xx_items.ts",
+    "scripts/migrations/migrate_10year_leveling_curve.ts",
+    "scripts/migrations/migrate_add_caster_gloves.ts",
+    "scripts/migrations/migrate_add_cosmic_essence.ts",
+    "scripts/migrations/migrate_add_purchased_price.ts",
+    "scripts/migrations/migrate_add_s_plus_items.ts",
+    "scripts/migrations/migrate_add_s_plus_xx_keys.ts",
+    "scripts/migrations/migrate_add_xx_armor.ts",
+    "scripts/migrations/migrate_ailment_values.ts",
+    "scripts/migrations/migrate_auto_sell.ts",
+    "scripts/migrations/migrate_bigint_gold.ts",
+    "scripts/migrations/migrate_cosmic_consumables.ts",
+    "scripts/migrations/migrate_fix_cosmic_key_price.ts",
+    "scripts/migrations/migrate_image_extensions_to_webp.ts",
+    "scripts/migrations/migrate_monarch_bosses.ts",
+    "scripts/migrations/migrate_monarch_leveling_curve.ts",
+    "scripts/migrations/migrate_quest_schema.ts",
+    "scripts/migrations/migrate_rebalance_key_economy.ts",
+    "scripts/migrations/migrate_rebalance_sp_ap.ts",
+    "scripts/migrations/migrate_reconcile_elite_shadows.ts",
+    "scripts/migrations/migrate_remaining_bosses.ts",
+    "scripts/migrations/migrate_remove_stat_rewards.ts",
+    "scripts/migrations/migrate_scale_cosmic_items.ts",
+    "scripts/migrations/migrate_session_auth.ts",
+    "scripts/migrations/migrate_skill_catalog_truth.ts",
+    "scripts/migrations/schema_shadow_delegation.sql",
+    "scripts/migrations/update_zones_and_quests.ts",
+    "src/resources/bosses/boss-antares.png",
+    "src/resources/bosses/boss-ashborn.png",
+    "src/resources/bosses/boss-baruka.png",
+    "src/resources/bosses/boss-beru.png",
+    "src/resources/bosses/boss-buryura.png",
+    "src/resources/bosses/boss-cerberus.png",
+    "src/resources/bosses/boss-hwang.png",
+    "src/resources/bosses/boss-igris.png",
+    "src/resources/bosses/boss-itarim-apostles.png",
+    "src/resources/bosses/boss-itarim.png",
+    "src/resources/bosses/boss-kamish.png",
+    "src/resources/bosses/boss-kandiru.png",
+    "src/resources/bosses/boss-kargalgan.png",
+    "src/resources/bosses/boss-kasaka.png",
+    "src/resources/bosses/boss-legia.png",
+    "src/resources/bosses/boss-metus.png",
+    "src/resources/bosses/boss-querehsha.png",
+    "src/resources/bosses/boss-rakan.png",
+    "src/resources/bosses/boss-sillad.png",
+    "src/resources/bosses/boss-status-of-god.png",
+    "src/resources/bosses/boss-tarnak.png",
+    "src/resources/bosses/boss-vulcan.png",
+    "src/resources/bosses/boss-yogumunt.png",
+    "src/resources/bosses/bosss-baran.png",
+    "src/resources/sample1.png",
+    "src/resources/sample2.png",
+    "src/resources/sample3.png",
+    "src/resources/sample4.png",
+    "src/resources/sample5.png",
+    "task.md"
+  ]
+}

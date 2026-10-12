@@ -1,0 +1,434 @@
+@import "tailwindcss";
+
+/* @plugin "tailwindcss-animate"; */
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: var(--font-orbitron);
+  --font-mono: var(--font-jetbrains-mono);
+  --font-body: var(--font-inter);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* ... other color vars ... */
+
+  /* System Colors */
+  --color-system-black: #0B1221;
+  --color-system-cyan: #00F2FF;
+  --color-system-purple: #7C3AED;
+  --color-system-red: #FF2E2E;
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+}
+
+:root {
+  /* Softer Dark Theme: Deep Navy + Soft White */
+  --background: #0B1221;
+  /* Was #050505 */
+  --foreground: #E2E8F0;
+  /* Was #ffffff - Slate 200 */
+
+  --card: #151e32;
+  /* Slightly lighter navy for cards */
+  --card-foreground: #E2E8F0;
+
+  --popover: #151e32;
+  --popover-foreground: #E2E8F0;
+
+  --primary: #22d3ee;
+  /* Cyan 400 - slightly softer than pure neon */
+  --primary-foreground: #000000;
+
+  --secondary: #7C3AED;
+  --secondary-foreground: #ffffff;
+
+  --muted: #27272a;
+  --muted-foreground: #a1a1aa;
+
+  --accent: #27272a;
+  --accent-foreground: #ffffff;
+
+  --destructive: #FF2E2E;
+  --destructive-foreground: #ffffff;
+
+  --border: #27272a;
+  --input: #27272a;
+  --ring: #00F2FF;
+
+  --radius: 0.5rem;
+  --min-readable: 10px;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground font-mono antialiased;
+  }
+
+  /* Global Scrollbar Styles */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(11, 18, 33, 0.3);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(34, 211, 238, 0.2);
+    border-radius: 10px;
+    border: 1px solid rgba(34, 211, 238, 0.05);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(34, 211, 238, 0.4);
+    box-shadow: 0 0 10px rgba(34, 211, 238, 0.2);
+  }
+
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(34, 211, 238, 0.2) rgba(11, 18, 33, 0.3);
+  }
+}
+
+@layer utilities {
+  .text-readable {
+    font-size: max(var(--min-readable), 0.625rem);
+  }
+
+  .text-glow-cyan {
+    text-shadow: 0 0 10px rgba(0, 242, 255, 0.5), 0 0 20px rgba(0, 242, 255, 0.3);
+  }
+
+  .border-glow-cyan {
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.2), inset 0 0 10px rgba(0, 242, 255, 0.1);
+  }
+
+  .text-glow-red {
+    text-shadow: 0 0 10px rgba(220, 38, 38, 0.5), 0 0 20px rgba(220, 38, 38, 0.3);
+  }
+
+  .border-glow-red {
+    box-shadow: 0 0 15px rgba(220, 38, 38, 0.2), inset 0 0 10px rgba(220, 38, 38, 0.1);
+  }
+
+  .bg-glass {
+    @apply bg-black/80 backdrop-blur-md border border-white/10;
+  }
+
+  .glass-panel {
+    @apply bg-black/40 backdrop-blur-md border border-cyan-500/30;
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.1);
+  }
+
+  @keyframes skill-glow-pulse {
+
+    0%,
+    100% {
+      box-shadow: 0 0 10px rgba(0, 242, 255, 0.3);
+    }
+
+    50% {
+      box-shadow: 0 0 20px rgba(0, 242, 255, 0.6);
+    }
+  }
+
+  @keyframes mastery-aura {
+    0% {
+      filter: drop-shadow(0 0 5px #fbbf24) brightness(1);
+    }
+
+    50% {
+      filter: drop-shadow(0 0 15px #fbbf24) brightness(1.3);
+    }
+
+    100% {
+      filter: drop-shadow(0 0 5px #fbbf24) brightness(1);
+    }
+  }
+
+  @keyframes scanning {
+    0% {
+      transform: translateY(-100%);
+    }
+
+    100% {
+      transform: translateY(100%);
+    }
+  }
+
+  .animate-scan {
+    animation: scanning 3s linear infinite;
+  }
+
+  @keyframes level-up-flash {
+    0% {
+      filter: brightness(1);
+      transform: scale(1);
+    }
+
+    50% {
+      filter: brightness(2) contrast(1.5);
+      transform: scale(1.1);
+    }
+
+    100% {
+      filter: brightness(1);
+      transform: scale(1);
+    }
+  }
+
+  .animate-skill-pulse {
+    animation: skill-glow-pulse 3s infinite ease-in-out;
+  }
+
+  .animate-mastery {
+    animation: mastery-aura 4s infinite ease-in-out;
+  }
+
+  .animate-level-up {
+    animation: level-up-flash 0.5s ease-out;
+  }
+
+  /* Scrollbar Utilities */
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(34, 211, 238, 0.25);
+    border-radius: 10px;
+    border: 1px solid rgba(34, 211, 238, 0.1);
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(34, 211, 238, 0.5);
+    box-shadow: 0 0 10px rgba(34, 211, 238, 0.3);
+  }
+
+  /* Shimmer animation for stat bars */
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+
+    100% {
+      transform: translateX(200%);
+    }
+  }
+
+  .animate-shimmer {
+    animation: shimmer 3s infinite;
+  }
+
+  /* Quest Card Rank Glows */
+  @keyframes glow-e {
+
+    0%,
+    100% {
+      box-shadow: 0 0 10px rgba(100, 100, 100, 0.2);
+    }
+
+    50% {
+      box-shadow: 0 0 20px rgba(100, 100, 100, 0.4);
+    }
+  }
+
+  @keyframes glow-d {
+
+    0%,
+    100% {
+      box-shadow: 0 0 10px rgba(34, 197, 94, 0.3);
+    }
+
+    50% {
+      box-shadow: 0 0 20px rgba(34, 197, 94, 0.5);
+    }
+  }
+
+  @keyframes glow-c {
+
+    0%,
+    100% {
+      box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+    }
+
+    50% {
+      box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+    }
+  }
+
+  @keyframes glow-b {
+
+    0%,
+    100% {
+      box-shadow: 0 0 10px rgba(168, 85, 247, 0.3);
+    }
+
+    50% {
+      box-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
+    }
+  }
+
+  @keyframes glow-a {
+
+    0%,
+    100% {
+      box-shadow: 0 0 15px rgba(251, 146, 60, 0.4);
+    }
+
+    50% {
+      box-shadow: 0 0 25px rgba(251, 146, 60, 0.6);
+    }
+  }
+
+  @keyframes glow-s {
+
+    0%,
+    100% {
+      box-shadow: 0 0 15px rgba(251, 191, 36, 0.4);
+    }
+
+    50% {
+      box-shadow: 0 0 30px rgba(251, 191, 36, 0.7);
+    }
+  }
+
+  .animate-glow-e {
+    animation: glow-e 3s ease-in-out infinite;
+  }
+
+  .animate-glow-d {
+    animation: glow-d 3s ease-in-out infinite;
+  }
+
+  .animate-glow-c {
+    animation: glow-c 3s ease-in-out infinite;
+  }
+
+  .animate-glow-b {
+    animation: glow-b 3s ease-in-out infinite;
+  }
+
+  .animate-glow-a {
+    animation: glow-a 3s ease-in-out infinite;
+  }
+
+  .animate-glow-s {
+    animation: glow-s 3s ease-in-out infinite;
+  }
+
+  /* Card Hover Effects */
+  @keyframes card-lift {
+    from {
+      transform: translateY(0) scale(1);
+    }
+
+    to {
+      transform: translateY(-4px) scale(1.01);
+    }
+  }
+
+  .hover-lift:hover {
+    animation: card-lift 0.3s ease-out forwards;
+  }
+
+  /* Reward Pulse */
+  @keyframes reward-pulse {
+
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    50% {
+      transform: scale(1.1);
+      opacity: 0.8;
+    }
+  }
+
+  .animate-reward-pulse {
+    animation: reward-pulse 2s ease-in-out infinite;
+  }
+
+  /* Button Ripple */
+  @keyframes ripple {
+    from {
+      transform: scale(0);
+      opacity: 0.6;
+    }
+
+    to {
+      transform: scale(4);
+      opacity: 0;
+    }
+  }
+
+  .animate-ripple {
+    animation: ripple 0.6s ease-out;
+  }
+
+  /* Badge Pulse */
+  @keyframes badge-pulse {
+
+    0%,
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    50% {
+      opacity: 0.7;
+      transform: scale(1.05);
+    }
+  }
+
+  .animate-badge-pulse {
+    animation: badge-pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes ability-trigger-glow {
+
+    0%,
+    100% {
+      box-shadow: 0 0 10px rgba(34, 211, 238, 0.2), inset 0 0 5px rgba(34, 211, 238, 0.1);
+      filter: brightness(1);
+    }
+
+    50% {
+      box-shadow: 0 0 25px rgba(34, 211, 238, 0.6), inset 0 0 15px rgba(34, 211, 238, 0.3);
+      filter: brightness(1.2);
+    }
+  }
+
+  .animate-active-ability {
+    animation: ability-trigger-glow 2s infinite ease-in-out;
+  }
+}

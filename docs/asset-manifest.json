@@ -1,0 +1,1296 @@
+{
+  "format": 1,
+  "scope": "public release assets",
+  "assets": [
+    {
+      "path": "public/achievements/combat.png",
+      "bytes": 963486,
+      "sha256": "5d7da506de48e8bf179f0cec677f6674a24a73ae47c43d36bba59650f908d571",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/achievements/progression.png",
+      "bytes": 1041817,
+      "sha256": "a00bdb249fa9c74b92d1d0d9f79e83242a9fc36f445bd067d3a50420fa33234b",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/achievements/secret.png",
+      "bytes": 1026188,
+      "sha256": "72d2b7bcbeede91dfbf714fa018558c19e9077d2bbd488643593845eff570792",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/achievements/wealth.png",
+      "bytes": 1021834,
+      "sha256": "87c6b85e293543d886824b1e610d392d14f787bc80c82a5a1a85ac1861ea1dfb",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/avatars/assassin-female.webp",
+      "bytes": 254156,
+      "sha256": "9f2803d970b5b97ab4b9f2722ddbd633f0e4cd04a70c360740cc0d7bb9d7abf1",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/avatars/assassin-male.webp",
+      "bytes": 244310,
+      "sha256": "8c89b4ec499f60072ee4804a2b363c93c562b07e8c4ab4dcb890bf5ec70541a1",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/avatars/druid-female.webp",
+      "bytes": 330480,
+      "sha256": "648f4284ab400bc1e89fdcc3a3372d0336323c3b31e2b268d6c4dea36c9ff6bb",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/avatars/druid-male.webp",
+      "bytes": 242350,
+      "sha256": "c81513d8d83c5ac047b7b7e67e40bdf646c51d6947abf1cf23f9aef275aced7d",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/avatars/generic-female.webp",
+      "bytes": 262416,
+      "sha256": "8c3ba08b7e56b46623582b1e58431901953e651ba28876cf9832f128f72610ca",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/avatars/generic-male.webp",
+      "bytes": 209290,
+      "sha256": "8665e414169d35998f01f7fb636976676cd84d2d9108ce42ce31383f8ff22566",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/avatars/healer-female.webp",
+      "bytes": 230738,
+      "sha256": "bc5ba965bcbcb020cdf0300e6167f5303e3ace340f57139345d7201254ac5313",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/avatars/healer-male.webp",
+      "bytes": 243596,
+      "sha256": "163cb5ee265e77325bce66ce63cb6594355608bd4e81330278e25e7c10fd2be9",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/avatars/mage-female.webp",
+      "bytes": 288258,
+      "sha256": "139c411e4dcaf70c7c5893755b17cbbab1605bba490725f9cd88642f8e11cb27",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/avatars/mage-male.webp",
+      "bytes": 262482,
+      "sha256": "692ff3b52dc09e2719101501c8f54a83a19b14821ee6e96915560d999f6fc87f",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/avatars/monk-female.webp",
+      "bytes": 289548,
+      "sha256": "2f3305c6b22e65f2bf2c3b60a5a93f75d2db15b2da7c55bf5bc8167ea65073a6",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/avatars/monk-male.webp",
+      "bytes": 242302,
+      "sha256": "819ff949521f4eec5536eb15f3d291bdb3531d6608a41cc07d2a5b5572e57770",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/avatars/necromancer-female.webp",
+      "bytes": 292948,
+      "sha256": "122436729b25298ceb3fc2ee3be5e6ed130fea0be56dd9436b6345847487e670",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/avatars/necromancer-male.webp",
+      "bytes": 309806,
+      "sha256": "ed1d6c5e68447500377850fb77d5df79d330ad527f03c2a4dafb2945ee0944ee",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/avatars/tank-female.webp",
+      "bytes": 185968,
+      "sha256": "3147bc443b83bf1607b4c8d36e36c34c98f8030fc798536078f23c95a0a0ab0f",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/avatars/tank-male.webp",
+      "bytes": 185338,
+      "sha256": "b84845183202bb7fc04643542ed3dbf457518097acdd65257259148f5b39c752",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/avatars/warlock-female.webp",
+      "bytes": 269834,
+      "sha256": "dab0887d323285bae699ef04ff6d39eba49883518a3fd71a8be2e8c3cf3b395c",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/avatars/warlock-male.webp",
+      "bytes": 256022,
+      "sha256": "44612a5f5bc891693a135a2defc5ff6cbbf642d4ea8a01d0025a0d1b2fcd8f12",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/bosses/boss-antares.webp",
+      "bytes": 351662,
+      "sha256": "0bc85bc6d8f4ffa30f6fa9109fa0db462b2a7db1655e8ea3050ba564e979a03a",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/bosses/boss-ashborn.webp",
+      "bytes": 32860,
+      "sha256": "fcdcfdcfd4dd33b567e2325bac932f40f435ab87b3c30ed013f666c2186fe9d3",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/bosses/boss-atropus.webp",
+      "bytes": 261420,
+      "sha256": "71410caa8bb0d3a868e64f8e8fcb5f0299b152985581217b42ac473e010aedf3",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/bosses/boss-azathoth.webp",
+      "bytes": 261420,
+      "sha256": "71410caa8bb0d3a868e64f8e8fcb5f0299b152985581217b42ac473e010aedf3",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/bosses/boss-baruka.webp",
+      "bytes": 291446,
+      "sha256": "101025076f0f6d44cd8a3d726a9fb33863568ae9cfc303a6c98d0b6021b9137c",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/bosses/boss-beru.webp",
+      "bytes": 330494,
+      "sha256": "398cc8050b6bbb9415223d32ca523bbb06c672d0f9f837ce15fee7333fefe715",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/bosses/boss-buryura.webp",
+      "bytes": 298126,
+      "sha256": "8e873d3ecec0d807ce281d5e226d4a134ab44fb8312411e5fe35e16d2530d6d5",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/bosses/boss-cerberus.webp",
+      "bytes": 277892,
+      "sha256": "58f633e20936d437a6bc1eb02a8c3f100a1a67a2eac053667881476b1003cb21",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/bosses/boss-hwang.webp",
+      "bytes": 252438,
+      "sha256": "bb093d86a06f184317f11308b643327e9c448845f260806a80e89888e5cb6302",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/bosses/boss-igris.webp",
+      "bytes": 241320,
+      "sha256": "b58fe61c35145ba19edc09be967cfbe040c891c3315d7c2a6fb85ef6889cc4fd",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/bosses/boss-itarim-apostles.webp",
+      "bytes": 365758,
+      "sha256": "7f1fea317a7f479b1ef1a6f1a78ca73de5579fb8c5a52204b45da09c39937fad",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/bosses/boss-itarim.webp",
+      "bytes": 261420,
+      "sha256": "71410caa8bb0d3a868e64f8e8fcb5f0299b152985581217b42ac473e010aedf3",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/bosses/boss-kamish.webp",
+      "bytes": 371350,
+      "sha256": "a579c90e55bc012b73efc4cf80d610e62a26fc7c33f70ce940ed60bc01c18fda",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/bosses/boss-kandiru.webp",
+      "bytes": 305978,
+      "sha256": "8a3897b67248b6baa23de3986f0105a43ecf934f07498b75259e15a3d907c798",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/bosses/boss-kargalgan.webp",
+      "bytes": 249742,
+      "sha256": "d347d741c03d0b4a4d694df17da0a2ce2bb4718745e6bc61132caeb353c2d784",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/bosses/boss-kasaka.webp",
+      "bytes": 325896,
+      "sha256": "f08a69147aa50aa9a4c3908d8a6411340f188dc0fd8c167d51a4f1fce9eb3984",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/bosses/boss-legia.webp",
+      "bytes": 320378,
+      "sha256": "bb1e40b8c6188232898bcfc48163b7002b8a82d049067211d6843e08d181072f",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/bosses/boss-metus.webp",
+      "bytes": 229026,
+      "sha256": "4aa5b5a64ffb01c508302f292dd9af6009f4ef50cc0fbcdcf1fffc3c042a9a9b",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/bosses/boss-nyarlathotep.webp",
+      "bytes": 261420,
+      "sha256": "71410caa8bb0d3a868e64f8e8fcb5f0299b152985581217b42ac473e010aedf3",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/bosses/boss-querehsha.webp",
+      "bytes": 400482,
+      "sha256": "29a7e271efc6cfb3badf59484f686c5ff6416e083919aa735ba158b4d4a4e96f",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/bosses/boss-rakan.webp",
+      "bytes": 366440,
+      "sha256": "fbb9157c82b2ee192f1a723e81e37cb0e2e29aaeb07abd160f153ec243afeb2e",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/bosses/boss-sillad.webp",
+      "bytes": 417346,
+      "sha256": "474452382a05b7c99652073d29c39ad05df56a4b63c04f478aa3ab26c588444a",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/bosses/boss-status-of-god.webp",
+      "bytes": 349948,
+      "sha256": "b1686099531c0548cd705ea5899d3f755d46bfbfa9725140d1475608db4d14e5",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/bosses/boss-tarnak.webp",
+      "bytes": 366170,
+      "sha256": "9bc5998e656e487be639bc8c36bb7914ea560635829332591f6c0ffc7f25ede2",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/bosses/boss-tiamat.webp",
+      "bytes": 261420,
+      "sha256": "71410caa8bb0d3a868e64f8e8fcb5f0299b152985581217b42ac473e010aedf3",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/bosses/boss-vecna.webp",
+      "bytes": 261420,
+      "sha256": "71410caa8bb0d3a868e64f8e8fcb5f0299b152985581217b42ac473e010aedf3",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/bosses/boss-vulcan.webp",
+      "bytes": 339866,
+      "sha256": "a98a385b11091a9e542317fe4b4cde2a83a8da4d9ac97af24641fc0567c5ae76",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/bosses/boss-yogumunt.webp",
+      "bytes": 280364,
+      "sha256": "5ad3118b74711444c20fd5e32c885fcae1ff0a181db55164dddd06d1f365708f",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/bosses/bosss-baran.webp",
+      "bytes": 410172,
+      "sha256": "f68e41fe28b0d21bac7d8d1068bd4bb36fc669f95739751153082b8e130c89ab",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/grid.svg",
+      "bytes": 183,
+      "sha256": "ddf9aeece6e73e5a02c78bb2d28051faa04b7e52b2f8280d5ad3d6ae79c8c5df",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved",
+      "normalization": "lf-text"
+    },
+    {
+      "path": "public/images/bosses/boss_atropus.webp",
+      "bytes": 91396,
+      "sha256": "58fac77a12d251048bd7d5f75b6017ad2b568d764b1efc53fcb89967e13a390f",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/images/bosses/boss_azathoth.webp",
+      "bytes": 82286,
+      "sha256": "3f112d56f9716613cf800cb1bf9bdf0fc24ad4e86fbcf89c83d4d296f8385d13",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/images/bosses/boss_nyarlathotep.webp",
+      "bytes": 93774,
+      "sha256": "2f18733965a49683920d30e8cf07174454a30f1f324229ca64a2ded864211020",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/images/bosses/boss_tiamat.webp",
+      "bytes": 123848,
+      "sha256": "8d705b7cee901e516fdc46eb22a1343163776621ff41949e1042eee80bb9a140",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/images/bosses/boss_vecna.webp",
+      "bytes": 116474,
+      "sha256": "bfd2394272815f180eabede5e907b1f279b675858109ee5b1d86fc27ab7c20a2",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/accessory.webp",
+      "bytes": 70742,
+      "sha256": "fb947d2a375e0ba231e89276215c94196ea79fadda245f73c7e30bf947a10c39",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/altar-agility.png",
+      "bytes": 676760,
+      "sha256": "e32ad6fe2d062135e02681e7d7dde0cefd249cd6e3040a770d6f00d48ae29426",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/altar-intelligence.png",
+      "bytes": 886679,
+      "sha256": "53df91889670c48c3f1c2857ca4b18a6567d5ae2bb27f759f75230d08548da40",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/altar-perception.png",
+      "bytes": 875983,
+      "sha256": "a40af04acf26e457bd1f75cf401d3891a9b984e2021d3ebdfc824f16aa2f1c15",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/altar-strength.png",
+      "bytes": 602807,
+      "sha256": "63bb82b632b987b22024cb54f5fe52fb85edb055f9f96f1eb1b40fbe1f25f3e7",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/altar-vitality.png",
+      "bytes": 722419,
+      "sha256": "b6b1e8af5b64deed3a4288838ee03845843db3d8b2430cc71cfe480fc8108a03",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/bandages.webp",
+      "bytes": 98740,
+      "sha256": "b645a047857915574e016e98db334f27de4f0b0d97833685aeabe409271fc0c1",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/barukas-dagger.webp",
+      "bytes": 101548,
+      "sha256": "bb92151ea85a6e1979ce98f39938724bdd2970cde334884e6377c62b1357d442",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/bread-of-the-gatekeeper.webp",
+      "bytes": 156788,
+      "sha256": "a27256ca31ce280b8aa4b933b35983b4bd1515587784f77002c8994b34527844",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/chest.webp",
+      "bytes": 68928,
+      "sha256": "816a6f5e4006cc5d659cb711ee8e63502dfc49dcab9912d9d6a4b2ae80f9154c",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/cosmic-armor.webp",
+      "bytes": 944813,
+      "sha256": "09904cc34ad382f5305d23f9c79efd8a7f125bd4fc9c79dd7a1ea8fd7afbee2f",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/cosmic-crown.webp",
+      "bytes": 702938,
+      "sha256": "f93a0ef45b86739ced9c7cf40e42eb1f7ddc2960f2c6ef16aab84de42653884d",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/cosmic-gauntlet.webp",
+      "bytes": 733843,
+      "sha256": "4529a28d6f3f5e3ed2697921c43dea139be2ea0acb5359d6af65459028812586",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/cosmic-mask.webp",
+      "bytes": 693592,
+      "sha256": "bc4f57e2b04acfc8882f0e83338509af4851fa2f066d21ffb61fb8ce722bb069",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/cosmic-shard.webp",
+      "bytes": 792964,
+      "sha256": "d052017e74baf502918f7a256c6e0d12a9381103a21cf7701fafb8faa50a2ce4",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/cosmic-tome.webp",
+      "bytes": 781717,
+      "sha256": "3485b31b6c9cb63babad12a1dac70c5906e7e8423ba5da324e829dbe6020790a",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/cup-of-reincarnation.webp",
+      "bytes": 62712,
+      "sha256": "689d940654bc50aa2f352d1d9d166cfbf5321baedbb4d95595489868523077ea",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/dungeon-key-d.webp",
+      "bytes": 86984,
+      "sha256": "de7a5102b565c503d147f5eb705635eb4d02851d7b5d5febf74d768c9ad7d7e2",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/elixir-intelligence.webp",
+      "bytes": 111840,
+      "sha256": "cf2ecac9649f51dd7b3a042ae4fc99f9945483b30fc01a914bef5fb3855b93a7",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/elixir-strength.webp",
+      "bytes": 82796,
+      "sha256": "4ea6cb41454b3a4022317d66ce44d875638d4fd5f1168a60b7c7e4103e7ab416",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/elixir-vitality.webp",
+      "bytes": 136852,
+      "sha256": "ca6590d8686007e696609638649216b9c7490429a9a000d9503d40384a8cb961",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/elvenwood-fruit.webp",
+      "bytes": 87004,
+      "sha256": "669f479cf2d5796243ec007188ca0303007340fda8d404e7a72dc55d08072e47",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/essence-of-arise.webp",
+      "bytes": 53308,
+      "sha256": "5c65dc37ee1705cd4680a13ca40210325fa6b2c2c93c5ddd439d50e77b42b877",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/feet.webp",
+      "bytes": 59554,
+      "sha256": "1a1b367af4b44afae92f1ff77d83aec20d082998a7e4e2ba97e5b800b4d0faac",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/greater-mana-potion.webp",
+      "bytes": 68808,
+      "sha256": "6cb74317650808c3b7e849a44f292c1a6869126c25d00d091e3a14619f402b4e",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/hand-vecna.webp",
+      "bytes": 571337,
+      "sha256": "7f12685ab4ef4ba7206d94558d4c35147c46792bf62adc03e1f776a60ad26abe",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/hands.png",
+      "bytes": 696996,
+      "sha256": "a0f06ae3d0382b477d9c4a8c7790659ea27ac7e26bab94f34712b0b7f9c99597",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/head.webp",
+      "bytes": 49252,
+      "sha256": "51e69342de057272c627def05695d08fd2d6afbb62182638df69a991b235eae3",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/healing-potion-premium.webp",
+      "bytes": 67818,
+      "sha256": "27f3884d2b0dce4e20f16da9fff32a373ba2287e483f4852f866025c4d1edc00",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/healing-potion.webp",
+      "bytes": 65808,
+      "sha256": "90ce67a58bbc547014243769695fefa1b65995f58aed57bdd6efbca6ae9b0d50",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/holy-water-of-life.webp",
+      "bytes": 67648,
+      "sha256": "477ea7948cc4fa19767cd7f1ee8bb511859dccf6399f363470d561db7b507fff",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/ice-bears-robe.webp",
+      "bytes": 154316,
+      "sha256": "df1e029085b771fc94704c9da7026dfffa228014f53f7bdab83232536adb8cda",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/igriss-helmet.webp",
+      "bytes": 110344,
+      "sha256": "dc388eac7c13b98cc8400ad1f5bef72dfc33abb37d0324f2d51f01c2fa64dd08",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/iron-buckler.webp",
+      "bytes": 131848,
+      "sha256": "6f33e56bfcacdde249a094138da2e579a7bcb8d8c8be2da3805a25ea5b0b56c6",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/kamish-wrath.webp",
+      "bytes": 159894,
+      "sha256": "399a533412b738fc3569d3fc854ccccb464eda231945385c4e4db63d4ef1a1fc",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/kasaka-venom-pouch.webp",
+      "bytes": 91496,
+      "sha256": "0af4c78957ef886ee7fe42100815494ade0f93f9c640f70271c1891eb89e62a2",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/kasakas-venom-fang.webp",
+      "bytes": 57496,
+      "sha256": "b510aa7b7634c628c57cfa4a6e7fa75342e0def23713945a6d298ac0306438a3",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/key.webp",
+      "bytes": 57168,
+      "sha256": "93d84f00dad2c4daa54ecb52e33e3b33bfe8cdfe7b21f63567bb888ff8533ad7",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/leather-armor-premium.webp",
+      "bytes": 109550,
+      "sha256": "d1370e2f50cb29cc1e9f2d3bd7cbaabf46ca932874da7d784124c17bcde46a45",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/legs.webp",
+      "bytes": 68116,
+      "sha256": "61b80aedb9e46b08b33f473f4e9135edb870d45fda2af999d4317a40e688975b",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/mana-infused-coffee.webp",
+      "bytes": 14804,
+      "sha256": "d2a613e076428315f2af066909bdbc758b3d0b179af32f55fba361d63bf3b56c",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/mana-potion-premium.webp",
+      "bytes": 108342,
+      "sha256": "b4ed690df21465a5c5c775268d04b5e0b30169f4e295587e145b8d359802f148",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/offhand.webp",
+      "bytes": 72204,
+      "sha256": "c46f960c28abe820d7cec66f508ef9ef102a2078da74ef025756ba64ace728a5",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/potion-iron-body.webp",
+      "bytes": 115980,
+      "sha256": "1d0d4e6e2865f59377bd497db8899be5995c92a9f10e5a9f39679338c65b5370",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/premium-boots.webp",
+      "bytes": 97004,
+      "sha256": "cf2c042f1b6bc8ba1c31eaa5eeae79da8c6dd8b12e9979ba29881d9523ae0358",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/premium-pants.webp",
+      "bytes": 112372,
+      "sha256": "dd3977c3d91be1a8f95adafb1ec66ee6418b6626a1f228ab16af1cb20dc1c2cb",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/premium-ring.webp",
+      "bytes": 61520,
+      "sha256": "75708dca324d6983a29598283e9e2b942f594d2fe2a1fefdfef91bfdca779f65",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/purified-blood-demon-king.webp",
+      "bytes": 18400,
+      "sha256": "ba90e6ec7d4c86e372899a5db8d41342ce63ed4afe11815a4936d8af134ec80f",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/scroll-of-the-labyrinth.webp",
+      "bytes": 17166,
+      "sha256": "c2107022d777238d415f96ad43779149408d76ed5897269702e3757d44311ed8",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/shadow-monarch-crown.webp",
+      "bytes": 577517,
+      "sha256": "3393d5e529709d5573d9a91762a31475145a6a4da91f2c347997e0c294d217e9",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/shadow-monarch-scythe.webp",
+      "bytes": 133054,
+      "sha256": "a9a6821f649828179c047ef756897ebd60d834a4de8984036e4107e2bbeb0c3d",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/steel-sword-premium.webp",
+      "bytes": 53046,
+      "sha256": "99666a95938f55ad0647854f6f612b62b6f06cbf49e465cb2efa4a66ebe90a28",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/system-antidote.webp",
+      "bytes": 16540,
+      "sha256": "d40c4b9418e1a14903793af3521e2eb4defe09847acebcbf58428aba301fa56a",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/tiamat-fang.webp",
+      "bytes": 801762,
+      "sha256": "f0fa84b17f80fabd458fd1bccd439e4386d0d2dd7a9a6f0be979030117c7c8f2",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/void-dagger.webp",
+      "bytes": 790744,
+      "sha256": "b053f5d1685e629f9ee4bbe489071053cc2f8425c91289640e8b3d2de4b9dab1",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/vulcans-horn.webp",
+      "bytes": 102030,
+      "sha256": "f11dbf7c65e852e4a38e55c173edfa333a06db1e8795a639b5d81aed0d370ee1",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/wardens-necklace.webp",
+      "bytes": 120184,
+      "sha256": "3f89f005a3bf78ac39d31aae813602de08662b6307e390ece6d6b69018c99887",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/weapon.webp",
+      "bytes": 56954,
+      "sha256": "57ef0b34519acd62792cbb290aa63bcaf51f28fa9af404b82df735d144d946e3",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/wrath-antares.webp",
+      "bytes": 541822,
+      "sha256": "a5b4ee222ad68cc97466709bf6e087a19611fb16d61f24188d72b863dfddb463",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/items/xx-scythe.webp",
+      "bytes": 703955,
+      "sha256": "ca4ab2aa9c3c52e4d40f9482d47b5982c32fbf94db689cd170248b52ee275c9b",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/skills/algorithm.webp",
+      "bytes": 69800,
+      "sha256": "fe86e4f06cf6575449e15d6855c4bbd43ff3e08fc180d95fa1eed584eff95295",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/skills/bear-form.webp",
+      "bytes": 31978,
+      "sha256": "7fb8977da92a0502b9656a2a9fc0eba9f965a2b927329882a65c2b4d1e6c7a4a",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/skills/bloodlust.webp",
+      "bytes": 31094,
+      "sha256": "018e6e5e714086d314c93f0250c8a80535bafec33f83624a18827b5cd723b3d7",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/skills/coding.webp",
+      "bytes": 53522,
+      "sha256": "c54cfff16b6dc6772e09751e411efee956c8711c9043cd2778e481a5dbb28c81",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/skills/critical-strike.webp",
+      "bytes": 33662,
+      "sha256": "68cef472fd76ce3dcb30052650e2c66a4fb3bac797e6b3726090c3f0a660be97",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/skills/curse-of-agony.webp",
+      "bytes": 29274,
+      "sha256": "e3aee0f24ed10be8716c30710b2ddfbc3a7a2efc01f70cefe6b7c7cefc9a0796",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/skills/dagger-mastery.webp",
+      "bytes": 37966,
+      "sha256": "7e973c497832b45f1c709e9f671947dc33fc71639c6cada7900b184fb9722620",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/skills/deep-work.webp",
+      "bytes": 29792,
+      "sha256": "92c475a850d0ec74bad71a89c5a022d87fe7831c888eb5341255f40a93b627a0",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/skills/dominator-touch.webp",
+      "bytes": 38396,
+      "sha256": "eba3ea4726f759b1583dd77171222559783b9870136911475437c458e6615ae7",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/skills/endurance.webp",
+      "bytes": 33316,
+      "sha256": "e82324527f6ebbdf155f3c8015fb24f6a0a10418c61bee137b9c1470c3c60425",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/skills/entangling-roots.webp",
+      "bytes": 36896,
+      "sha256": "79bca23f925d35657aa2f8ca886fc239313f253d41a9727c86c62d67bf6ef539",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/skills/fireball.webp",
+      "bytes": 36038,
+      "sha256": "d7885dc9b837d5467744e55a7d59a5daab7ad1df6852fa553c841f78aeade114",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/skills/flow-state.webp",
+      "bytes": 51852,
+      "sha256": "358134de2b1bd39d384bfd97c722cc881856441b4c5d33afb2db28b77be0ee9f",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/skills/focus.webp",
+      "bytes": 41672,
+      "sha256": "1b4b37a46e2b2a030039a2921b97a80a45986fe7175d11e25b0abe5eb1617071",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/skills/holy-light.webp",
+      "bytes": 26672,
+      "sha256": "3c0d43cddb3fdb01d1c603f7bd0e0d57af38e45dfed4a665689a01ea61a07e06",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/skills/iron-body.webp",
+      "bytes": 48598,
+      "sha256": "04f796bdf85bb94ad08b46ab5a84e808e08e60ab971103783f507a65af11bae7",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/skills/iron-fist.webp",
+      "bytes": 40260,
+      "sha256": "6058332f67d0c93df8018168c09ea841782f122d764589b65a5fede2573b30bb",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/skills/iron-skin.webp",
+      "bytes": 64990,
+      "sha256": "a8180eb6ed03543aaa3266941ba7ee430674317215ab25f2002a59cbf49efa84",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/skills/iron-will.webp",
+      "bytes": 37116,
+      "sha256": "7e79829e5e0c91cd751613ad475e8d08d8f30d1e33d1c3858d1f3d3f41da90d2",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/skills/longevity.webp",
+      "bytes": 57794,
+      "sha256": "3f3aad84a343972393d29afbc0786fc8c19e6abc757d50d550cd347409674d8b",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/skills/mana-shield.webp",
+      "bytes": 62554,
+      "sha256": "cd56e99d4d039dcf85bd54e5eabb538c0300d3877fbb05f26b636817648cb7c7",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/skills/meditation.webp",
+      "bytes": 32400,
+      "sha256": "fb503ca6e2f19c4ae1fa15ecd8b6c34f735d36009ef29f493d5bbb79dee3eb20",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/skills/monarch-domain.webp",
+      "bytes": 38500,
+      "sha256": "3364ebc996fc3c12f4646c91970d1421d9a3f2b8045e672e7a309ea0ed5e4256",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/skills/mutilate.webp",
+      "bytes": 30080,
+      "sha256": "2d9c27aa1ce33be76c56e4978b92f6a137b5f98388bdfe760609fb40f8a22f1f",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/skills/purification.webp",
+      "bytes": 46930,
+      "sha256": "0fbd1d62944bb913646d4f9fcbbe68fb0c8be12009759d8416876d60d8bc9959",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/skills/quick-silver.webp",
+      "bytes": 30930,
+      "sha256": "f94c0d07c5db1aed12e1c99e6af7b8db6bc4837cd388e136a5dca2cf64974093",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/skills/recovery.webp",
+      "bytes": 42322,
+      "sha256": "c4f36c443aeafb94b0625efea377ffb7290fbba917974f11706394b67f9def7d",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/skills/sense.webp",
+      "bytes": 33508,
+      "sha256": "3fba92d30a4662444a14f7e6d800bee9f802b45fb5edde527d0e197cd9d3f160",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/skills/shadow-extraction.webp",
+      "bytes": 38972,
+      "sha256": "ac9351dfdc9623dab11cd1a3c00a3d815f1dee8f747f86aaa2a2712fe2262bbc",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/skills/shadows-step.webp",
+      "bytes": 38590,
+      "sha256": "31358e43ef07dc6aa81c3979e48103eedb9590be9cd82fc0c74b9c6ed0974be9",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/skills/sprint.webp",
+      "bytes": 24866,
+      "sha256": "d53cbd74f2994318714d8917e1c33a452d28fa9551f800e8bef05db155392747",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/skills/stealth.webp",
+      "bytes": 16886,
+      "sha256": "77cd69f0416190f627208fe1de6180857c593098caded1e3461aadc47cb4f025",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/skills/system-design.webp",
+      "bytes": 45614,
+      "sha256": "dbe4c704f4944b38f8e2b39634f13852fac4634eb7ae4a14ca679af99ee87c5a",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/skills/taunt.webp",
+      "bytes": 35724,
+      "sha256": "d677600561e30158aa94ecc6c4f580310100e34b316ea913f2b029e125c2c7c7",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/skills/time-blocking.webp",
+      "bytes": 38338,
+      "sha256": "a96b00edf60221057cc67c5c3609ad9bf43d38602e2180922960327b42c43102",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/skills/ultimate-awakening.webp",
+      "bytes": 85218,
+      "sha256": "7c69e87adebe06af8f511f1c3234cbaf3c9a364174ae7e19b60f2a0abed2b448",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/skills/vital-strike.webp",
+      "bytes": 36994,
+      "sha256": "a128b18d8f3f12d361037f1857c253c2fc41f678761155f5ccd285e61b7c6ac9",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/zones/fantasya.webp",
+      "bytes": 20472,
+      "sha256": "a37ba094a11dd228f44c8b9de8d0859a914550100f6b9b15df50c8d51c164f92",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/zones/home.webp",
+      "bytes": 11750,
+      "sha256": "dc20b0e13f6b43840378df26b9636f35d59449868269d1b7b025634fef70b012",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/zones/library.webp",
+      "bytes": 16558,
+      "sha256": "17418f0b16c1f5623cff565f91ffcefb819655d5df9a140cbbcbb8350507928f",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/zones/sanctuary.webp",
+      "bytes": 17560,
+      "sha256": "d902fa53b54fd33d847fc9521e93452bbcae9c3c016b70314eeb50f62019fe36",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/zones/training.webp",
+      "bytes": 15930,
+      "sha256": "d39d7f448d125b26d140e9b8c6768ce0bdd3a702ccbc8e2781adf71732f21c0d",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "public/zones/work.webp",
+      "bytes": 14764,
+      "sha256": "0ee2216a376fd4c18b1ded24ac12c06e2af78712112b57ea5a62ac101c1fb41c",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    },
+    {
+      "path": "src/app/favicon.ico",
+      "bytes": 25931,
+      "sha256": "2b8ad2d33455a8f736fc3a8ebf8f0bdea8848ad4c0db48a2833bd0f9cd775932",
+      "source": "owner-generated locally with SDXL 1.0; text-only prompts; no reference images (2026-10-12)",
+      "license": "CC0-1.0",
+      "review": "approved"
+    }
+  ],
+  "missingCatalogImageReferences": []
+}

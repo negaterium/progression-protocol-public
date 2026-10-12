@@ -1,0 +1,23 @@
+[Unit]
+Description=Progression Protocol
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=sls
+Group=sls
+WorkingDirectory=/srv/progression-protocol/current
+Environment=NODE_ENV=production
+# Adjust npm to the installed Node.js 22 runtime's absolute path.
+ExecStart=/usr/bin/npm run start -- --hostname 127.0.0.1
+Restart=on-failure
+RestartSec=5
+KillMode=control-group
+TimeoutStopSec=30
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

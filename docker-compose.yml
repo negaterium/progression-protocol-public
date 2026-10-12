@@ -1,0 +1,31 @@
+services:
+  app:
+    container_name: progression-protocol-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "9999:9999"
+    environment:
+      # Compose interpolates this service before every command, including `build`.
+      # Copy .env.docker.example to .env before using `docker compose`.
+      # Database Connection (External)
+      - POSTGRES_HOST=${POSTGRES_HOST:?Set POSTGRES_HOST}
+      - POSTGRES_PORT=${POSTGRES_PORT:-5432}
+      - POSTGRES_USER=${POSTGRES_USER:?Set POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD}
+      - POSTGRES_DATABASE=${POSTGRES_DATABASE:-progression_protocol}
+      # Next.js Settings
+      - NODE_ENV=production
+      - SLS_ENABLE_DEV_AUTH=false
+      - SLS_DEVELOPER_USER_IDS=${SLS_DEVELOPER_USER_IDS:-}
+      - SLS_TRUST_PROXY_HEADERS=${SLS_TRUST_PROXY_HEADERS:-false}
+      - USE_SECURE_COOKIES=${USE_SECURE_COOKIES:-true}
+      - PORT=9999
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

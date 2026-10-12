@@ -1,0 +1,23 @@
+{
+  "format": 1,
+  "version": "001_baseline",
+  "postgresMajor": 17,
+  "schemaSha256": "a83a149517952cadc750c43ce1121c471275bbb73c446e9ffa64c9dfabd64641",
+  "catalogsSha256": "482bda1bc72824e7eab083cc7165aab8ecbdb29303f551cfdddca22c7a3eebeb",
+  "counts": {
+    "zones": 6,
+    "items": 195,
+    "bosses": 29,
+    "boss_objectives": 0,
+    "skills": 38,
+    "achievements": 77,
+    "titles": 47,
+    "quests": 116
+  },
+  "review": {
+    "playerDataExcluded": true,
+    "catalogCreationTimestampsNormalized": true,
+    "ownershipAndGrantsExcluded": true,
+    "assetRightsReviewPending": true
+  }
+}
