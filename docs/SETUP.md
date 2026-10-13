@@ -22,7 +22,7 @@ files and database unchanged; the fresh initializer is not an upgrade tool.
 Clone your chosen repository URL into a new directory, then install the lockfile:
 
 ```sh
-git clone https://github.com/negaterium/progression-protocol.git progression-protocol
+git clone https://github.com/negaterium/progression-protocol-public.git progression-protocol
 cd progression-protocol
 npm ci
 ```

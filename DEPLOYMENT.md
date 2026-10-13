@@ -27,7 +27,7 @@ localhost-published ports; see [Docker port publishing](https://docs.docker.com/
 Clone an explicitly chosen release tag/commit into a fresh directory:
 
 ```sh
-git clone https://github.com/negaterium/progression-protocol.git progression-protocol
+git clone https://github.com/negaterium/progression-protocol-public.git progression-protocol
 cd progression-protocol
 git checkout <reviewed-release-tag-or-commit>
 npm ci
