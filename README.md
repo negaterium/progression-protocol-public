@@ -51,23 +51,23 @@ for the display-permission and fan-project context.
 ## 🌟 Capabilities
 
 ### 🛡️ Hunter Dashboard
-- **Real-Time Analytics & HUD:** A highly responsive persistent sidebar and vitals strip that instantly syncs Combat Damage, Mana expenditure, and XP gains globally without server latency.
-- **Leveling Engine:** Track seamless 3-year progression from Level 1 through a sprawling endgame (Level 999) with specialized Job Classes (Necromancer, Fighter, Mage, Assassin, and more).
-- **Vitals Processing (HP/MP):** Manage life balance through an active **Mana (MP)** pool that is expended as you execute tasks, and **HP** that degrades if you fail obligations.
+- **Server-Backed HUD:** A persistent sidebar and vitals strip show current HP/MP, XP, Gold, combat stats, active boss state and recent rewards. Mutating server actions revalidate the dashboard views.
+- **Leveling Engine:** Track progression from Level 1 through the Level 999 transcendence threshold and into post-cap systems with specialized Job Classes (Necromancer, Fighter, Mage, Assassin, and more).
+- **Vitals Processing (HP/MP):** Manage life balance through an active **Mana (MP)** pool that is spent when you execute tasks, while failed obligations apply the configured HP penalties.
 
 ### 📅 Productivity Hub
-- **Habit Tracking:** Custom, recurring routine management (Daily, Weekly, Monthly) that mathematically tracks your consistency over 90+ days.
-- **Streak Protection (Shadow Observer):** Advanced retroactive time-tracking mechanics that allow you to sync missed daily tasks when offline, preserving your momentum.
-- **Persistent Mission Log:** A retro-futuristic terminal interface that securely archives every task and milestone you've ever achieved.
-- **Seamless Integrations:** Group related tasks into thematic "Zones" (e.g., *Sanctuary* for rest, *Work Sector* for career).
+- **Habit Tracking:** Custom, recurring routine management (Daily, Weekly, Monthly) with completion history and streak tracking.
+- **Streak Protection (Shadow Observer):** Bounded offline recovery accepts eligible dates from the previous 90 days (up to 90 dates per request) and removes the matching penalty effects.
+- **Persistent Mission Log:** A retro-futuristic terminal interface stores quest completion logs. The dashboard displays the latest 1,000 entries and the total recorded count.
+- **Zone Organization:** Group related tasks into thematic "Zones" (e.g., *Sanctuary* for rest, *Work Sector* for career).
 
 ### ⚔️ The Living Arsenal — Dynamic Item Scaling
-Equipment in the System is *alive*. Every piece of gear automatically scales its combat stats to match your current Hunter level, ensuring no item ever becomes permanently obsolete.
+Equipment scaling is applied to selected positive numeric attributes in the Store and Inventory projections, effective-stat calculations, and dashboard summaries. Consumables, dungeon keys, boolean and percentage effects, and other utility values remain at their stored values. The current boss-combat round also receives some direct weapon and special equipment fields in raw form, so the implementation is a bounded scaling system rather than a guarantee that every item remains competitive forever.
 
 - **Formula:** `scaleFactor = min(1 + level/25, rankCeiling)`
-- **Rank Ceilings:** Each rarity tier has a hard power ceiling (E-Rank caps at ×5, S-Rank at ×250), preserving the value of higher-tier loot drops.
-- **Visual Indicators:** Items display their current multiplier in the Store and Inventory (e.g., `[×5.0]`), so you always know earned power vs. base value.
-- **Scalable Attributes:** Only combat-relevant stats are affected (Strength, Agility, Damage, Defense, Intelligence, etc.). Utility effects (dungeon keys, XP bonuses) remain at base.
+- **Rank Ceilings:** Each equipment rarity has a hard power ceiling, preserving the value of higher-tier loot drops.
+- **Visual Indicators:** Store and Inventory entries display the current multiplier when level scaling applies (for example, `[×5.0]`), so you can compare current power with the stored base value.
+- **Scalable Attributes:** The current list includes Strength, Agility, Intelligence, Vitality, Perception, Damage, Defense, HP/MP flats, Armor Penetration, Luck, Charisma, Focus and Willpower. Special flags, utility effects and non-positive values are not scaled.
 
 | Rank | Power Ceiling | Hits Cap At Level |
 |------|--------------|-------------------|
@@ -77,36 +77,56 @@ Equipment in the System is *alive*. Every piece of gear automatically scales its
 | B | ×50 | Level 1,225 |
 | A | ×100 | Level 2,475 |
 | S | ×250 | Level 6,225 |
+| S+ | ×500 | Level 12,475 |
+| XX | ×1,000 | Level 24,975 |
+| COSMIC | ×9,999 | Level 249,950 |
+
+The cap levels above are derived from the formula. An unknown or missing item
+rank uses the E-rank ceiling in the current implementation.
 
 ### ⛩️ Progression & Automation
 - **The Shadow Army:** Specialized mechanics for the Necromancer class (unlocked at Level 40). Manage both **Infantry** (randomly extracted from dungeon runs) and **Elite Commanders** (extracted from defeated Bosses). Dispatch shadows to passively chip at Boss HP while you rest, or spend Infantry on Active *Siege Delegations* for massive burst damage.
-- **Elite Command Limit:** The number of simultaneously summoned Boss Shadows is capped by a formula: `1 + floor((level - 40) / 20) + floor(intelligence / 500)`. Exceed the limit and newly extracted elites are auto-stored.
+- **Elite Command Limit:** The number of simultaneously summoned Boss Shadows is capped by `1 + floor(max(0, level - 40) / 20) + floor(intelligence / 500)`. Exceed the limit and newly extracted elites are auto-stored.
 - **Beru's Delegation Buff:** Having the *Ant King (Beru)* summoned reduces delegation Infantry cost and duration by a percentage tied to Beru's level (capped at 90% reduction).
 - **Auto-Sell System:** Configurable automatic liquidation of low-rank loot (E/D/C-Rank armor, weapons, accessories) upon Boss defeat, keeping the inventory clean.
-- **Boss Raids:** Unique combat encounters with level-based prerequisites. Dynamic scaling ensures bosses always represent a meaningful challenge regardless of your current level.
-- **Inventory & Loot:** Earn scaling equipment drops, consumable potions, rare boss keys, and Quality Rolls (COMMON → PERFECT tiers with bonus affixes).
+- **Boss Raids:** Unique combat encounters with level-based prerequisites. Boss HP and attack scale from rank and player level within rank-specific caps; actual encounter duration depends on player damage, equipment, skills and quest cadence.
+- **Inventory & Loot:** Earn scaling equipment drops, consumable potions, rare boss keys, and Quality Rolls from COMMON through SUPERIOR, LEGENDARY, PERFECT, TRANSCENDENT and COSMIC tiers, with bonus affixes where eligible.
 
 ---
 
 ## 🐉 Boss Combat System
 
-Bosses spawn with HP calculated from your current level to ensure fights always last an appropriate number of days — never trivially short, never impossibly long.
+When a boss battle starts, its maximum HP is calculated from the boss rank,
+player level, the catalogued database HP and post-cap status. The result is a
+balance formula; it does not promise a fixed number of days per encounter.
 
-**HP Formula:** `scaledHP = baseHP × min(linearMult × scalingMult, rankCap)`
+**HP Formula:**
+`scaledHP = floor(baseHP × min(1 + level/20, rankScalingCap))`
 
-| Rank | Base HP | Target Duration (Lv 130+) |
-|------|---------|--------------------------|
-| E | 600 | < 1 hour |
-| D | 2,000 | < 4 hours |
-| C | 6,000 | < 1 day |
-| B | 20,000 | ~1 day |
-| A | 50,000 | ~2 days |
-| S | 180,000 | ~3 days |
-| S+ | 400,000 | ~5 days |
-| XX | 800,000 | ~8 days |
-| COSMIC | 12,000,000 | ~21 days (fixed) |
+The encounter stores `max(databaseHP or 1,000, scaledHP)`. Non-COSMIC bosses
+receive a 2× post-cap multiplier for Level 999+ players; COSMIC bosses do not
+receive that extra multiplier.
 
-**Necromancer Shadow Army:** Passive presence deals ~0.8% boss HP per quest completion (levelMult capped at ×1.5 for passive mode). Active siege delegations remain uncapped — reward intentional effort.
+| Rank | Formula Base HP | Scaling Cap |
+|------|----------------:|-------------:|
+| E | 250 | ×25 |
+| D | 600 | ×60 |
+| C | 1,000 | ×120 |
+| B | 2,200 | ×400 |
+| A | 3,600 | ×1,500 |
+| S | 16,000 | ×20 |
+| S+ | 24,000 | ×40 |
+| XX | 33,000 | ×100 |
+| COSMIC | 5,000,000 | ×9,999 |
+
+Boss attack uses the same level-and-cap pattern, then player defense applies the
+`100 / (100 + DEF)` mitigation curve. High-rank encounters add minimum-damage
+rules and a bounded per-hit damage cap.
+
+**Necromancer Shadow Army:** Passive presence contributes up to
+`maxHP × 0.008 × armyCapacityRatio × min(levelMultiplier, 1.5)` per quest
+completion. An active siege uses a larger `maxHP × 0.10` base contribution and
+its own level multiplier capped at ×2.5; it is stronger, but it is not uncapped.
 
 ---
 
@@ -122,18 +142,18 @@ The System uses a **session-based authentication** model backed directly by Post
 
 ## 🛠️ Tech Stack & Architecture
 
-Progression Protocol is optimized for seamless deployment to dedicated hardware or isolated VPS environments.
+Progression Protocol is designed for deployment to dedicated hardware or isolated VPS environments.
 
 - **Frontend & Backend Framework:** [Next.js 16](https://nextjs.org/) (App Router, Server Actions)
 - **Language:** [TypeScript](https://www.typescriptlang.org/)
-- **Database:** [PostgreSQL](https://www.postgresql.org/) (handled via raw `pg` client for max efficiency)
+- **Database:** [PostgreSQL](https://www.postgresql.org/) (accessed through the `pg` client)
 - **Styling:** [Tailwind CSS](https://tailwindcss.com/)
 - **Icons:** Lucide React
 
 ### Architecture Highlights
-- **Zero-Layout Shift Rendering:** The dashboard executes critical data fetching securely server-side before finalizing the render, removing the "flash" of blank content.
-- **AI-Agent Standards (`AGENTS.md`):** The repository maintains strict guidelines, bounds, and protocols formatted specifically for AI pair programmers to seamlessly contribute without breaking database integrity protocols.
-- **Server-Side Dynamic Scaling:** All item and boss scaling calculations occur server-side before reaching the UI — no client-side stat manipulation.
+- **Server-First Rendering:** The dashboard fetches critical player data on the server before rendering. Client transitions still depend on the application and database response time.
+- **AI-Agent Standards (`AGENTS.md`):** The repository documents strict contribution boundaries for AI pair programmers, including database integrity requirements.
+- **Server-Side Dynamic Scaling:** Item and boss scaling formulas run on the server and the UI receives server-provided values. Some direct weapon and special equipment inputs in the current boss-combat path remain stored/raw values, as described in the Living Arsenal section.
 
 ---
 
@@ -225,8 +245,10 @@ and rebuild existing deployments from the locked package files.
 
 Original project code is licensed under the [MIT License](LICENSE).
 Retained generated visual assets are released under [CC0 1.0](docs/ASSET_LICENSE.md)
-to the extent that the project owner controls applicable rights. Reference
-screenshots, private preparation binaries and third-party material remain excluded.
+to the extent that the project owner controls applicable rights. Project
+screenshots captured from the running project are included under the display
+permission described in [the screenshot notes](docs/screenshots/README.md);
+private preparation binaries and third-party material remain excluded.
 See [asset review](docs/ASSET_REVIEW.md) and [licensing scope](docs/LICENSING.md).
 Passing CI verifies software integrity; it does not clear franchise names, lore,
 characters or trademarks.

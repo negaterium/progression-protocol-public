@@ -1,6 +1,6 @@
 {
   "format": 1,
-  "sourceCommit": "041b04540ca2ed93296bdaa77a553083df8f6853",
+  "sourceCommit": "721e0f7ae68a6458d92b9196d605d2afd22ec016",
   "files": [
     {
       "path": ".dockerignore",
@@ -78,6 +78,11 @@
       "sha256": "f35ea8d77edefccc99c73409e5b9782daa91cbd5e02cf15d9bdf82e40188588b"
     },
     {
+      "path": "CHANGELOG.md",
+      "bytes": 1195,
+      "sha256": "ae104c4e0b6a061f02743fd31b043e8e8da755107e447dbdde22d544ed50abaa"
+    },
+    {
       "path": "CODE_OF_CONDUCT.md",
       "bytes": 773,
       "sha256": "53a5b97956c730fd2656743c9e316a0c97369dd7da1266e439ce8e2842b49bad"
@@ -89,8 +94,8 @@
     },
     {
       "path": "DEPLOYMENT.md",
-      "bytes": 21027,
-      "sha256": "55c61724a7b4e31d87ae9b918bb3bf4f5216cde017831d1137c7c3a6a827dc58"
+      "bytes": 21034,
+      "sha256": "21086fcbe0656bf828916187a49239d77586dacbce2c3faa4562b63427979d8d"
     },
     {
       "path": "Dockerfile",
@@ -104,8 +109,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 12442,
-      "sha256": "a01db59a43fd2758c1312eb5bc7ac4f7ff6b6184cbfbb6dfee159dfef731ba01"
+      "bytes": 15898,
+      "sha256": "9c202653dc1fa411bd98d640bc7a6d1812a6f7ad9e2cf0ea9976e70600c751a4"
     },
     {
       "path": "SECURITY.md",
@@ -184,13 +189,13 @@
     },
     {
       "path": "docs/ASSET_LICENSE.md",
-      "bytes": 1544,
-      "sha256": "59d3ff2c8e67f997ca2f7bf39bc200e8585ac75db0a77bfacf5f24c464be1288"
+      "bytes": 1969,
+      "sha256": "d180c417fc560c62b5d49d9a854172a07fe3e64161f1f88faf686e294e6d0086"
     },
     {
       "path": "docs/ASSET_REVIEW.md",
-      "bytes": 4475,
-      "sha256": "a40b0d370963be80675dda80a98df3ca58c14613d1e4795d5420ae66873a8d0a"
+      "bytes": 4924,
+      "sha256": "d9b93c4856cfba3efcd3eabb3048f8683e164ada04effff378c90ba02fff48e1"
     },
     {
       "path": "docs/FAN_PROJECT_NOTICE.md",
@@ -214,13 +219,13 @@
     },
     {
       "path": "docs/RELEASE_CHECKLIST.md",
-      "bytes": 4209,
-      "sha256": "913281d5b8360fe672e54f7df33bbda0679d810e79cff653b11b3fb04984fa36"
+      "bytes": 4259,
+      "sha256": "9afcadbe53602698c644481d4d9e7a15a7a93a819a4cd950ba46457476f2f444"
     },
     {
       "path": "docs/SETUP.md",
-      "bytes": 12619,
-      "sha256": "03a96482d7567422a0ae45fd099fe493aa6aedd5c04286af32e92eededb61d8e"
+      "bytes": 12626,
+      "sha256": "9d71fc897efac2d67de94026b69ac9d9ae7da277259f09581cea3bfe4b7551b3"
     },
     {
       "path": "docs/SKILL_AUDIT.md",
@@ -239,8 +244,53 @@
     },
     {
       "path": "docs/asset-manifest.json",
-      "bytes": 53828,
-      "sha256": "357311b021c0621c49b20cabae3569e775f2b581325e97c352dc32681df7c6e8"
+      "bytes": 57522,
+      "sha256": "d0a0bcaf44d8d0eb80a7809da7e56abd3c8e9256cf485639fd6e673a9f4e05f9"
+    },
+    {
+      "path": "docs/screenshots/BOSSES.png",
+      "bytes": 3436266,
+      "sha256": "95f9307c966d6ba0ad4685e59601c9e416d2191328be1c4cb52f5a88356e226d"
+    },
+    {
+      "path": "docs/screenshots/HABITS.png",
+      "bytes": 396491,
+      "sha256": "8b1db2ab1f27ecd1b784ffc7226a7705caede1905a4b83c57554be287b8878f8"
+    },
+    {
+      "path": "docs/screenshots/INVENTORY.png",
+      "bytes": 1162199,
+      "sha256": "e5447163d96d06595d78bf483cbe408c27302ec2093e79c6bd8ba5ee5ad548b8"
+    },
+    {
+      "path": "docs/screenshots/PROFILE.png",
+      "bytes": 755993,
+      "sha256": "0bf5a9521fe1519beab1a32b9cecb8c04e78da833493174c29bf487ee439914a"
+    },
+    {
+      "path": "docs/screenshots/QUESTS.png",
+      "bytes": 1273263,
+      "sha256": "7ca23ef797685760a1b3e73456ec062e5b421e25bb8d82bb917a25b6e9097c4e"
+    },
+    {
+      "path": "docs/screenshots/README.md",
+      "bytes": 1139,
+      "sha256": "bfbb7c4926704b72fca2fdf8292500deb58b313db20171f912ce2a357ab90af6"
+    },
+    {
+      "path": "docs/screenshots/SKILLS.png",
+      "bytes": 931492,
+      "sha256": "58265b84cda3c390f57122f39ccba11a463891b54aeb7d1bcfbb37cb9b9ed176"
+    },
+    {
+      "path": "docs/screenshots/STATUS.png",
+      "bytes": 460455,
+      "sha256": "0e43450d7bbc1cf26e8764d5b53cab18f7cc833117f2531e379f1e000ec0aa87"
+    },
+    {
+      "path": "docs/screenshots/STORE.png",
+      "bytes": 928514,
+      "sha256": "1e7942ed8eaea3a86ea8479ce05d7231cad9a0b8e2ac4f5c1d8b539bac94350f"
     },
     {
       "path": "eslint.config.mjs",
