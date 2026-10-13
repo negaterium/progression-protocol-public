@@ -3,6 +3,70 @@
   "scope": "public release assets",
   "assets": [
     {
+      "path": "docs/screenshots/BOSSES.png",
+      "bytes": 3436266,
+      "sha256": "95f9307c966d6ba0ad4685e59601c9e416d2191328be1c4cb52f5a88356e226d",
+      "source": "owner-captured Progression Protocol UI screenshot from the local application (2026-10-13); no credentials, secrets or database export visible",
+      "license": "Project display permission; underlying code and visual assets follow repository notices",
+      "review": "approved"
+    },
+    {
+      "path": "docs/screenshots/HABITS.png",
+      "bytes": 396491,
+      "sha256": "8b1db2ab1f27ecd1b784ffc7226a7705caede1905a4b83c57554be287b8878f8",
+      "source": "owner-captured Progression Protocol UI screenshot from the local application (2026-10-13); no credentials, secrets or database export visible",
+      "license": "Project display permission; underlying code and visual assets follow repository notices",
+      "review": "approved"
+    },
+    {
+      "path": "docs/screenshots/INVENTORY.png",
+      "bytes": 1162199,
+      "sha256": "e5447163d96d06595d78bf483cbe408c27302ec2093e79c6bd8ba5ee5ad548b8",
+      "source": "owner-captured Progression Protocol UI screenshot from the local application (2026-10-13); no credentials, secrets or database export visible",
+      "license": "Project display permission; underlying code and visual assets follow repository notices",
+      "review": "approved"
+    },
+    {
+      "path": "docs/screenshots/PROFILE.png",
+      "bytes": 755993,
+      "sha256": "0bf5a9521fe1519beab1a32b9cecb8c04e78da833493174c29bf487ee439914a",
+      "source": "owner-captured Progression Protocol UI screenshot from the local application (2026-10-13); no credentials, secrets or database export visible",
+      "license": "Project display permission; underlying code and visual assets follow repository notices",
+      "review": "approved"
+    },
+    {
+      "path": "docs/screenshots/QUESTS.png",
+      "bytes": 1273263,
+      "sha256": "7ca23ef797685760a1b3e73456ec062e5b421e25bb8d82bb917a25b6e9097c4e",
+      "source": "owner-captured Progression Protocol UI screenshot from the local application (2026-10-13); no credentials, secrets or database export visible",
+      "license": "Project display permission; underlying code and visual assets follow repository notices",
+      "review": "approved"
+    },
+    {
+      "path": "docs/screenshots/SKILLS.png",
+      "bytes": 931492,
+      "sha256": "58265b84cda3c390f57122f39ccba11a463891b54aeb7d1bcfbb37cb9b9ed176",
+      "source": "owner-captured Progression Protocol UI screenshot from the local application (2026-10-13); no credentials, secrets or database export visible",
+      "license": "Project display permission; underlying code and visual assets follow repository notices",
+      "review": "approved"
+    },
+    {
+      "path": "docs/screenshots/STATUS.png",
+      "bytes": 460455,
+      "sha256": "0e43450d7bbc1cf26e8764d5b53cab18f7cc833117f2531e379f1e000ec0aa87",
+      "source": "owner-captured Progression Protocol UI screenshot from the local application (2026-10-13); no credentials, secrets or database export visible",
+      "license": "Project display permission; underlying code and visual assets follow repository notices",
+      "review": "approved"
+    },
+    {
+      "path": "docs/screenshots/STORE.png",
+      "bytes": 928514,
+      "sha256": "1e7942ed8eaea3a86ea8479ce05d7231cad9a0b8e2ac4f5c1d8b539bac94350f",
+      "source": "owner-captured Progression Protocol UI screenshot from the local application (2026-10-13); no credentials, secrets or database export visible",
+      "license": "Project display permission; underlying code and visual assets follow repository notices",
+      "review": "approved"
+    },
+    {
       "path": "public/achievements/combat.png",
       "bytes": 963486,
       "sha256": "5d7da506de48e8bf179f0cec677f6674a24a73ae47c43d36bba59650f908d571",

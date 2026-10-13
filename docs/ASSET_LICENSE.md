@@ -24,3 +24,10 @@ branding are reviewed separately under [LICENSING.md](LICENSING.md).
 
 The 29 private preparation binaries under `src/resources` are intentionally omitted
 from the public export and are not covered by this notice.
+
+The eight owner-captured PNGs under `docs/screenshots` are included as project
+showcase material with display permission. They contain no database export,
+credentials, secrets or private deployment configuration. This permission is
+limited to displaying the captures with the project; it does not grant additional
+rights to third-party names, characters, lore, logos or trademarks represented in
+the unofficial fan project.

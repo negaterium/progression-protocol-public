@@ -21,6 +21,33 @@ maintainer does not intend to monetize it. See the complete
 
 ---
 
+## Screenshots
+
+The captures below show the main areas of the running interface. Select any
+image to open the original full-resolution PNG, or see the [screenshot notes](docs/screenshots/README.md)
+for the display-permission and fan-project context.
+
+<table>
+  <tr>
+    <td align="center"><strong>Status</strong><br><a href="docs/screenshots/STATUS.png"><img src="docs/screenshots/STATUS.png" alt="Progression Protocol status dashboard" width="480"></a></td>
+    <td align="center"><strong>Profile</strong><br><a href="docs/screenshots/PROFILE.png"><img src="docs/screenshots/PROFILE.png" alt="Progression Protocol hunter profile" width="480"></a></td>
+  </tr>
+  <tr>
+    <td align="center"><strong>Quests</strong><br><a href="docs/screenshots/QUESTS.png"><img src="docs/screenshots/QUESTS.png" alt="Progression Protocol quests page" width="480"></a></td>
+    <td align="center"><strong>Bosses</strong><br><a href="docs/screenshots/BOSSES.png"><img src="docs/screenshots/BOSSES.png" alt="Progression Protocol bosses page" width="480"></a></td>
+  </tr>
+  <tr>
+    <td align="center"><strong>Skills</strong><br><a href="docs/screenshots/SKILLS.png"><img src="docs/screenshots/SKILLS.png" alt="Progression Protocol skills page" width="480"></a></td>
+    <td align="center"><strong>Habits</strong><br><a href="docs/screenshots/HABITS.png"><img src="docs/screenshots/HABITS.png" alt="Progression Protocol habits page" width="480"></a></td>
+  </tr>
+  <tr>
+    <td align="center"><strong>Inventory</strong><br><a href="docs/screenshots/INVENTORY.png"><img src="docs/screenshots/INVENTORY.png" alt="Progression Protocol inventory page" width="480"></a></td>
+    <td align="center"><strong>Store</strong><br><a href="docs/screenshots/STORE.png"><img src="docs/screenshots/STORE.png" alt="Progression Protocol store page" width="480"></a></td>
+  </tr>
+</table>
+
+---
+
 ## 🌟 Capabilities
 
 ### 🛡️ Hunter Dashboard
@@ -120,7 +147,7 @@ Progression Protocol is optimized for seamless deployment to dedicated hardware 
 
 1. **Clone the repository**
     ```bash
-    git clone https://github.com/negaterium/progression-protocol.git progression-protocol
+    git clone https://github.com/negaterium/progression-protocol-public.git progression-protocol
     cd progression-protocol
     ```
 

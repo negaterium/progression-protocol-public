@@ -12,10 +12,12 @@ not clear third-party names, characters, lore, trademarks or other branding.
 
 ## Recorded inventory
 
-[asset-manifest.json](asset-manifest.json) records 190 tracked assets with byte
-sizes and SHA-256 fingerprints: 160 served files under `public` (about 34.5 MiB)
-and 30 other binaries (339,703,248 bytes). The latter include the favicon,
-high-resolution boss PNG originals and five reference screenshots in `src/resources`.
+[asset-manifest.json](asset-manifest.json) records 198 tracked assets with byte
+sizes and SHA-256 fingerprints: 160 served files under `public` (about 34.5 MiB),
+30 other private-preparation binaries, and eight owner-captured display
+screenshots under `docs/screenshots/`. The private-preparation binaries include
+the favicon, high-resolution boss PNG originals and five reference screenshots in
+`src/resources`.
 SVG fingerprints use canonical LF text so Windows CRLF conversion does not change
 their recorded content; image binaries are checked byte for byte.
 No application/script references to `src/resources` were found in the initial scan.
@@ -37,6 +39,12 @@ were used according to the owner's statement. Keep personal creator contact deta
 and private correspondence out of the repository. The model notice and asset license
 are recorded in [ASSET_LICENSE.md](ASSET_LICENSE.md) and
 [THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md).
+
+The eight `docs/screenshots` captures are separate owner-provided showcase assets.
+They are approved for repository display and contain no credentials, secrets,
+database export or deployment configuration. Their display permission does not
+extend the rights granted for third-party-inspired names, characters, lore or
+trademarks visible in the fan project.
 
 Possible release decisions for future changes are: retain with documented
 permission/notices, replace with original cleared artwork, or omit from the public
