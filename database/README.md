@@ -26,6 +26,7 @@ database reachability, version and app-table permissions using read-only queries
 
 ```sh
 npm run db:init -- --target-database YOUR_EMPTY_DATABASE --confirm --env-file .env.local
+npm run db:migrate -- --target-database YOUR_EMPTY_DATABASE --confirm --env-file .env.local
 npm run db:create-user -- hunter --target-database YOUR_EMPTY_DATABASE --env-file .env.local
 ```
 
@@ -76,6 +77,35 @@ earlier catalog snapshot, and `003_clear_missing_item_images.sql`, which removes
 six stale image URLs from existing item rows after those seed references were
 cleared. Fresh installs may apply both harmlessly; later releases add their own
 numbered files.
+
+`004_boss_bounty_balance.sql` is required by the boss balance release, including
+on fresh installs after `db:init`. It adds the per-player earned XP ledger,
+idempotent participation/victory events and encounter version/completion fields.
+Existing active encounters retain version 1 and their original HP and full
+rewards. Defeated history receives completion/reward timestamps without changing
+player XP, gold, keys or loot. No migration runs automatically on startup.
+Back up the database, preview the pending list, apply the migration, and then
+deploy the matching app build. Roll back the app before considering schema
+rollback; do not discard earned bounty rows. See [boss balance](../docs/BOSS_BALANCE.md).
+
+### Existing databases without a packaged baseline marker
+
+For an older working database, do not run `db:init` to create a marker. The
+boss release provides a narrow opt-in path for **only** migration 004:
+
+```sh
+npm run db:migrate -- --target-database YOUR_DATABASE --env-file .env.local --legacy-boss-balance --check
+# After a verified backup and review of the successful preflight:
+npm run db:migrate -- --target-database YOUR_DATABASE --env-file .env.local --legacy-boss-balance --confirm
+```
+
+The preflight verifies required legacy column types and unique IDs. Check mode
+creates nothing. Apply mode installs only the boss feature and records its
+checksum in `sls_feature_migrations`; it never claims that the packaged baseline
+or migrations 002/003 were installed. Changed checksums and untracked partial
+feature schemas are rejected. Existing active HP and player XP are preserved.
+This is not a general-purpose baseline adoption mechanism. Databases with the
+packaged baseline marker must use the normal numbered migration path instead.
 Do not edit an applied baseline or use the historical ad hoc scripts as an
 installer. Verify a database backup before upgrades.
 

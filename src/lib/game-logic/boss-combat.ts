@@ -77,6 +77,15 @@ export interface BossCombatResult {
     updatedStatusEffects?: StatusEffect[];
 }
 
+/** Optional evaluator for offline experiments. Gameplay callers use the default rules. */
+export type BossOutgoingDamageResolver = (damage: {
+    uncappedDirect: number;
+    summon: number;
+    levelMultiplier: number;
+    maxHp: number;
+    difficulty: string;
+}) => { direct: number; summon: number };
+
 
 
 const LORE_ATK_OVERRIDES: Array<{ match: string; atk: number }> = [
@@ -94,7 +103,8 @@ const LORE_ATK_OVERRIDES: Array<{ match: string; atk: number }> = [
  * and computes — keeping the logic pure and testable.
  */
 export async function calculateBossCombatRound(
-    input: BossCombatInput
+    input: BossCombatInput,
+    resolveOutgoingDamage?: BossOutgoingDamageResolver
 ): Promise<BossCombatResult> {
     const {
         userId, questId, questDifficulty, activeEncounter,
@@ -198,6 +208,7 @@ export async function calculateBossCombatRound(
     }
 
     actualDealt = Math.floor(actualDealt * rankMultiplier * levelMult);
+    const uncappedDirect = actualDealt;
 
     // Damage cap
     const LOSS_LIMIT: Record<string, number> = {
@@ -212,12 +223,12 @@ export async function calculateBossCombatRound(
 
     // Life Drain heals from the player's direct attack after encounter scaling
     // and safety caps, before any separate shadow-army damage is added.
-    const directDamageDealt = actualDealt;
+    let directDamageDealt = actualDealt;
     const lifeDrainPercent = Math.min(
         0.20,
         Math.max(0, Number(modifiers['life_drain_percent']) || 0)
     );
-    const playerHealing = applyHealingReceivedBonus(directDamageDealt * lifeDrainPercent, modifiers);
+    let playerHealing = applyHealingReceivedBonus(directDamageDealt * lifeDrainPercent, modifiers);
 
     // Shadow army damage
     let summonDamage = 0;
@@ -248,6 +259,18 @@ export async function calculateBossCombatRound(
         }
         summonDamage = Math.floor(summonDamage * (1 + shadowArmyDamagePercent));
         actualDealt += summonDamage;
+    }
+
+    if (resolveOutgoingDamage) {
+        const resolved = resolveOutgoingDamage({ uncappedDirect, summon: summonDamage, levelMultiplier: levelMult,
+            maxHp: activeEncounter.max_hp, difficulty: questDifficulty });
+        if (![resolved.direct, resolved.summon].every(value => Number.isFinite(value) && value >= 0)) {
+            throw new Error('Invalid outgoing combat evaluation');
+        }
+        directDamageDealt = Math.floor(resolved.direct);
+        summonDamage = Math.floor(resolved.summon);
+        actualDealt = directDamageDealt + summonDamage;
+        playerHealing = applyHealingReceivedBonus(directDamageDealt * lifeDrainPercent, modifiers);
     }
 
     const newBossHp = Math.max(0, activeEncounter.current_hp - actualDealt);

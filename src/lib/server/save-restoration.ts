@@ -12,6 +12,7 @@ export const saveDataSchema = z.object({
     quest_logs: rows.default([]), user_skills: rows.default([]),
     user_achievements: rows.default([]), user_titles: rows.default([]),
     active_encounters: rows.default([]), quests: rows.optional(),
+    boss_bounty_ledgers: rows.max(1).default([]), boss_bounty_events: rows.default([]),
 }).strict();
 
 type SaveData = z.infer<typeof saveDataSchema>;
@@ -27,19 +28,31 @@ const insertStatements = {
     user_achievements: 'INSERT INTO user_achievements SELECT * FROM jsonb_populate_recordset(NULL::user_achievements, $1::jsonb)',
     user_titles: 'INSERT INTO user_titles SELECT * FROM jsonb_populate_recordset(NULL::user_titles, $1::jsonb)',
     active_encounters: 'INSERT INTO active_encounters SELECT * FROM jsonb_populate_recordset(NULL::active_encounters, $1::jsonb)',
+    boss_bounty_ledgers: 'INSERT INTO boss_bounty_ledgers SELECT * FROM jsonb_populate_recordset(NULL::boss_bounty_ledgers, $1::jsonb)',
+    boss_bounty_events: `INSERT INTO boss_bounty_events (user_id, source_key, encounter_id, quest_id, kind, xp_base, earned_micros, created_at)
+        SELECT user_id, source_key, encounter_id, quest_id, kind, xp_base, earned_micros, created_at
+        FROM jsonb_populate_recordset(NULL::boss_bounty_events, $1::jsonb)`,
 } as const;
 
 export async function restoreSave(userId: string, input: unknown): Promise<void> {
     const data = saveDataSchema.parse(input);
+    // Pre-migration saves have no balance snapshot; preserve them as legacy fights.
+    data.active_encounters = data.active_encounters.map(row => ({ ...row, balance_version: row.balance_version ?? 1,
+        completed_at: row.completed_at ?? (row.status === 'DEFEATED' ? row.last_updated ?? row.created_at : null),
+        rewarded_at: row.rewarded_at ?? (row.status === 'DEFEATED' ? row.last_updated ?? row.created_at : null) }));
     if (Buffer.byteLength(JSON.stringify(data), 'utf8') > 5 * 1024 * 1024) throw new Error('Save exceeds 5 MiB.');
     if (data.profiles[0].id !== userId) throw new Error('This save belongs to a different user.');
     for (const [table, records] of Object.entries(data)) {
         if (table === 'profiles' || !records) continue;
         if (records.some(row => row.user_id !== userId)) throw new Error('Save contains rows belonging to another user.');
     }
-    const questIds = [...new Set([...data.user_quests, ...data.quest_logs]
+    const questIds = [...new Set([...data.user_quests, ...data.quest_logs, ...data.boss_bounty_events]
         .map(row => row.quest_id).filter(id => id != null))];
     z.array(z.string().uuid()).parse(questIds);
+    const encounterIds = new Set(data.active_encounters.map(row => row.id));
+    if (data.boss_bounty_events.some(row => row.encounter_id != null && !encounterIds.has(row.encounter_id))) {
+        throw new Error('Save references a missing encounter.');
+    }
 
     await db.transaction(async client => {
         const profile = await client.query('SELECT id FROM profiles WHERE id = $1 FOR UPDATE', [userId]);
@@ -79,12 +92,16 @@ export async function restoreSave(userId: string, input: unknown): Promise<void>
                 'user_skills', (SELECT COALESCE(jsonb_agg(s), '[]') FROM user_skills s WHERE user_id = $1),
                 'user_achievements', (SELECT COALESCE(jsonb_agg(a), '[]') FROM user_achievements a WHERE user_id = $1),
                 'user_titles', (SELECT COALESCE(jsonb_agg(t), '[]') FROM user_titles t WHERE user_id = $1),
-                'active_encounters', (SELECT COALESCE(jsonb_agg(e), '[]') FROM active_encounters e WHERE user_id = $1)
+                'active_encounters', (SELECT COALESCE(jsonb_agg(e), '[]') FROM active_encounters e WHERE user_id = $1),
+                'boss_bounty_ledgers', (SELECT COALESCE(jsonb_agg(l), '[]') FROM boss_bounty_ledgers l WHERE user_id = $1),
+                'boss_bounty_events', (SELECT COALESCE(jsonb_agg(e), '[]') FROM boss_bounty_events e WHERE user_id = $1)
             ), 'MANUAL', NOW()`, [userId]);
         await client.query(`DELETE FROM user_backups WHERE user_id = $1 AND id NOT IN (
             SELECT id FROM user_backups WHERE user_id = $1 ORDER BY created_at DESC, id DESC LIMIT 7
         )`, [userId]);
 
+        await client.query('DELETE FROM boss_bounty_events WHERE user_id = $1', [userId]);
+        await client.query('DELETE FROM boss_bounty_ledgers WHERE user_id = $1', [userId]);
         await client.query('DELETE FROM active_encounters WHERE user_id = $1', [userId]);
         await client.query('DELETE FROM user_titles WHERE user_id = $1', [userId]);
         await client.query('DELETE FROM user_achievements WHERE user_id = $1', [userId]);

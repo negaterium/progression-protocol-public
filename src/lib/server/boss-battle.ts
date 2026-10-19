@@ -4,6 +4,7 @@ import { gameDb as db, withGameTransaction } from "./game-db";
 import { RANK_LEVELS, getBossKeySuffix } from "@/lib/system/rank-constants";
 import { calculateBossMaxHP, isPostCap } from "@/lib/system/formula";
 import { calculateBossCooldown } from "@/lib/game-logic/boss-cooldowns";
+import { BOSS_BALANCE_VERSION } from '@/lib/game-logic/boss-balance-policy';
 
 type BossProgressionRecord = {
     id: string;
@@ -173,10 +174,10 @@ export async function startBossBattle(user: AuthenticatedUser, bossId: string, k
 
 
         const { rows: newEncounters } = await db.query(`
-            INSERT INTO active_encounters (user_id, boss_id, current_hp, max_hp, status, streak_bonus)
-            VALUES ($1, $2, $3, $4, 'ACTIVE', 0)
+            INSERT INTO active_encounters (user_id, boss_id, current_hp, max_hp, status, streak_bonus, balance_version, is_first_clear)
+            VALUES ($1, $2, $3, $4, 'ACTIVE', 0, $5, $6)
             RETURNING *
-        `, [user.id, boss.id, finalMaxHP, finalMaxHP]);
+        `, [user.id, boss.id, finalMaxHP, finalMaxHP, BOSS_BALANCE_VERSION, !lastDefeat]);
 
         const newEncounter = newEncounters[0];
 

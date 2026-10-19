@@ -5,7 +5,8 @@
     "scripts/database/**/*.ts",
     "scripts/setup/**/*.ts",
     "scripts/deployment/**/*.ts",
-    "scripts/lib/**/*.ts"
+    "scripts/lib/**/*.ts",
+    "scripts/simulation/**/*.ts"
   ],
   "exclude": ["node_modules", "scratch"]
 }

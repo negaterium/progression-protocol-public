@@ -7,25 +7,17 @@ import { rollItemQuality, applyQualityToEffect } from "@/lib/game-logic/item-rol
 import { BOSS_LOOT_TABLE } from "@/lib/game-logic/boss-loot";
 import { logTransaction } from "./audit";
 import { AchievementManager } from "@/lib/achievement-manager";
+import { BOSS_BALANCE_VERSION, BOSS_RANK_REWARDS, isBossBountyEligible, getBossRepeatRewardScale } from '@/lib/game-logic/boss-balance-policy';
+import { withdrawBossBounty } from './boss-bounty';
 
-export const RANK_REWARDS: Record<string, { xp: number, gold: number }> = {
-    "E": { xp: 100, gold: 200 },
-    "D": { xp: 250, gold: 500 },
-    "C": { xp: 500, gold: 1000 },
-    "B": { xp: 1000, gold: 5000 },
-    "A": { xp: 2500, gold: 20000 },
-    "S": { xp: 5000, gold: 100000 },
-    "S+": { xp: 10000, gold: 500000 },   // Monarchs
-    "XX": { xp: 20000, gold: 1000000 }, // Gods
-    "COSMIC": { xp: 100000, gold: 5000000 }, // Cosmic Entities — Post-999 Only
-};
+export const RANK_REWARDS = BOSS_RANK_REWARDS;
 
 export async function awardBossRewards(user: AuthenticatedUser, bossId: string, encounterId?: string) {
     const userId = user.id;
     return withGameTransaction(userId, async () => {
-        const encounter = await db.queryOne<{ id: string }>(
-            `SELECT id FROM active_encounters WHERE user_id = $1 AND boss_id = $2
-             AND status = 'ACTIVE' AND current_hp <= 0 AND ($3::text IS NULL OR id::text = $3) FOR UPDATE`,
+        const encounter = await db.queryOne<{ id: string; balance_version?: number; is_first_clear?: boolean }>(
+            `SELECT id, balance_version, is_first_clear FROM active_encounters WHERE user_id = $1 AND boss_id = $2
+             AND status = 'ACTIVE' AND current_hp <= 0 AND rewarded_at IS NULL AND ($3::text IS NULL OR id::text = $3) FOR UPDATE`,
             [userId, bossId, encounterId || null]
         );
         if (!encounter) throw new Error("No defeated active encounter available for rewards.");
@@ -42,6 +34,9 @@ export async function awardBossRewards(user: AuthenticatedUser, bossId: string, 
         const autoSellJunk = profile?.auto_sell_junk || false;
         const playerIsPostCap = isPostCap(level);
         const isCosmicBoss = (boss.rank as string) === 'COSMIC';
+        const isRepeat = encounter.balance_version === BOSS_BALANCE_VERSION && encounter.is_first_clear === false;
+        const rewardScale = isRepeat ? getBossRepeatRewardScale(boss.rank) : 1;
+        const usesBounty = isRepeat && isBossBountyEligible(boss);
 
         // 3. Determine Dynamic Rewards
         const baseRewards = RANK_REWARDS[boss.rank as string] || RANK_REWARDS['C'];
@@ -51,7 +46,8 @@ export async function awardBossRewards(user: AuthenticatedUser, bossId: string, 
 
         // POST-999 MECHANIC: Quest XP doubles when player is at/above level cap
         const postCapXpMult = playerIsPostCap ? 2.0 : 1.0;
-        const finalXp = Math.floor(baseRewards.xp * multiplier * postCapXpMult);
+        const finalXp = usesBounty ? await withdrawBossBounty(userId, encounter.id)
+            : Math.floor(baseRewards.xp * multiplier * postCapXpMult * rewardScale);
 
         if (playerIsPostCap) {
             console.log(`[Boss Rewards] POST-CAP: 2x XP applied. Final XP: ${finalXp}`);
@@ -64,7 +60,7 @@ export async function awardBossRewards(user: AuthenticatedUser, bossId: string, 
             WHERE inv.user_id = $1 AND inv.equipped = true
         `, [userId]);
         const goldBonusMult = eqRes.rows.reduce((mult, e) => mult * (1 + (e.effect?.gold_bonus || 0)), 1);
-        let finalGold = Math.floor(baseRewards.gold * multiplier * goldBonusMult);
+        let finalGold = Math.floor(baseRewards.gold * multiplier * goldBonusMult * rewardScale);
 
         console.log(`[Boss Rewards] User Level ${level} -> Multiplier ${multiplier.toFixed(2)}x. XP: ${baseRewards.xp} -> ${finalXp}`);
 
@@ -73,7 +69,7 @@ export async function awardBossRewards(user: AuthenticatedUser, bossId: string, 
         const droppedItems: Record<string, unknown>[] = [];
 
         for (const entry of lootTable) {
-            if (Math.random() <= entry.chance) {
+            if (Math.random() < entry.chance * rewardScale) {
                 let item = await db.queryOne<any>("SELECT * FROM items WHERE name = $1", [entry.itemName]);
 
                 if (item) {
@@ -290,8 +286,8 @@ export async function awardBossRewards(user: AuthenticatedUser, bossId: string, 
         }
 
         // 7. Award XP
-        await awardXp(userId, finalXp);
-        await db.query("UPDATE active_encounters SET status = 'DEFEATED' WHERE id = $1", [encounter.id]);
+        if (finalXp > 0) await awardXp(userId, finalXp);
+        await db.query("UPDATE active_encounters SET status = 'DEFEATED', completed_at = clock_timestamp(), rewarded_at = clock_timestamp() WHERE id = $1", [encounter.id]);
 
         // Trigger Achievement Check (Boss Kill)
         try {
@@ -306,7 +302,7 @@ export async function awardBossRewards(user: AuthenticatedUser, bossId: string, 
         try {
             // Dynamic import to avoid circular dependency
             const { extractShadow } = await import("./shadow-extraction");
-            const shadowRes = await extractShadow(user, { bossId, source: 'BOSS' });
+            const shadowRes = Math.random() < rewardScale ? await extractShadow(user, { bossId, source: 'BOSS' }) : null;
 
             console.log(`[Shadow Extraction] Result for Boss ${boss.name}:`, shadowRes);
 
@@ -321,7 +317,7 @@ export async function awardBossRewards(user: AuthenticatedUser, bossId: string, 
         }
 
         // AUDIT LOG
-        await logTransaction(userId, "BOSS_DEFEAT", { xp: finalXp, gold: finalGold }, { bossId, bossName: boss.name, base_xp: baseRewards.xp, multiplier });
+        await logTransaction(userId, "BOSS_DEFEAT", { xp: finalXp, gold: finalGold }, { bossId, bossName: boss.name, base_xp: baseRewards.xp, multiplier, rewardScale, usesBounty });
 
         return {
             xp: finalXp,

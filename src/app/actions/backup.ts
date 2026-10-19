@@ -3,7 +3,7 @@
 import { z } from "zod";
 import { safeAction } from "@/lib/action-utils";
 import { revalidatePath } from "next/cache";
-import db from "@/lib/db";
+import { gameDb as db, withGameTransaction } from '@/lib/server/game-db';
 import { restoreSave, saveDataSchema } from "@/lib/server/save-restoration";
 
 const backupQueries = {
@@ -17,43 +17,46 @@ const backupQueries = {
     user_achievements: 'SELECT * FROM user_achievements WHERE user_id = $1',
     user_titles: 'SELECT * FROM user_titles WHERE user_id = $1',
     active_encounters: 'SELECT * FROM active_encounters WHERE user_id = $1',
+    boss_bounty_ledgers: 'SELECT * FROM boss_bounty_ledgers WHERE user_id = $1',
+    boss_bounty_events: 'SELECT * FROM boss_bounty_events WHERE user_id = $1',
 };
 
 export async function createDailyBackupAction(type: 'DAILY' | 'MANUAL' = 'DAILY') {
     return safeAction(z.enum(['DAILY', 'MANUAL']), type, async (backupType) => {
         const { getAuthenticatedUser } = await import("@/lib/auth-utils");
         const user = await getAuthenticatedUser();
+        return withGameTransaction(user.id, async () => {
+            console.log(`Creating ${type} Backup for User: ${user.id}`);
 
-        console.log(`Creating ${type} Backup for User: ${user.id}`);
+            const backupData: Record<string, any[]> = {};
 
-        const backupData: Record<string, any[]> = {};
+            // Fetch data from all tables
+            for (const [table, query] of Object.entries(backupQueries)) {
+                const { rows } = await db.query(query, [user.id]);
+                backupData[table] = rows;
+            }
 
-        // Fetch data from all tables
-        for (const [table, query] of Object.entries(backupQueries)) {
-            const { rows } = await db.query(query, [user.id]);
-            backupData[table] = rows;
-        }
+            // Store in user_backups
+            await db.query(`
+                INSERT INTO user_backups (user_id, backup_data, type, created_at)
+                VALUES ($1, $2, $3, NOW())
+            `, [user.id, JSON.stringify(backupData), backupType]);
 
-        // Store in user_backups
-        await db.query(`
-            INSERT INTO user_backups (user_id, backup_data, type, created_at)
-            VALUES ($1, $2, $3, NOW())
-        `, [user.id, JSON.stringify(backupData), backupType]);
+            // Pruning: Keep last 7 backups total (Daily or Manual)
+            await db.query(`
+                DELETE FROM user_backups
+                WHERE user_id = $1
+                AND id NOT IN (
+                    SELECT id FROM user_backups
+                    WHERE user_id = $1
+                    ORDER BY created_at DESC
+                    LIMIT 7
+                )
+            `, [user.id]);
 
-        // Pruning: Keep last 7 backups total (Daily or Manual)
-        await db.query(`
-            DELETE FROM user_backups 
-            WHERE user_id = $1 
-            AND id NOT IN (
-                SELECT id FROM user_backups 
-                WHERE user_id = $1 
-                ORDER BY created_at DESC 
-                LIMIT 7
-            )
-        `, [user.id]);
-
-        revalidatePath("/dashboard/profile");
-        return { success: true };
+            revalidatePath("/dashboard/profile");
+            return { success: true };
+        });
     });
 }
 
@@ -113,17 +116,19 @@ export async function exportUserDataAction() {
     return safeAction(z.void(), undefined, async () => {
         const { getAuthenticatedUser } = await import("@/lib/auth-utils");
         const user = await getAuthenticatedUser();
+        return withGameTransaction(user.id, async () => {
 
-        console.log(`Exporting Data for User: ${user.id}`);
+            console.log(`Exporting Data for User: ${user.id}`);
 
-        const backupData: Record<string, any[]> = {};
+            const backupData: Record<string, any[]> = {};
 
-        // Fetch data from all tables
-        for (const [table, query] of Object.entries(backupQueries)) {
-            const { rows } = await db.query(query, [user.id]);
-            backupData[table] = rows;
-        }
+            // Fetch data from all tables
+            for (const [table, query] of Object.entries(backupQueries)) {
+                const { rows } = await db.query(query, [user.id]);
+                backupData[table] = rows;
+            }
 
-        return { data: backupData };
+            return { data: backupData };
+        });
     });
 }

@@ -28,6 +28,8 @@ interface ActionTabsProps {
         initialInventory: any[];
         initialKeys: any[];
         storeDiscount: number;
+        bounty: import('@/lib/server/boss-bounty').BossBountySummary;
+        initialServerNow: string;
     };
 }
 

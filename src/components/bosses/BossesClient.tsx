@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useTransition, useMemo } from "react";
+import { useEffect, useState, useTransition, useMemo, useRef } from "react";
 import { Skull, Crown, Eye, Sword, ArrowUpCircle, Ghost, ShieldAlert, SignalHigh, Sparkles, ShoppingBag, Coins } from "lucide-react";
 import { startBossBattleAction } from "@/app/actions/bosses";
 import { purchaseItemAction } from "@/app/actions/store";
@@ -11,6 +11,8 @@ import { Database } from "@/types/database.types";
 import { getAbilityIntel, getResistanceIntel, getWeaknessIntel, IntelMetadata } from "@/lib/game-logic/boss-intel-metadata";
 import { calculateBossMaxHP } from "@/lib/system/formula";
 import { getBossKeySuffix } from "@/lib/system/rank-constants";
+import { BossBountyPanel } from './BossBountyPanel';
+import type { BossBountySummary } from '@/lib/server/boss-bounty';
 
 type Boss = Database['public']['Tables']['bosses']['Row'] & {
     intel?: {
@@ -49,6 +51,8 @@ interface BossesClientProps {
     initialInventory: InventoryItem[];
     initialKeys: any[];
     storeDiscount: number;
+    bounty: BossBountySummary;
+    initialServerNow: string;
 }
 
 export function BossesClient({ 
@@ -58,9 +62,22 @@ export function BossesClient({
     initialUserGold,
     initialInventory,
     initialKeys,
-    storeDiscount
+    storeDiscount,
+    bounty,
+    initialServerNow
 }: BossesClientProps) {
     const router = useRouter();
+    const [nowMs, setNowMs] = useState(() => new Date(initialServerNow).getTime());
+    const allowanceDay = useRef(initialServerNow.slice(0, 10));
+    useEffect(() => {
+        const timer = setInterval(() => {
+            const now = new Date();
+            setNowMs(now.getTime());
+            const day = now.toISOString().slice(0, 10);
+            if (day !== allowanceDay.current) { allowanceDay.current = day; router.refresh(); }
+        }, 1000);
+        return () => clearInterval(timer);
+    }, [router]);
 
     // Compute User-Specific Boss Statuses
     const isPostCap = initialUserLevel >= 999;
@@ -191,6 +208,8 @@ export function BossesClient({
                 </div>
             </header>
 
+            <div className="mb-6"><BossBountyPanel bounty={bounty} /></div>
+            <p className="mb-4 text-xs text-slate-400">Gate cooldowns reset at 00:00 UTC, measured from the day the encounter started.</p>
             {/* Tabs Navigation */}
             <div className="flex flex-wrap gap-2 mb-8">
                 {phases.map((phase) => (
@@ -238,6 +257,7 @@ export function BossesClient({
                                         onBattle={() => handleBattle(boss.id)}
                                         onPurchaseKey={handlePurchaseKey}
                                         isPending={isPending}
+                                        nowMs={nowMs}
                                     />
                                 ))}
                             </div>
@@ -285,7 +305,8 @@ function BossCard({
     onViewIntel, 
     onBattle, 
     onPurchaseKey, 
-    isPending 
+    isPending,
+    nowMs
 }: { 
     boss: Boss, 
     userLevel: number, 
@@ -295,7 +316,8 @@ function BossCard({
     onViewIntel: (b: Boss) => void, 
     onBattle: () => void, 
     onPurchaseKey: (itemId: number) => void, 
-    isPending: boolean 
+    isPending: boolean,
+    nowMs: number
 }) {
     const isLevelMet = userLevel >= (boss.required_level || 1);
     const isDbUnlocked = boss.status !== 'LOCKED';
@@ -328,7 +350,7 @@ function BossCard({
 
     const rankStyle = getRankColor(rank);
 
-    const cooldown = calculateBossCooldown(boss.last_defeated_at, rank);
+    const cooldown = calculateBossCooldown(boss.last_defeated_at, rank, new Date(nowMs));
     const isReady = cooldown.isReady;
 
     const borderColor = isDefeated ? (isReady ? "border-green-500 shadow-[0_0_10px_rgba(34,197,94,0.2)]" : "border-green-800") : (isUnlocked ? "border-red-900/50 hover:border-red-500" : "border-slate-800 opacity-75");
@@ -469,7 +491,7 @@ function BossCard({
                                     EXECUTED
                                 </span>
                                 {boss.last_defeated_at && (
-                                    <CountdownTimer lastDefeatedAt={boss.last_defeated_at} rank={rank} />
+                                    <CountdownTimer lastDefeatedAt={boss.last_defeated_at} rank={rank} nowMs={nowMs} />
                                 )}
                             </div>
                         )}
@@ -681,28 +703,10 @@ function BossIntelModal({ boss, userLevel, onClose }: { boss: Boss, userLevel: n
     );
 }
 
-function CountdownTimer({ lastDefeatedAt, rank }: { lastDefeatedAt: string, rank: string }) {
-    const [timeLeft, setTimeLeft] = useState("");
-
-    useEffect(() => {
-        const calculateTime = () => {
-            const cooldown = calculateBossCooldown(lastDefeatedAt, rank);
-
-            if (cooldown.isReady) {
-                setTimeLeft("READY");
-                return;
-            }
-
-            if (cooldown.d > 0) setTimeLeft(`${cooldown.d}d ${cooldown.h}h`);
-            else setTimeLeft(`${cooldown.h}h ${cooldown.m}m`);
-        };
-
-        calculateTime();
-        const interval = setInterval(calculateTime, 60000);
-        return () => clearInterval(interval);
-    }, [lastDefeatedAt, rank]);
-
-    if (timeLeft === "READY") return <span className="text-[10px] text-green-400 font-mono animate-pulse">GATE OPEN</span>;
+function CountdownTimer({ lastDefeatedAt, rank, nowMs }: { lastDefeatedAt: string, rank: string, nowMs: number }) {
+    const cooldown = calculateBossCooldown(lastDefeatedAt, rank, new Date(nowMs));
+    const timeLeft = cooldown.d > 0 ? `${cooldown.d}d ${cooldown.h}h` : `${cooldown.h}h ${cooldown.m}m`;
+    if (cooldown.isReady) return <span className="text-[10px] text-green-400 font-mono animate-pulse">GATE OPEN</span>;
 
     return (
         <span className="text-[10px] text-slate-500 font-mono">

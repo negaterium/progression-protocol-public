@@ -1,28 +1,17 @@
-import { addDays, startOfDay, differenceInMilliseconds } from 'date-fns';
+import { CURRENT_BOSS_COOLDOWNS, normalizeBossRank } from './boss-balance-policy';
 
-export const BOSS_COOLDOWNS: Record<string, number> = {
-    'E': 1,
-    'C': 2,
-    'D': 3,
-    'B': 4,
-    'A': 5,
-    'S': 7,
-    'S+': 14,
-    'XX': 30,
-    'COSMIC': 60,  // Cosmic bosses reset every 2 months — these are events
-};
+export const BOSS_COOLDOWNS = CURRENT_BOSS_COOLDOWNS;
 
-export function calculateBossCooldown(lastDefeatedAt: string | Date | undefined, rank: string) {
+export function calculateBossCooldown(lastDefeatedAt: string | Date | undefined, rank: string, now = new Date()) {
     if (!lastDefeatedAt) {
         return { isReady: true, timeLeftMs: 0, h: 0, m: 0, d: 0 };
     }
 
-    const rankKey = rank === 'COSMIC' ? 'COSMIC' : (rank === 'S+' || rank === 'XX' ? rank : (rank.includes('S') ? 'S' : rank.charAt(0)));
+    const rankKey = normalizeBossRank(rank);
     // Default to 1 day if rank not found
     const cooldownDays = BOSS_COOLDOWNS[rankKey] || 1;
 
     const lastRun = new Date(lastDefeatedAt);
-    const now = new Date();
 
     // Logic: Reset happens at 00:00 (Midnight) after X days
     // If defeated today at 15:00, and cooldown is 1 day.
@@ -34,8 +23,10 @@ export function calculateBossCooldown(lastDefeatedAt: string | Date | undefined,
     // Add 1 Day: 2024-01-02 00:00.
     // Result: Resets at midnight the next day.
 
-    const resetDate = addDays(startOfDay(lastRun), cooldownDays);
-    const diff = differenceInMilliseconds(resetDate, now);
+    // Keep the historical encounter-start origin; use UTC midnight in every runtime.
+    const resetDate = new Date(Date.UTC(lastRun.getUTCFullYear(), lastRun.getUTCMonth(), lastRun.getUTCDate() + cooldownDays));
+    const diff = resetDate.getTime() - now.getTime();
+    if (!Number.isFinite(diff)) throw new Error('Invalid boss cooldown timestamp');
 
     if (diff <= 0) {
         return { isReady: true, timeLeftMs: 0, h: 0, m: 0, d: 0 };

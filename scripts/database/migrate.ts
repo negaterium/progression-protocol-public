@@ -6,6 +6,7 @@ import { join } from 'node:path';
 import { Pool } from 'pg';
 import { databaseConfig } from './config';
 import { ConfigurationError } from '../../src/lib/server/environment';
+import { upgradeLegacyBossBalance } from './legacy-boss-balance';
 
 const MIGRATIONS_DIR = 'database/migrations';
 const BASELINE_VERSION = '001_baseline';
@@ -39,6 +40,7 @@ async function main() {
     const { values } = parseArgs({ options: {
         'env-file': { type: 'string' }, 'target-database': { type: 'string' },
         confirm: { type: 'boolean' }, check: { type: 'boolean' },
+        'legacy-boss-balance': { type: 'boolean' },
     } });
     const config = databaseConfig(values['env-file']);
     const target = values['target-database'];
@@ -64,7 +66,16 @@ async function main() {
         if (serverVersion < 170000) throw new Error('Upgrade migrations require PostgreSQL 17 or later.');
 
         const marker = (await client.query("SELECT to_regclass('public.sls_schema_migrations') AS marker")).rows[0].marker;
-        if (!marker) throw new Error('The baseline is not installed. Initialize a new database before applying upgrade migrations.');
+        if (!marker) {
+            if (!values['legacy-boss-balance']) throw new Error('The baseline marker is absent. Existing databases can preview the guarded boss-only upgrade with --legacy-boss-balance --check. Do not initialize an existing database.');
+            const feature = migrations.find(migration => migration.version === '004_boss_bounty_balance');
+            if (!feature) throw new Error('The reviewed boss-balance migration is missing.');
+            const message = await upgradeLegacyBossBalance(client, feature, confirmed);
+            await client.query('COMMIT');
+            console.log(message);
+            return;
+        }
+        if (values['legacy-boss-balance']) throw new Error('This database has the packaged baseline. Use the normal numbered migration path without --legacy-boss-balance.');
 
         const appliedRows = await client.query<{ version: string; checksum: string }>(
             'SELECT version, checksum FROM public.sls_schema_migrations ORDER BY version'

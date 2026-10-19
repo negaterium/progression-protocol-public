@@ -1,6 +1,7 @@
 import db from "@/lib/db";
 import { getAuthenticatedUser } from "@/lib/auth-utils";
 import { BossesClient } from "@/components/bosses/BossesClient";
+import { getBossBountySummary } from '@/lib/server/boss-bounty';
 
 export default async function BossesPage() {
     const user = await getAuthenticatedUser();
@@ -21,6 +22,7 @@ export default async function BossesPage() {
     ]);
 
     const userLevel = profile?.level || 1;
+    const bounty = await getBossBountySummary(user.id, userLevel);
     const userGold = profile?.gold_credits || 0;
     const bosses = bossesRows.rows || [];
     const history = historyRows.rows || [];
@@ -60,6 +62,8 @@ export default async function BossesPage() {
             initialInventory={mappedInventory}
             initialKeys={keyItems}
             storeDiscount={storeDiscount}
+            bounty={bounty}
+            initialServerNow={new Date().toISOString()}
         />
     );
 }

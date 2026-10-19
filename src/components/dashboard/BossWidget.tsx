@@ -7,6 +7,7 @@ import { Shield, Skull, Zap, Sword, Target, Flame, Droplets, Snowflake, Ghost, C
 import { StatusEffect } from "@/lib/game-logic/boss-ability-manager";
 import { createPortal } from "react-dom";
 import { getAbilityIntel, getResistanceIntel, getWeaknessIntel, IntelMetadata } from "@/lib/game-logic/boss-intel-metadata";
+import { BossBountyPanel } from '@/components/bosses/BossBountyPanel';
 
 interface IntelTooltipProps {
     children: React.ReactNode;
@@ -99,11 +100,12 @@ interface BossEncounter {
         xp: number;
         gold: number;
     };
+    bounty?: import('@/lib/server/boss-bounty').BossBountySummary | null;
 }
 
 export function BossWidget() {
     const [encounter, setEncounter] = useState<BossEncounter | null>(null);
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
     const [isIntelOpen, setIsIntelOpen] = useState(false);
     const [showDamage, setShowDamage] = useState(false);
     const [damageAmount, setDamageAmount] = useState(0);
@@ -116,8 +118,6 @@ export function BossWidget() {
     const fetchEncounter = useCallback(async (isInitial = false) => {
         try {
             // Only set loading if we don't have data yet to prevent flashing on updates
-            if(isInitial) setLoading(true);
-
             console.log('[BossWidget] Calling fetchActiveEncounterAction');
             const data = await fetchActiveEncounterAction();
             console.log('[BossWidget] Server Action returned:', data);
@@ -139,7 +139,8 @@ export function BossWidget() {
                     weaknesses: (data.boss as any)?.weaknesses,
                     resistances: (data.boss as any)?.resistances,
                     created_at: (data as any).created_at,
-                    potentialRewards: (data as any).potentialRewards
+                    potentialRewards: (data as any).potentialRewards,
+                    bounty: data.bounty
                 };
 
                 const currentLastHp = lastHpRef.current;
@@ -172,7 +173,7 @@ export function BossWidget() {
 
     useEffect(() => {
         // Initial fetch with loading state
-        fetchEncounter(true);
+        const initialFetch = setTimeout(() => { void fetchEncounter(true); }, 0);
 
         const handleUpdate = () => fetchEncounter(false);
         window.addEventListener('progression_protocol_update', handleUpdate);
@@ -226,6 +227,7 @@ export function BossWidget() {
         window.addEventListener('solo_boss_engaged', handleEngage);
 
         return () => {
+            clearTimeout(initialFetch);
             window.removeEventListener('progression_protocol_update', handleUpdate);
             window.removeEventListener('solo_boss_damage', handleDamage);
             window.removeEventListener('solo_boss_engaged', handleEngage);
@@ -340,12 +342,13 @@ export function BossWidget() {
                     </div>
                     {encounter.potentialRewards && (
                         <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs font-mono">
-                            <span className="text-slate-400">Rewards</span>
+                            <span className="text-slate-400">{encounter.bounty ? 'Banked victory XP' : 'Base rewards'}</span>
                             <span className="text-blue-400">+{encounter.potentialRewards.xp.toLocaleString()} XP</span>
                             <span className="text-yellow-400">+{encounter.potentialRewards.gold.toLocaleString()} G</span>
                             {encounter.streak_bonus > 0 && <span className="text-red-400">+{encounter.streak_bonus}% DMG</span>}
                         </div>
                     )}
+                    {encounter.bounty && <BossBountyPanel bounty={encounter.bounty} compact />}
                     {activeEffects.length > 0 && (
                         <div className="flex flex-wrap gap-2">
                             {activeEffects.map((effect, idx) => (

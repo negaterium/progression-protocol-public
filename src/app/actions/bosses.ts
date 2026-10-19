@@ -9,6 +9,8 @@ import { getDeveloperUser } from "@/lib/server/admin-auth";
 import { safeAction } from "@/lib/action-utils";
 import { z } from "zod";
 import { calculateGlobalRewardMultiplier } from "@/lib/system/formula";
+import { BOSS_BALANCE_VERSION, getBossRepeatRewardScale, isBossBountyEligible } from '@/lib/game-logic/boss-balance-policy';
+import { getBossBountySummary } from '@/lib/server/boss-bounty';
 
 export async function startBossBattleAction(input: { bossId: string }) {
     return safeAction(z.object({ bossId: z.string().min(1) }).strict(), input, async ({ bossId }) => {
@@ -32,7 +34,7 @@ export async function fetchActiveEncounterAction() {
         const { rows } = await db.query(`
             SELECT ae.id, ae.current_hp, ae.max_hp, ae.streak_bonus, ae.status, ae.created_at,
                    b.name as boss_name, b.rank as boss_rank, b.image_url as boss_image,
-                   b.description, b.intel, b.damage_type
+                   b.description, b.intel, b.damage_type, b.phase, ae.balance_version, ae.is_first_clear
             FROM active_encounters ae
             JOIN bosses b ON ae.boss_id = b.id
             WHERE ae.user_id = $1 AND ae.status = 'ACTIVE'
@@ -51,8 +53,13 @@ export async function fetchActiveEncounterAction() {
 
         // Reward Scaling Calculation (Active View)
         const multiplier = calculateGlobalRewardMultiplier(level);
-        const estXp = Math.floor(baseRewards.xp * multiplier);
-        const estGold = Math.floor(baseRewards.gold * multiplier);
+        const repeat = row.balance_version === BOSS_BALANCE_VERSION && row.is_first_clear === false;
+        const rewardScale = repeat ? getBossRepeatRewardScale(row.boss_rank) : 1;
+        const usesBounty = repeat && isBossBountyEligible({ rank: row.boss_rank, phase: row.phase });
+        const bounty = usesBounty ? await getBossBountySummary(user.id, level) : null;
+        const postCap = level >= 999 ? 2 : 1;
+        const estXp = usesBounty ? bounty?.pendingXp || 0 : Math.floor(baseRewards.xp * multiplier * postCap * rewardScale);
+        const estGold = Math.floor(baseRewards.gold * multiplier * rewardScale);
 
         const result = {
             ...row,
@@ -67,7 +74,8 @@ export async function fetchActiveEncounterAction() {
             potentialRewards: {
                 xp: estXp,
                 gold: estGold
-            }
+            },
+            bounty
         };
 
         return result;

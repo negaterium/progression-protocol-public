@@ -12,6 +12,8 @@
     "start": "node scripts/runtime/next.mjs start",
     "lint": "eslint",
     "test": "vitest run",
+    "simulate:bosses": "tsx scripts/simulation/boss-balance.ts",
+    "simulate:bosses:extended": "tsx scripts/simulation/boss-balance-extended.ts",
     "typecheck": "tsc --noEmit",
     "security:audit": "node scripts/security/publication-audit.mjs --history",
     "security:verify": "node scripts/security/verify-boundaries.mjs",

@@ -79,10 +79,10 @@ async function main() {
         assert(cleared.rows.every((row) => row.image_url === null));
         const appliedMigrations = await pool.query<{ version: string }>(
             'SELECT version FROM public.sls_schema_migrations WHERE version = ANY($1::text[]) ORDER BY version',
-            [['002_skill_catalog_truth', '003_clear_missing_item_images']]
+            [['002_skill_catalog_truth', '003_clear_missing_item_images', '004_boss_bounty_balance']]
         );
         assert.deepEqual(appliedMigrations.rows.map((row) => row.version), [
-            '002_skill_catalog_truth', '003_clear_missing_item_images',
+            '002_skill_catalog_truth', '003_clear_missing_item_images', '004_boss_bounty_balance',
         ]);
         stage = 'numbered migration check';
         await run(process.execPath, ['node_modules/tsx/dist/cli.mjs', 'scripts/database/migrate.ts',
@@ -121,13 +121,48 @@ async function main() {
             assert.equal((await pool.query('SELECT quantity FROM inventory WHERE user_id = $1', [id])).rows[0].quantity, 2);
             await restoreSave(id, { ...save, quests: undefined }); // Legacy save format.
         } finally { await db.end(); }
+        stage = 'boss balance transactions';
+        await run(process.execPath, ['node_modules/vitest/vitest.mjs', 'run', 'src/lib/server/boss-balance.integration.test.ts'],
+            { env: { ...migrationEnvironment, BOSS_BALANCE_TEST_DATABASE: 'sls_package_test' }, timeout: 120000 });
+        stage = 'legacy boss-only upgrade';
+        await pool.query('CREATE DATABASE sls_legacy_boss_test');
+        const legacyPool = new Pool({ host: '127.0.0.1', port, user: 'sls_package_test', password, database: 'sls_legacy_boss_test' });
+        try {
+            await installDatabasePackage(legacyPool, bundle);
+            await legacyPool.query('ALTER TABLE public.sls_schema_migrations RENAME TO legacy_package_marker');
+            const legacyId = randomBytes(16).toString('hex').replace(/^(.{8})(.{4})(.{4})(.{4})(.{12})$/, '$1-$2-$3-$4-$5');
+            await legacyPool.query('INSERT INTO users (id, username, password_hash) VALUES ($1, $2, $3)', [legacyId, 'legacy_probe', 'disabled-fixture']);
+            await legacyPool.query('INSERT INTO profiles (id, current_xp) VALUES ($1, 12345)', [legacyId]);
+            await legacyPool.query(`INSERT INTO active_encounters (user_id, boss_id, current_hp, max_hp, status)
+                SELECT $1, id, 4321, 12345, 'ACTIVE' FROM bosses ORDER BY required_level LIMIT 1`, [legacyId]);
+            const legacyEnvironment = { ...migrationEnvironment, POSTGRES_DATABASE: 'sls_legacy_boss_test' };
+            const legacyArgs = ['node_modules/tsx/dist/cli.mjs', 'scripts/database/migrate.ts', '--target-database', 'sls_legacy_boss_test', '--legacy-boss-balance'];
+            await run(process.execPath, [...legacyArgs, '--check'], { env: legacyEnvironment, timeout: 120000 });
+            assert.equal((await legacyPool.query("SELECT to_regclass('public.sls_feature_migrations') AS marker")).rows[0].marker, null);
+            await run(process.execPath, [...legacyArgs, '--confirm'], { env: legacyEnvironment, timeout: 120000 });
+            await run(process.execPath, [...legacyArgs, '--confirm'], { env: legacyEnvironment, timeout: 120000 });
+            assert.equal((await legacyPool.query('SELECT current_xp FROM profiles WHERE id=$1', [legacyId])).rows[0].current_xp, 12345);
+            const legacyEncounter = (await legacyPool.query("SELECT current_hp, balance_version FROM active_encounters WHERE user_id=$1 AND status='ACTIVE'", [legacyId])).rows[0];
+            assert.equal(legacyEncounter.current_hp, 4321); assert.equal(legacyEncounter.balance_version, 1);
+            assert.equal((await legacyPool.query("SELECT to_regclass('public.sls_schema_migrations') AS marker")).rows[0].marker, null);
+            const feature = (await legacyPool.query('SELECT version, checksum FROM sls_feature_migrations')).rows[0];
+            assert.equal(feature.version, '004_boss_bounty_balance');
+            await legacyPool.query('UPDATE sls_feature_migrations SET checksum=$1 WHERE version=$2', ['0'.repeat(64), feature.version]);
+            await assert.rejects(run(process.execPath, [...legacyArgs, '--check'], { env: legacyEnvironment, timeout: 120000 }));
+            await legacyPool.query('UPDATE sls_feature_migrations SET checksum=$1 WHERE version=$2', [feature.checksum, feature.version]);
+            await legacyPool.query('ALTER TABLE public.sls_feature_migrations RENAME TO legacy_feature_marker');
+            await assert.rejects(run(process.execPath, [...legacyArgs, '--confirm'], { env: legacyEnvironment, timeout: 120000 }));
+            await legacyPool.query('ALTER TABLE public.legacy_feature_marker RENAME TO sls_feature_migrations');
+        } finally { await legacyPool.end(); }
         await mkdir('scratch/database-verification', { recursive: true });
         await writeFile('scratch/database-verification/result.json', JSON.stringify({ passed: true,
             checks: ['existing database rejection', 'failed installation rollback', 'fresh install', 'idempotent rerun',
                 'numbered migration apply/check', 'modified baseline rejection', 'playable account',
-                'bcrypt login verification', 'duplicate account rejection', 'restore round trip', 'restore rollback', 'legacy save'],
+                'bcrypt login verification', 'duplicate account rejection', 'restore round trip', 'restore rollback', 'legacy save',
+                'boss reward concurrency, rollback, first clear, HP and bounty save compatibility',
+                'legacy feature preflight, idempotency, preservation, checksum and untracked-schema protection'],
         }, null, 2));
-        console.log('Twelve PostgreSQL integration checks passed. Only isolated disposable databases were changed.');
+        console.log('Database installation, migrations, saves and boss balance transaction checks passed. Only isolated disposable databases were changed.');
     } finally {
         await pool?.end();
         if (started) await run('docker', ['stop', name], { timeout: 30000 });

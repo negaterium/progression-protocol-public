@@ -6,7 +6,7 @@ import { ConfigurationError, parseApplicationEnvironment, configurationNotes } f
 const requiredTables = ['users', 'sessions', 'profiles', 'hunter_stats', 'zones', 'quests', 'user_quests',
     'quest_logs', 'habit_logs', 'items', 'inventory', 'bosses', 'active_encounters', 'skills', 'user_skills',
     'achievements', 'user_achievements', 'titles', 'user_titles', 'shadows', 'shadow_assignments', 'user_backups',
-    'audit_logs', 'debug_logs'];
+    'audit_logs', 'debug_logs', 'boss_bounty_ledgers', 'boss_bounty_events'];
 
 class ReadinessError extends Error { }
 

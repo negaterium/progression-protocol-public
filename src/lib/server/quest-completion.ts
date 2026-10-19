@@ -15,6 +15,8 @@ import { calculateBossCombatRound } from "@/lib/game-logic/boss-combat";
 import { calculateQuestManaEfficiency, cleansePurifiableStatusEffects } from "@/lib/system/skill-effects";
 import { gameDb as db, withGameTransaction } from "./game-db";
 import { getAccessibleQuest, assertQuestOpen } from "./quest-access";
+import { BOSS_BALANCE_VERSION, isBossBountyEligible, resolveBalancedBossDamage } from '@/lib/game-logic/boss-balance-policy';
+import { creditBossParticipation } from './boss-bounty';
 
 export async function completeQuest(user: AuthenticatedUser, questId: string, { skipManaCost = false }: { skipManaCost?: boolean } = {}) {
     return withGameTransaction(user.id, async () => {
@@ -67,12 +69,13 @@ export async function completeQuest(user: AuthenticatedUser, questId: string, { 
         let statusHpLoss = 0;
         let blockActionReason: string | null = null;
         let effectsChanged = false;
-        const currentHp = profile.current_hp || 100;
-        const maxHp = 100 + ((stats?.vitality || 10) * 10);
+        const beforeStatuses = await recalculateAndClampPlayerStats(user.id);
+        const currentHp = beforeStatuses.currentHp ?? profile.current_hp ?? 100;
+        const statusMaxHp = beforeStatuses.maxHp;
 
         const processedEffects: StatusEffect[] = [];
         for (const effect of activeEffects) {
-            if (effect.damagePercent) { statusHpLoss += Math.floor(maxHp * effect.damagePercent); effectsChanged = true; }
+            if (effect.damagePercent) { statusHpLoss += Math.floor(statusMaxHp * effect.damagePercent); effectsChanged = true; }
             if (effect.isStun) blockActionReason = effect.description || "Stunned";
             const newDuration = (effect.duration || 0) - 1;
             if (newDuration > 0) processedEffects.push({ ...effect, duration: newDuration });
@@ -135,8 +138,8 @@ export async function completeQuest(user: AuthenticatedUser, questId: string, { 
         }
 
         // 6. Reward calculation (single call, destructure all needed fields)
-        const recalculatedStats = await recalculateAndClampPlayerStats(user.id);
-        const { maxMana } = recalculatedStats;
+        const recalculatedStats = effectsChanged ? await recalculateAndClampPlayerStats(user.id) : beforeStatuses;
+        const { maxMana, maxHp } = recalculatedStats;
         const dailyRes = await db.queryOne<{ count: string }>(
             `SELECT COUNT(*) as count FROM user_quests uq
              JOIN quests q ON uq.quest_id = q.id
@@ -205,10 +208,10 @@ export async function completeQuest(user: AuthenticatedUser, questId: string, { 
         );
 
         // 9. Mark quest complete
-        await db.query(
+        const completion = await db.query<{ completed_at: Date }>(
             `INSERT INTO user_quests (user_id, quest_id, status, completed_at)
              VALUES ($1, $2, 'Complete', NOW())
-             ON CONFLICT (user_id, quest_id) DO UPDATE SET status = 'Complete', completed_at = NOW()`,
+             ON CONFLICT (user_id, quest_id) DO UPDATE SET status = 'Complete', completed_at = NOW() RETURNING completed_at`,
             [user.id, questId]
         );
 
@@ -234,19 +237,25 @@ export async function completeQuest(user: AuthenticatedUser, questId: string, { 
         // 12. Boss combat round
         let bossDamageResult: Record<string, any> = {};
         let bossErrorString: string | null = null;
+        let atomicBossRound = false;
+        let bossParticipationXp = 0;
         try {
             await db.transaction(async () => {
                 const activeEncounter = await db.queryOne<{
                     id: string; boss_id: string; boss_name: string; current_hp: number;
                     max_hp: number; intel: any; boss_rank: string; damage_type: string;
+                    boss_phase?: number; balance_version?: number; is_first_clear?: boolean;
                 }>(
-                    `SELECT ae.id, ae.boss_id, b.name as boss_name, ae.current_hp, ae.max_hp, b.intel, b.rank as boss_rank, b.damage_type
+                    `SELECT ae.id, ae.boss_id, b.name as boss_name, ae.current_hp, ae.max_hp, b.intel, b.rank as boss_rank, b.damage_type,
+                            b.phase as boss_phase, ae.balance_version, ae.is_first_clear
                  FROM active_encounters ae JOIN bosses b ON ae.boss_id = b.id
                  WHERE ae.user_id = $1 AND ae.status = 'ACTIVE' FOR UPDATE OF ae`,
                     [user.id]
                 );
 
                 if (activeEncounter) {
+                    atomicBossRound = activeEncounter.balance_version === BOSS_BALANCE_VERSION;
+                    const balanced = atomicBossRound && isBossBountyEligible({ rank: activeEncounter.boss_rank, phase: activeEncounter.boss_phase });
                     const { rows: equippedItems } = await db.query(
                         `SELECT it.effect, it.type, it.slot, it.name as item_name FROM inventory i JOIN items it ON i.item_id = it.id WHERE i.user_id = $1 AND i.equipped = true`,
                         [user.id]
@@ -271,7 +280,7 @@ export async function completeQuest(user: AuthenticatedUser, questId: string, { 
                         currentPlayerMana: finalNewMana,
                         statusEffects: activeEffects, titleModifiers,
                         activeEffects, isStunned: !!blockActionReason, maxPlayerHp: maxHp,
-                    });
+                    }, balanced ? resolveBalancedBossDamage : undefined);
 
                     // Write boss HP
                     await db.query("UPDATE active_encounters SET current_hp = $1, last_updated = $2 WHERE id = $3",
@@ -300,6 +309,14 @@ export async function completeQuest(user: AuthenticatedUser, questId: string, { 
                     }
 
                     bossDamageResult = combatResult;
+                    if (balanced && activeEncounter.is_first_clear === false) {
+                        const completedAt = completion.rows[0]?.completed_at;
+                        if (!completedAt) throw new Error('Quest completion timestamp unavailable');
+                        const bounty = await creditBossParticipation(user.id, { encounterId: activeEncounter.id, bossId: activeEncounter.boss_id,
+                            questId, completedAt: new Date(completedAt), difficulty: quest.difficulty || 'E', level: profile.level || 1 });
+                        bossParticipationXp = bounty.xp;
+                        bossDamageResult.bounty = { participationXp: bounty.xp, pendingXp: bounty.pendingXp };
+                    }
 
                     if (combatResult.currentHp === 0) {
                         const rewards = await awardBossRewards(user, activeEncounter.boss_id, activeEncounter.id);
@@ -311,6 +328,7 @@ export async function completeQuest(user: AuthenticatedUser, questId: string, { 
                             );
                         } catch { /* non-critical */ }
                         bossDamageResult.victory = true;
+                        if (bossDamageResult.bounty) bossDamageResult.bounty.pendingXp = 0;
                         if (rewards) {
                             bossDamageResult.rewards = {
                                 xp: rewards.xp || 0, gold: rewards.gold || 0,
@@ -322,6 +340,8 @@ export async function completeQuest(user: AuthenticatedUser, questId: string, { 
                 }
             });
         } catch (bossErr: unknown) {
+            // New ledger-backed rounds commit with the quest, or neither does.
+            if (atomicBossRound) throw bossErr;
             const errMsg = (bossErr as Error)?.message || "Unknown Boss Logic Error";
             bossErrorString = errMsg;
             bossDamageResult = {};
@@ -388,7 +408,7 @@ export async function completeQuest(user: AuthenticatedUser, questId: string, { 
         }
 
         // 14. XP grant (combines quest XP and daily bounty XP atomically)
-        const totalXpToGrant = finalXp + (dailyBountyAwarded ? dailyBountyAwarded.xp : 0);
+        const totalXpToGrant = finalXp + (dailyBountyAwarded ? dailyBountyAwarded.xp : 0) + bossParticipationXp;
         const xpResult = await awardXp(user.id, totalXpToGrant);
 
         // 15. Loot

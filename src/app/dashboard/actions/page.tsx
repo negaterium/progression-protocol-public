@@ -3,10 +3,12 @@ import db from "@/lib/db";
 import { getAuthenticatedUser } from "@/lib/auth-utils";
 import { ActionTabs } from "@/components/dashboard/ActionTabs";
 import { StatsManager } from "@/lib/stats-manager";
+import { getBossBountySummary } from '@/lib/server/boss-bounty';
 
 export const dynamic = 'force-dynamic';
 
 export default async function ActionsPage() {
+    let data: Parameters<typeof ActionTabs>[0];
     try {
         const user = await getAuthenticatedUser();
 
@@ -145,15 +147,12 @@ export default async function ActionsPage() {
             initialUserGold: profile?.gold_credits || 0,
             initialInventory: mappedInventory,
             initialKeys: keyItemsRow.rows || [],
-            storeDiscount: storeDiscount
+            storeDiscount: storeDiscount,
+            bounty: await getBossBountySummary(user.id, profile?.level || 1),
+            initialServerNow: new Date().toISOString()
         };
 
-        return (
-            <ActionTabs
-                questsData={questsData}
-                bossesData={bossesData}
-            />
-        );
+        data = { questsData, bossesData };
 
     } catch (error: any) {
         console.error("[ActionsPage] Server Render Error:", error);
@@ -167,4 +166,5 @@ export default async function ActionsPage() {
             </div>
         );
     }
+    return <ActionTabs {...data} />;
 }

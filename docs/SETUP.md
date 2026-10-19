@@ -57,6 +57,7 @@ player. The database name after `--target-database` must exactly match the effec
 
 ```sh
 npm run db:init -- --target-database progression_protocol --confirm --env-file .env.local
+npm run db:migrate -- --target-database progression_protocol --confirm --env-file .env.local
 npm run db:create-user -- hunter --target-database progression_protocol --env-file .env.local
 npm run config:doctor -- --env-file .env.local --mode development
 npm run dev

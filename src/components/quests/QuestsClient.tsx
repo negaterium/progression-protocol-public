@@ -183,6 +183,10 @@ export function QuestsClient({ initialZones, initialQuests, initialMana, initial
                 }
 
                 if (result.data.bossDamage) {
+                    if (result.data.bossDamage.bounty?.participationXp > 0) {
+                        showNotification({ title: 'BOSS XP EARNED', message: 'Combat participation reward. XP bonuses apply to this base amount.',
+                            type: 'SUCCESS', xp: result.data.bossDamage.bounty.participationXp });
+                    }
                     window.dispatchEvent(new CustomEvent('solo_boss_damage', {
                         detail: result.data.bossDamage
                     }));
@@ -353,6 +357,10 @@ export function QuestsClient({ initialZones, initialQuests, initialMana, initial
                 }
 
                 if (result.data.bossDamage) {
+                    if (result.data.bossDamage.bounty?.participationXp > 0) {
+                        showNotification({ title: 'BOSS XP EARNED', message: 'Combat participation reward. XP bonuses apply to this base amount.',
+                            type: 'SUCCESS', xp: result.data.bossDamage.bounty.participationXp });
+                    }
                     window.dispatchEvent(new CustomEvent('solo_boss_damage', {
                         detail: result.data.bossDamage
                     }));

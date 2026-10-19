@@ -409,6 +409,8 @@ export async function resetSystemAction() {
 
             // Clear Active Encounters (Fixes "Already in Combat" loop)
             await db.query("DELETE FROM active_encounters WHERE user_id = $1", [userId]);
+              await db.query("DELETE FROM boss_bounty_events WHERE user_id = $1", [userId]);
+              await db.query("DELETE FROM boss_bounty_ledgers WHERE user_id = $1", [userId]);
 
             // PENALTY PREVENTION: Seed fake 'Yesterday' logs so the user starts with a clean slate
             // Otherwise, if they level up to 2 on Day 1, the system thinks they missed Day 0 dailies.
